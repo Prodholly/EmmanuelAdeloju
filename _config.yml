@@ -158,6 +158,9 @@ newsletter:
 collections:
   books:
     output: true
+  modules:
+    output: true
+    permalink: /modules/:name/
   news:
     defaults:
       layout: post
