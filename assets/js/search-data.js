@@ -79,15 +79,15 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/EmmanuelAdeloju/blog/";
               },
-            },{id: "post-intro-to-large-language-models",
+            },{id: "post-",
         
-          title: "Intro to Large Language Models",
+          title: "",
         
-        description: "Building a shared mental model of what Large Language Models actually are, and what they are not.",
+        description: "",
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/EmmanuelAdeloju/blog/2026/intro-to-llm/";
+            window.location.href = "/EmmanuelAdeloju/blog/2026/2026-02-01-intro-to-llm/";
           
         },
       },{id: "post-a-post-with-plotly-js",
