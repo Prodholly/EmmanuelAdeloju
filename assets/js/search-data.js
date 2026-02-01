@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/EmmanuelAdeloju/blog/";
               },
-            },{id: "post-a-post-with-plotly-js",
+            },{id: "post-intro-to-large-language-models",
+        
+          title: "Intro to Large Language Models",
+        
+        description: "Building a shared mental model of what Large Language Models actually are, and what they are not.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/intro-to-llm/";
+          
+        },
+      },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
         
@@ -363,17 +374,6 @@ ninja.data = [{
         handler: () => {
           
             window.location.href = "/EmmanuelAdeloju/blog/2021/diagrams/";
-          
-        },
-      },{id: "post-a-distill-style-blog-post",
-        
-          title: "a distill-style blog post",
-        
-        description: "an example of a distill-style blog post and main elements",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/EmmanuelAdeloju/blog/2021/intro-to-llm/";
           
         },
       },{id: "post-a-distill-style-blog-post",
