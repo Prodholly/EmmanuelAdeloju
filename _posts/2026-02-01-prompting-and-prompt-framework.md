@@ -59,9 +59,7 @@ toc:
 ## Understanding Prompt Engineering
 
 Before we dive into specific techniques, let me briefly remind you of what prompt engineering is—from a slightly different angle that may deepen your understanding.
-
-**Prompt engineering is the design of tasks in natural language to LLMs to produce desired outputs.**
-
+Prompt engineering is the design of tasks in natural language to LLMs to produce desired outputs.
 An important note: these prompt engineering guidelines work across different LLM models and tools. Whether you're using ChatGPT, Claude, Gemini, or another model, these principles remain consistent.
 
 ---
