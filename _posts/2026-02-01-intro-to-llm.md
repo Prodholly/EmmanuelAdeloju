@@ -25,21 +25,22 @@ tikzjax: true
 # Table of Contents
 # IMPORTANT: section names MUST exactly match your Markdown headers
 toc:
-  - name: Why This Module Matters
-  - name: What Is a Large Language Model (LLM)?
-  - name: LLMs Are Pattern-Based, Not Reasoning Agents
-  - name: How Do LLMs Learn? (A Teacher-Friendly Overview)
+  - name: "Why This Module Matters"
+  - name: "What Is a Large Language Model (LLM)?"
+  - name: "LLMs Are Pattern-Based, Not Reasoning Agents"
+  - name: "How Do LLMs Learn? (A Teacher-Friendly Overview)"
     subsections:
-      - name: Training at a High Level
-      - name: Stage 1: Data Collection and Preprocessing
-      - name: Stage 2: Pretraining (Learning Language Patterns)
-      - name: Stage 3: Fine-Tuning (Specialization)
-  - name: Prompting and Prompt Engineering
+      - name: "Training at a High Level"
+      - name: "Stage 1: Data Collection and Preprocessing"
+      - name: "Stage 2: Pretraining (Learning Language Patterns)"
+      - name: "Stage 3: Fine-Tuning (Specialization)"
+  - name: "Prompting and Prompt Engineering"
     subsections:
-      - name: What Is a Prompt?
-      - name: What Is Prompt Engineering?
-  - name: Why LLMs Can Be Helpful for Science Data Sensemaking
-  - name: Major Risks Teachers Need to Be Aware Of
+      - name: "What Is a Prompt?"
+      - name: "What Is Prompt Engineering?"
+  - name: "Why LLMs Can Be Helpful for Science Data Sensemaking"
+  - name: "Major Risks Teachers Need to Be Aware Of"
+
 ---
 
 ## Why This Module Matters
