@@ -90,6 +90,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/prompt-techniques/";
           
         },
+      },{id: "post-prompt-engineering-framework-for-data-sensemaking",
+        
+          title: "Prompt Engineering Framework for Data Sensemaking",
+        
+        description: "Introducing SENSE, a structured framework for designing prompts that support scientific data sensemaking with Large Language Models.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/prompt-framework/";
+          
+        },
       },{id: "post-intro-to-large-language-models",
         
           title: "Intro to Large Language Models",
