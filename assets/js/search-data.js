@@ -79,7 +79,18 @@ ninja.data = [{
               handler: () => {
                 window.location.href = "/EmmanuelAdeloju/blog/";
               },
-            },{id: "post-intro-to-large-language-models",
+            },{id: "post-prompting-techniques-for-science-data-analysis-and-sensemaking",
+        
+          title: "Prompting Techniques for Science Data Analysis and Sensemaking",
+        
+        description: "A guide to choosing and applying the right prompting techniques for different levels of data tasks in science education.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/prompting-and-prompt-framework/";
+          
+        },
+      },{id: "post-intro-to-large-language-models",
         
           title: "Intro to Large Language Models",
         
