@@ -31,6 +31,9 @@ toc:
   - name: How Do LLMs Learn? (A Teacher-Friendly Overview)
     subsections:
       - name: Training at a High Level
+      - name: Stage 1: Data Collection and Preprocessing
+      - name: Stage 2: Pretraining (Learning Language Patterns)
+      - name: Stage 3: Fine-Tuning (Specialization)
   - name: Prompting and Prompt Engineering
     subsections:
       - name: What Is a Prompt?
@@ -83,6 +86,8 @@ Most models teachers encounter are **general-purpose models**. This means they a
   caption="A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data."
 %}
 
+Fig 1. A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data
+
 ---
 
 ## LLMs Are Pattern-Based, Not Reasoning Agents
@@ -110,7 +115,7 @@ Teachers do not need all the technical details—but they *do* need intuition. U
 
 LLMs are trained in three main stages.
 
----
+
 
 ### Stage 1: Data Collection and Preprocessing
 
@@ -126,7 +131,6 @@ This data is cleaned and filtered to remove low-quality or duplicate content. Wh
 **Educational implication:**  
 What the model “knows” depends entirely on what it has encountered in text form.
 
----
 
 ### Stage 2: Pretraining (Learning Language Patterns)
 
@@ -149,8 +153,6 @@ This stage creates a model that can respond across many topics, but without disc
   caption="Large Language Models generate responses by predicting the most probable next tokens based on patterns learned during training, not by reasoning from first principles."
 %}
 
-
----
 
 ### Stage 3: Fine-Tuning (Specialization)
 
@@ -179,7 +181,6 @@ A prompt is the input we give an LLM—usually text—that describes:
 
 > *“Explain the trend shown in this graph to a 7th-grade student using evidence from the data.”*
 
----
 
 ### What Is Prompt Engineering?
 
@@ -191,6 +192,8 @@ Prompt engineering is the intentional design and refinement of prompts to:
 In education, prompt engineering is less about “hacking” the model and more about **pedagogical precision**.
 
 I think of prompt engineering as **lesson design for an AI collaborator**.
+
+We will discuss Prompt Engineering more in Module 2.
 
 ---
 
