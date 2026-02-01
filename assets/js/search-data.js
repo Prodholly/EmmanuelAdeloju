@@ -373,6 +373,17 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
+            window.location.href = "/EmmanuelAdeloju/blog/2021/intro-to-llm/";
+          
+        },
+      },{id: "post-a-distill-style-blog-post",
+        
+          title: "a distill-style blog post",
+        
+        description: "an example of a distill-style blog post and main elements",
+        section: "Posts",
+        handler: () => {
+          
             window.location.href = "/EmmanuelAdeloju/blog/2021/distill/";
           
         },
