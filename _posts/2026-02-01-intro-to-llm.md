@@ -75,10 +75,12 @@ Most models teachers encounter are **general-purpose models**. This means they a
 > **Key takeaway:**  
 > LLMs are *language models*, not data analysis engines or reasoning agents.
 
-{% include figure.html 
+
+{% include figure.liquid 
   path="assets/img/prompt.png" 
   class="img-fluid rounded z-depth-1" 
-  caption="A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data." 
+  zoomable=true 
+  caption="A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data."
 %}
 
 ---
@@ -140,11 +142,13 @@ The model learns that phrases like *“also increases”* are statistically like
 
 This stage creates a model that can respond across many topics, but without disciplinary understanding.
 
-{% include figure.html 
+{% include figure.liquid 
   path="assets/img/llmprediction.jpg" 
   class="img-fluid rounded z-depth-1" 
-  caption="Large Language Models generate responses by predicting the most probable next tokens based on patterns learned during training, not by reasoning from first principles." 
+  zoomable=true 
+  caption="Large Language Models generate responses by predicting the most probable next tokens based on patterns learned during training, not by reasoning from first principles."
 %}
+
 
 ---
 
