@@ -87,7 +87,7 @@ ninja.data = [{
         section: "Posts",
         handler: () => {
           
-            window.location.href = "/EmmanuelAdeloju/blog/2026/prompting-and-prompt-framework/";
+            window.location.href = "/EmmanuelAdeloju/blog/2026/prompt-techniques/";
           
         },
       },{id: "post-intro-to-large-language-models",
