@@ -47,7 +47,6 @@ toc:
   - name: "Closing the Module"
 
 ---
-
 ## Why Framing the Problem Comes First
 
 Before we graph data, calculate averages, or run statistical tests, we need to step back and ask:
@@ -71,7 +70,7 @@ By the end of this module, teachers and students will be able to:
 
 ---
 
-## Step 1: Identify the Broader Issue (Context First)
+## Step 1: Identify the Broader Issue
 
 Data investigations begin with real-world phenomena, not datasets.
 
@@ -93,7 +92,7 @@ The broader issue might include:
 - Power outages affecting homes and businesses
 - Safety risks and economic consequences
 
-Here, the investigation is grounded in a real system that could be improved, which emphasizes problem-solving in context.
+Here, the investigation is grounded in a real system that could be improved, which emphasizes problem-solving in real-world context.
 
 ### How LLMs May Support This Step
 
