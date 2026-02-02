@@ -145,6 +145,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/data-exploration/";
           
         },
+      },{id: "post-consider-models",
+        
+          title: "Consider Models",
+        
+        description: "Learning to select, evaluate, and interpret models as evidence-building tools that balance clarity, uncertainty, and real-world relevance.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/consider-models/";
+          
+        },
       },{id: "post-consider-data",
         
           title: "Consider Data",
