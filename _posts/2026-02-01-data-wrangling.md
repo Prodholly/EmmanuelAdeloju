@@ -82,14 +82,10 @@ This helps reduce noise and keeps the analysis aligned with the phenomenon you a
 
 - Keeping only temperature readings from one location
 - Selecting trials conducted under the same experimental conditions
-- Focusing on one time window (e.g., post-intervention data)
 
 **LLM support (Zero-shot or Few-shot prompting):**
 
 Use the LLM model to suggest reasonable filtering criteria based on your research question, then decide whether they make scientific sense.
-
-> 📊 **Suggested visual:**  
-> Before-and-after table showing the full dataset vs. filtered dataset.
 
 ---
 
@@ -108,9 +104,6 @@ This is essential for identifying patterns and differences.
 **LLM support (Few-shot prompting):**
 
 Provide examples of how grouping is used in similar investigations and ask the LLM model to suggest groupings, but validate them against your data context.
-
-> 📊 **Suggested visual:**  
-> Table with a new "Group" column highlighted.
 
 ---
 
@@ -135,9 +128,6 @@ There is rarely one "correct" cleaning choice—each decision affects interpreta
 
 Ask the LLM model to walk through possible cleaning options and their consequences. Use this to compare alternatives, not to outsource judgment.
 
-> 📊 **Suggested visual:**  
-> Annotated table showing a missing value and an outlier.
-
 ---
 
 ## 4. Data Transformation: Make Data More Useful
@@ -158,9 +148,6 @@ This step often connects raw measurements to scientific meaning.
 **First prompt:** Identify useful transformations.
 
 **Second prompt:** Explain how each transformation would support the investigation.
-
-> 📊 **Suggested visual:**  
-> Side-by-side view of original variables and newly created variables.
 
 ---
 
@@ -186,14 +173,11 @@ These summaries help you understand variability and typical values.
 
 Ask the LLM model to generate summaries multiple times or in different formats to check for stability and consistency in interpretation.
 
-> 📊 **Suggested visual:**  
-> Simple descriptive statistics table.
-
 ---
 
 ## A Critical Reminder
 
-Data wrangling is not neutral. Every choice—what to remove, how to group, what to transform—shapes the story the data can tell.
+Data wrangling is not neutral. Every choice, what to remove, how to group, what to transform, shapes the story the data can tell.
 
 **LLMs are most useful here as thinking partners:**
 
@@ -201,7 +185,7 @@ Data wrangling is not neutral. Every choice—what to remove, how to group, what
 - Surfacing tradeoffs
 - Checking reasoning
 
-They do not decide what is scientifically appropriate—**you do**.
+They do not decide what is scientifically appropriate, **you do**.
 
 ---
 
