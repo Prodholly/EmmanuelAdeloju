@@ -123,17 +123,6 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/framing-the-problem/";
           
         },
-      },{id: "post-data-wrangling-processing-amp-transforming-data",
-        
-          title: "Data Wrangling (Processing &amp; Transforming Data)",
-        
-        description: "Learning to clean, organize, and transform data through iterative decision-making to prepare it for meaningful scientific analysis.",
-        section: "Posts",
-        handler: () => {
-          
-            window.location.href = "/EmmanuelAdeloju/blog/2026/data-wrangling.md/";
-          
-        },
       },{id: "post-data-exploration-and-visualization",
         
           title: "Data Exploration and Visualization",
