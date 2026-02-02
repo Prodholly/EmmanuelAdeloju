@@ -167,6 +167,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/consider-data/";
           
         },
+      },{id: "post-communicate-and-propose-action",
+        
+          title: "Communicate and Propose Action",
+        
+        description: "Translating data investigation results into clear narratives and evidence-based recommendations that inform real-world decisions.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/communicate-action/";
+          
+        },
       },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
