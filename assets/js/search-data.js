@@ -134,6 +134,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/data-wrangling.md/";
           
         },
+      },{id: "post-data-exploration-and-visualization",
+        
+          title: "Data Exploration and Visualization",
+        
+        description: "Using visualization as a thinking tool to discover patterns, relationships, and uncertainties in science data investigations.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/data-exploration/";
+          
+        },
       },{id: "post-consider-data",
         
           title: "Consider Data",
