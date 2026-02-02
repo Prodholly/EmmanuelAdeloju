@@ -122,7 +122,7 @@ Below is a visualization of how an LLM is checking through all possible words th
   path="assets/img/pattern.png" 
   class="img-fluid rounded z-depth-1" 
   zoomable=true 
-  caption="<span style='color: #f0f0f0;'>LLMs seeking patterns to match work with the next possible word <d-cite key='ft-generative-ai'></d-cite>.</span>"
+  caption="<span style='color: #f0f0f0;'>Fig 2. LLMs seeking patterns to match work with the next possible word <d-cite key='ft-generative-ai'>2</d-cite>.</span>"
 %}
 
 ---
