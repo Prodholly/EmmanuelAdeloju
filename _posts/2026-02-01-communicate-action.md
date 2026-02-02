@@ -47,21 +47,21 @@ Throughout this module, we continue working with our running example of investig
 
 ## Why This Phase Matters
 
-Data investigations do not end with models or visualizations. They end when evidence is translated into understanding and action. In this phase, I connect results back to the real-world problem, craft a clear data story, and propose actions that are supported by evidence.
+Data investigations do not end with models or visualizations. They end when evidence is translated into understanding and action. In this phase, you connect results back to the real-world problem, craft a clear data story, and propose actions that are supported by evidence.
 
-Communication is not an afterthought—it is part of the analysis. How results are framed, explained, and delivered directly affects whether insights are understood, trusted, and used.
+Communication is not an afterthought, it is part of the analysis. How results are framed, explained, and delivered directly affects whether insights are understood, trusted, and used.
 
 ---
 
 ## From Results to Meaning
 
-At this point in the investigation, I have:
+At this point in the investigation, you have:
 
 - Cleaned and explored electrical fire data
 - Built and evaluated models
 - Identified patterns, relationships, and uncertainty
 
-Now, I ask:
+Now, you ask:
 
 - What do these results mean in context?
 - What claims can be supported by evidence?
@@ -77,7 +77,7 @@ The following six-step workflow guides the process of communicating findings and
 
 ## Step 1: Reconnect Findings to the Original Problem
 
-I begin by returning to the broader issue that motivated the investigation.
+Begin by returning to the broader issue that motivated the investigation.
 
 **Electrical fire example:**
 
@@ -85,7 +85,7 @@ I begin by returning to the broader issue that motivated the investigation.
 
 **Investigative question:** How does building age relate to electrical fire incidents?
 
-Here, I explicitly connect models and visualizations back to the problem they were meant to address.
+Here, explicitly connect models and visualizations back to the problem they were meant to address.
 
 **Prompting technique:** Zero-shot prompting
 
@@ -95,27 +95,24 @@ Here, I explicitly connect models and visualizations back to the problem they we
 
 ## Step 2: Make Evidence-Based Claims
 
-I translate results into claims that are directly supported by data. Each claim is paired with specific evidence.
+Translate results into claims that are directly supported by data. Each claim is paired with specific evidence.
 
 **Example claims:**
 
 - "Electrical fires occur more frequently in buildings older than 30 years."
 - "Copper wiring appears in most incidents, but this may reflect its prevalence rather than increased risk."
 
-I avoid overstating conclusions and clearly acknowledge uncertainty.
+Avoid overstating conclusions and clearly acknowledge uncertainty.
 
 **Prompting technique:** Chain-of-thought prompting
 
 > *"Step by step, distinguish which conclusions are strongly supported by the data and which are tentative."*
 
-> 📊 **Suggested visual:**  
-> Claim–Evidence table linking statements to figures or models.
-
 ---
 
 ## Step 3: Craft a Data Story
 
-Rather than presenting isolated charts, I organize findings into a coherent narrative:
+Rather than presenting isolated charts, organize findings into a coherent narrative:
 
 - The problem and why it matters
 - What the data shows
@@ -129,14 +126,11 @@ A good data story helps others follow the reasoning without needing to inspect e
 > *"Here are two examples of data stories used in public safety reports.*  
 > *Based on these, help structure a clear narrative for the electrical fire findings."*
 
-> 📊 **Suggested visual:**  
-> Storyboard or slide sequence showing the flow of the data story.
-
 ---
 
 ## Step 4: Propose Actions Supported by Evidence
 
-I propose actions that are:
+Propose actions that are:
 
 - Grounded in the findings
 - Appropriate to the data's scope
@@ -158,9 +152,6 @@ Actions are framed as recommendations, not prescriptions.
 **Prompt 2:**
 > *"For each action, explain what evidence supports it and what uncertainties remain."*
 
-> 📊 **Suggested visual:**  
-> Action matrix linking evidence → recommendation → limitations.
-
 ---
 
 ## Step 5: Tailor Communication to the Audience
@@ -174,7 +165,7 @@ Different stakeholders require different levels of detail and language.
 - City officials
 - Fire safety professionals
 
-I adapt:
+Adapt:
 
 - Vocabulary and tone
 - Visual complexity
@@ -184,9 +175,6 @@ I adapt:
 
 > *"Explain these findings once for a technical audience and once for a general audience.*  
 > *Check that both versions remain consistent with the evidence."*
-
-> 📊 **Suggested visual:**  
-> Same insight shown in two formats (technical vs. public-facing).
 
 ---
 
@@ -204,16 +192,13 @@ This phase frequently leads to:
 - Collecting additional information
 - Framing a new investigative question
 
-This is not failure—it is how data investigations continue.
-
-> 📊 **Suggested visual:**  
-> Full investigation cycle diagram with arrows looping forward.
+This is not failure, it is how data investigations continue.
 
 ---
 
 ## Key Takeaway
 
-Communicating data is not about presenting results—it is about **enabling informed decisions**. In the context of electrical fire investigations, this means telling a clear, honest data story that connects evidence to action while respecting uncertainty.
+Communicating data is not about presenting results, it is about **enabling informed decisions**. In the context of electrical fire investigations, this means telling a clear, honest data story that connects evidence to action while respecting uncertainty.
 
 **LLMs can help with:**
 
