@@ -92,7 +92,7 @@ All examples in this module connect back to this question.
 
 ---
 
-## Step 1: Identify the Data Needed (Before Looking at Files)
+## Step 1: Identify the Data Needed
 
 Before opening any dataset, articulate what data would be useful.
 
@@ -117,13 +117,13 @@ Before opening any dataset, articulate what data would be useful.
 
 > *"Based on this [insert research question here], list the types of data variables that would be useful for investigating it."*
 
-The LLM helps generate ideas, but students must decide what is actually feasible and relevant.
+The LLM helps generate ideas, but teachers and students must decide what is actually feasible and relevant.
 
 ---
 
-## Step 2: Assess Data Provenance (Where Does the Data Come From?)
+## Step 2: Assess Data Provenance
 
-**Data provenance** refers to where the data originates, who collected it, and why it exists.
+**Data provenance** refers to where the data originates, who collected it, and why it exists. The data provenance can greatly influence the kind of insight generated. Also, there might be bias or some factors embedded in the data that may make it unfit for your task.
 
 Students should investigate:
 
@@ -155,7 +155,7 @@ Here, the model is asked to evaluate the data source rather than describe it.
 
 ---
 
-## Step 3: Read and Interpret Metadata (What Does the Data Actually Represent?)
+## Step 3: Read and Interpret Metadata
 
 Metadata includes information about:
 
@@ -183,7 +183,7 @@ A column labeled `WIRE_TYPE` might:
 > *"Here is an example of a well-described dataset column and explanation.*  
 > *Now help interpret these column names and suggest questions a student should ask about them."*
 
-Few-shot prompting helps the model mirror good interpretive habits.
+Few-shot prompting helps the LLM model mirror good interpretive habits.
 
 ---
 
@@ -213,7 +213,7 @@ Electrical fires may be underreported in:
 
 > **Take note to use this same prompt 3 different times and compare answers.**
 >
-> *"Generate three different ways this dataset [attach dataset] might be biased.*  
+> *"Suggest three different ways this dataset [attach dataset] might be biased.*  
 > *Then explain which bias is most concerning for this investigation and why."*
 
 This encourages multiple perspectives before settling on one interpretation.
