@@ -112,6 +112,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/intro-to-llm/";
           
         },
+      },{id: "post-frame-the-problem",
+        
+          title: "Frame the Problem",
+        
+        description: "Understanding how to anchor data investigations in real-world phenomena by framing problems before analysis begins.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/framing-the-problem/";
+          
+        },
       },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
