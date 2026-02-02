@@ -123,6 +123,17 @@ ninja.data = [{
             window.location.href = "/EmmanuelAdeloju/blog/2026/framing-the-problem/";
           
         },
+      },{id: "post-consider-data",
+        
+          title: "Consider Data",
+        
+        description: "Learning to evaluate data sources, understand metadata, and make informed decisions about data quality and ethical implications in science investigations.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/consider-data/";
+          
+        },
       },{id: "post-a-post-with-plotly-js",
         
           title: "a post with plotly.js",
