@@ -48,7 +48,7 @@ Throughout this module, we continue working with our running example of investig
 
 ## Why This Phase Matters
 
-Once data has been cleaned and structured, the next step is to explore it visually. Exploration is not about proving a conclusion—it is about **discovering patterns, relationships, anomalies, and uncertainties** that help refine understanding of a real-world problem.
+Once data has been cleaned and structured, the next step is to explore it visually. Exploration is not about proving a conclusion, it is about **discovering patterns, relationships, anomalies, and uncertainties** that help refine understanding of a real-world problem.
 
 In investigations of electrical fires, visualization helps reveal:
 
@@ -80,7 +80,7 @@ The following seven-step workflow guides the process of exploring data visually 
 
 ## Step 1: Clarify the Visualization Goal
 
-Before creating any chart, I restate my investigative question and decide what kind of insight I am looking for.
+Before creating any chart, you may restate my investigative question and decide what kind of insight you are looking for.
 
 **Electrical fire examples:**
 
@@ -99,14 +99,11 @@ Each question implies a different visualization goal:
 
 > *"Given this research question about electrical fire causes, what type of insight should a visualization aim to show: trend, comparison, distribution, or relationship?"*
 
-> 📊 **Suggested visual:**  
-> Diagram showing different visualization goals mapped to chart types.
-
 ---
 
 ## Step 2: Select Chart Type and Map Variables
 
-Once the goal is clear, I choose a chart that matches it and decide how variables map to:
+Once the goal is clear, choose a chart that matches it and decide how variables map to:
 
 - Axes (x, y)
 - Color or grouping
@@ -121,13 +118,10 @@ Once the goal is clear, I choose a chart that matches it and decide how variable
 
 **Prompting technique:** Few-shot prompting
 
-> *"Here are two examples of charts used in fire safety analysis.*  
+> *"Here is my data on fire safety analysis.*  
 > *Based on these, suggest an appropriate chart for comparing electrical fire incidents across wire materials."*
 
 I treat the output as a suggestion, not a final decision.
-
-> 📊 **Suggested visual:**  
-> Table linking research questions → chart types → mapped variables.
 
 ---
 
@@ -135,7 +129,7 @@ I treat the output as a suggestion, not a final decision.
 
 At this stage, the goal is **exploration, not polish**.
 
-I generate an initial chart and ask:
+Generate an initial chart and ask:
 
 - What stands out?
 - What surprises me?
@@ -149,16 +143,13 @@ I generate an initial chart and ask:
 **Prompt 2:**
 > *"Explain what patterns or differences are most noticeable in this chart."*
 
-> 📊 **Suggested visual:**  
-> Rough, exploratory chart labeled "First Draft – For Exploration Only".
-
 ---
 
 ## Step 4: Interpret What the Data Shows
 
 Interpretation involves describing what the data actually displays, not explaining why it happens.
 
-I separate:
+Separate:
 
 - **Observed patterns** (what the data shows)
 - **Speculation or hypotheses** (possible explanations)
@@ -172,16 +163,13 @@ I separate:
 **Prompting technique:** Chain-of-thought prompting
 
 > *"Step by step, describe the main patterns in this electrical fire visualization.*  
-> *Clearly separate observed data patterns from possible explanations."*
-
-> 📊 **Suggested visual:**  
-> Annotated chart with arrows and notes labeling visible patterns.
+> *Clearly separate observed data patterns from possible explanations. Use the attached data as context"*
 
 ---
 
 ## Step 5: Critique the Visualization
 
-Before communicating results, I check whether the visualization could mislead.
+Before communicating results, check whether the visualization could mislead.
 
 **Key questions:**
 
@@ -195,16 +183,13 @@ Before communicating results, I check whether the visualization could mislead.
 > *"Review this visualization for potential sources of misinterpretation.*  
 > *Then review it again from the perspective of a skeptical reader."*
 
-This helps surface issues I might overlook.
-
-> 📊 **Suggested visual:**  
-> Example of a misleading chart vs. a corrected version.
+This helps surface issues you might overlook.
 
 ---
 
 ## Step 6: Communicate Findings
 
-Once the visualization is accurate and interpretable, I translate it into communication products:
+Once the visualization is accurate and interpretable, translate it into communication products:
 
 - A short written results section
 - A slide or poster figure
@@ -217,8 +202,6 @@ Once the visualization is accurate and interpretable, I translate it into commun
 - A concise caption explaining what the visualization shows
 - Notes on data source and processing decisions
 
-> 📊 **Suggested visual:**  
-> Final polished figure with caption and annotation.
 
 ---
 
@@ -226,7 +209,7 @@ Once the visualization is accurate and interpretable, I translate it into commun
 
 Data visualization is rarely final on the first attempt.
 
-I:
+You should:
 
 - Share the visualization for peer feedback
 - Revise both the chart and interpretation
@@ -238,6 +221,6 @@ This ensures transparency and reproducibility.
 
 ## Key Takeaway
 
-Exploration and visualization are not just about presentation—they are **thinking tools**. In investigating electrical fire data, visualizations help surface relationships, challenge assumptions, and guide next steps in analysis.
+Exploration and visualization are not just about presentation, they are **thinking tools**. In investigating electrical fire data, visualizations help surface relationships, challenge assumptions, and guide next steps in analysis.
 
 LLMs can accelerate this process by suggesting options and explanations, but the responsibility for accuracy, interpretation, and ethical use always remains with the investigator.
