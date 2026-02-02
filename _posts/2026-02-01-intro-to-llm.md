@@ -12,6 +12,17 @@ authors:
     affiliations:
       name: Arizona State University
 
+bibliography:
+  - id: ft-generative-ai
+    type: website
+    title: "Generative AI exists because of the transformer"
+    author:
+      - family: Financial Times
+        given: ""
+    URL: https://ig.ft.com/generative-ai/
+    issued:
+      year: 2023
+
 # Optional distill feature toggles (keep what you actually use)
 mermaid:
   enabled: true
@@ -45,14 +56,18 @@ toc:
 
 ## Why This Module Matters
 
-Before asking teachers to use AI for data analysis and sensemaking, it is important to slow down and build a **shared mental model** of what Large Language Models (LLMs) actually are—and what they are not.
+Before asking teachers to use AI for data analysis and sensemaking, it is important to slow down and build a **shared mental model** of what Large Language Models (LLMs) actually are - and what they are not.
 
 This matters because how we understand these tools directly shapes:
 - how we use them in instruction,
 - how much we trust them, and
 - how we design prompts for them.
 
-Without a clear mental model, it is easy to overestimate what LLMs can do or to misuse them in ways that undermine student sensemaking rather than support it.
+Particulary since the use case in this course is to make sense of science data, we need to develop some understanding, to some extent, of how they produce their responses.
+
+Without a clear mental model, it is easy to overestimate what LLMs can do or to misuse them in ways that undermine sensemaking rather than support it. Specifically, whatever the LLMs generate, are they grounded in the data we provide? Does the output help us better develop understanding of the phenomenon of interest? 
+
+**Finally, and this is core to data sensemking, does the LLM help us create reliable ideas of reality from the observed data?**
 
 ---
 
@@ -61,37 +76,32 @@ Without a clear mental model, it is easy to overestimate what LLMs can do or to 
 Large Language Models (LLMs) are a type of Artificial Intelligence (AI) designed to work with **human language**. They are trained on massive collections of text and learn **statistical patterns in language**, enabling them to generate new text that sounds coherent and contextually appropriate.
 
 In practical terms, LLMs can:
+- numerical data
 - respond to questions,
 - summarize text,
 - generate explanations,
 - translate languages,
 - write code, and
-- support *language-based sensemaking* around data.
 
-Common examples include:
+Common examples of LLMs include:
 - **ChatGPT** (OpenAI)
 - **Claude** (Anthropic)
 - **Gemini** (Google)
 - **LLaMA** (Meta)
 
-Most models teachers encounter are **general-purpose models**. This means they are designed to perform reasonably well across many tasks, rather than being experts in a single discipline such as statistics or data science.
-
-> **Key takeaway:**  
-> LLMs are *language models*, not data analysis engines or reasoning agents.
+Most LLM models teachers encounter are **general-purpose models**. This means they are designed to perform reasonably well across many tasks, rather than being experts in a single discipline such as statistics or data science.
 
 
 {% include figure.liquid 
   path="assets/img/prompt.png" 
   class="img-fluid rounded z-depth-1" 
   zoomable=true 
-  caption="A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data."
+  caption="Fig 1. A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data."
 %}
-
-Fig 1. A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data
 
 ---
 
-## LLMs Are Pattern-Based, Not Reasoning Agents
+## LLMs Are Pattern-Based
 
 This is one of the most important ideas in this module.
 
@@ -106,9 +116,18 @@ This is why LLM outputs can:
 
 Understanding this limitation is essential for using LLMs productively in science education.
 
+Below is a visualization of how an LLM is checking through all possible words that should follow "work". The word with similar/close "numeric value" will be assigned as the next word.
+
+{% include figure.liquid 
+  path="assets/img/pattern.png" 
+  class="img-fluid rounded z-depth-1" 
+  zoomable=true 
+  caption="<span style='color: #f0f0f0;'>LLMs seeking patterns to match work with the next possible word <d-cite key='ft-generative-ai'></d-cite>.</span>"
+%}
+
 ---
 
-## How Do LLMs Learn? (A Teacher-Friendly Overview)
+## How Do LLMs Learn?
 
 Teachers do not need all the technical details—but they *do* need intuition. Understanding how these models are trained helps us interact with them more critically and productively.
 
@@ -132,7 +151,6 @@ This data is cleaned and filtered to remove low-quality or duplicate content. Wh
 **Educational implication:**  
 What the model “knows” depends entirely on what it has encountered in text form.
 
-
 ### Stage 2: Pretraining (Learning Language Patterns)
 
 During pretraining, the model learns general patterns in language by predicting missing or next words across **billions (or trillions) of words**.
@@ -153,7 +171,6 @@ This stage creates a model that can respond across many topics, but without disc
   zoomable=true 
   caption="Large Language Models generate responses by predicting the most probable next tokens based on patterns learned during training, not by reasoning from first principles."
 %}
-
 
 ### Stage 3: Fine-Tuning (Specialization)
 
@@ -221,7 +238,7 @@ To use LLMs responsibly, we need to be explicit about the risks.
 
 ### Attributing Human-Like Reasoning
 
-Fluent language can easily be mistaken for genuine understanding. This may lead to overconfidence in explanations that are not grounded in the data.
+Fluent language can easily be mistaken for genuine understanding, hence attributing human-level reasoning to it. This may lead to overconfidence in explanations that are not grounded in the data.
 
 ### Uncritical Trust in Outputs
 
