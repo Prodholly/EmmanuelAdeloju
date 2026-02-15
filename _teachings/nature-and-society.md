@@ -1,6 +1,6 @@
 ---
 layout: course
-title: Nature and Society: An Introduction to Environmental Studies
+title: Nature and Society An Introduction to Environmental Studies
 description: This course introduces environmental studies through scientific thinking. Students examine global environmental challenges, analyze earth systems, and apply evidence-based reasoning to develop sustainable solutions.
 instructor: Emmanuel Adeloju
 year: 2025
