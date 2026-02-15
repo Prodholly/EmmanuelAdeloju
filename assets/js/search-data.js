@@ -572,6 +572,11 @@ ninja.data = [{
           description: "",
           section: "Teachings",handler: () => {
               window.location.href = "/EmmanuelAdeloju/teachings/introduction-to-machine-learning/";
+            },},{id: "teachings-",
+          title: '',
+          description: "",
+          section: "Teachings",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/teachings/nature-and-society/";
             },},{
         id: 'social-email',
         title: 'email',
