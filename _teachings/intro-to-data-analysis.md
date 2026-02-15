@@ -2,7 +2,7 @@
 layout: course
 title: Introduction to Data Analysis
 description: Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.
-instructor: Prof. Audrey Beardsley
+instructor: Prof. Audrey Beardsley | Emmanuel Adeloju (TA)
 year: 2025
 term: Spring
 location: Tempe Campus, COOR L1-72
