@@ -542,11 +542,6 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/EmmanuelAdeloju/news/announcement_2/";
-            },},{id: "news-announcement-3",
-          title: 'Announcement_3',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/news/announcement_3/";
             },},{id: "news-i-passed-my-comprehensive-exam",
           title: 'I passed my Comprehensive Exam.',
           description: "",
