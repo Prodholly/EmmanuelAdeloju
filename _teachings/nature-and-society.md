@@ -16,7 +16,7 @@ schedule:
     topic: Human Domination of Ecosystems
     description: Examination of anthropogenic impacts on ecosystems and planetary systems.
   - week: 3
-    topic: Climate Change: Evidence and Impacts
+    topic: Climate Change Evidence and Impacts
     description: Scientific evidence for climate change and analysis of ecological and societal consequences.
   - week: 4
     topic: Field Study #1 – Biodiversity and Conservation Science
