@@ -28,6 +28,7 @@ latest_posts:
   limit: 3 # leave blank to include all the blog posts
 ---
 
+## Emmanuel Adeloju
 I am a third-year PhD student in Learning Literacies and Technology at Arizona State University, co-advised by [Dr. Michelle Jordan](https://search.asu.edu/profile/1623910) and [Dr. Punya Mishra](https://punyamishra.com/). My research focuses on Human-AI Interaction and Data Science Education, specifically, how we can use Large Language Models to support data sensemaking in science education.
 
 My dissertation explores how teachers develop pedagogical and epistemic knowledge of LLMs as tools for data sensemaking, and how they scaffold students’ use of LLMs to construct evidence-based explanations from scientific data. I'm particularly interested in the intersection of AI capabilities and human learning. Furthermore, my other extended research focuses on what responsible AI integration looks like in practice, as it relates to AI Safety/Risks for students. My work combines user experience research, educational data science, and AI safety, with implications for the design of more pedagogically effective and safe AI systems in the K-12 education context.
