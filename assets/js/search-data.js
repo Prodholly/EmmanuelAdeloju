@@ -542,10 +542,12 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/EmmanuelAdeloju/news/announcement_2/";
-            },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
-          title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+            },},{id: "news-announcement-3",
+          title: 'Announcement_3',
           description: "",
-          section: "News",},{id: "news-i-passed-my-comprehensive-exam-candidacy",
+          section: "News",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/news/announcement_3/";
+            },},{id: "news-i-passed-my-comprehensive-exam-candidacy",
           title: 'I passed my Comprehensive Exam (Candidacy).',
           description: "",
           section: "News",},{id: "news-i-passed-my-phd-proposal-defense-candidacy",
