@@ -2,7 +2,7 @@
 layout: about
 title: about
 permalink: /
-subtitle: Emmanuel Adeloju
+subtitle: ## Emmanuel Adeloju
 
 profile:
   align: right
