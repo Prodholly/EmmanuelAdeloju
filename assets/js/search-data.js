@@ -547,8 +547,8 @@ ninja.data = [{
           description: "",
           section: "News",handler: () => {
               window.location.href = "/EmmanuelAdeloju/news/announcement_3/";
-            },},{id: "news-i-passed-my-comprehensive-exam-candidacy",
-          title: 'I passed my Comprehensive Exam (Candidacy).',
+            },},{id: "news-i-passed-my-comprehensive-exam",
+          title: 'I passed my Comprehensive Exam.',
           description: "",
           section: "News",},{id: "news-i-passed-my-phd-proposal-defense-candidacy",
           title: 'I passed my PhD Proposal Defense (Candidacy).',
