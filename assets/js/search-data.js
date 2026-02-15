@@ -598,9 +598,9 @@ ninja.data = [{
           description: "Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.",
           section: "Teachings",handler: () => {
               window.location.href = "/EmmanuelAdeloju/teachings/intro-to-data-analysis/";
-            },},{id: "teachings-introduction-to-machine-learning",
-          title: 'Introduction to Machine Learning',
-          description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
+            },},{id: "teachings-",
+          title: '',
+          description: "",
           section: "Teachings",handler: () => {
               window.location.href = "/EmmanuelAdeloju/teachings/introduction-to-machine-learning/";
             },},{
