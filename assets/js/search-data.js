@@ -511,11 +511,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/EmmanuelAdeloju/books/the_godfather/";
-            },},{id: "news-a-long-announcement-with-details",
-          title: 'A long announcement with details',
-          description: "",
-          section: "News",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/news/announcement_2/";
             },},{id: "news-i-passed-my-comprehensive-exam",
           title: 'I passed my Comprehensive Exam.',
           description: "",
