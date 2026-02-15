@@ -44,21 +44,7 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/teaching/";
           },
-        },{id: "dropdown-bookshelf",
-              title: "bookshelf",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/EmmanuelAdeloju/books/";
-              },
-            },{id: "dropdown-blog",
-              title: "blog",
-              description: "",
-              section: "Dropdown",
-              handler: () => {
-                window.location.href = "/EmmanuelAdeloju/blog/";
-              },
-            },{id: "post-prompting-techniques-for-science-data-analysis-and-sensemaking",
+        },{id: "post-prompting-techniques-for-science-data-analysis-and-sensemaking",
         
           title: "Prompting Techniques for Science Data Analysis and Sensemaking",
         
