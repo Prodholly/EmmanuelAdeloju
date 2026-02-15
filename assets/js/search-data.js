@@ -532,11 +532,6 @@ ninja.data = [{
           description: "",
           section: "Books",handler: () => {
               window.location.href = "/EmmanuelAdeloju/books/the_godfather/";
-            },},{id: "modules-understanding-large-language-models-llms-for-science-data-sensemaking",
-          title: 'Understanding Large Language Models (LLMs) for Science Data Sensemaking',
-          description: "Building a shared mental model of what Large Language Models actually are, and what they are not.",
-          section: "Modules",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/modules/module-01/";
             },},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
