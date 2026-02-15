@@ -593,11 +593,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/EmmanuelAdeloju/projects/9_project/";
-            },},{id: "teachings-data-science-fundamentals",
-          title: 'Data Science Fundamentals',
-          description: "This course covers the foundational aspects of data science, including data collection, cleaning, analysis, and visualization. Students will learn practical skills for working with real-world datasets.",
+            },},{id: "teachings-introduction-to-data-analysis",
+          title: 'Introduction to Data Analysis',
+          description: "Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.",
           section: "Teachings",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/teachings/data-science-fundamentals/";
+              window.location.href = "/EmmanuelAdeloju/teachings/intro-to-data-analysis/";
             },},{id: "teachings-introduction-to-machine-learning",
           title: 'Introduction to Machine Learning',
           description: "This course provides an introduction to machine learning concepts, algorithms, and applications. Students will learn about supervised and unsupervised learning, model evaluation, and practical implementations.",
