@@ -537,16 +537,16 @@ ninja.data = [{
           description: "Building a shared mental model of what Large Language Models actually are, and what they are not.",
           section: "Modules",handler: () => {
               window.location.href = "/EmmanuelAdeloju/modules/module-01/";
-            },},{id: "news-a-simple-inline-announcement",
-          title: 'A simple inline announcement.',
-          description: "",
-          section: "News",},{id: "news-a-long-announcement-with-details",
+            },},{id: "news-a-long-announcement-with-details",
           title: 'A long announcement with details',
           description: "",
           section: "News",handler: () => {
               window.location.href = "/EmmanuelAdeloju/news/announcement_2/";
             },},{id: "news-a-simple-inline-announcement-with-markdown-emoji-sparkles-smile",
           title: 'A simple inline announcement with Markdown emoji! :sparkles: :smile:',
+          description: "",
+          section: "News",},{id: "news-i-passed-my-phd-proposal-defense-candidacy",
+          title: 'I passed my PhD Proposal Defense (Candidacy).',
           description: "",
           section: "News",},{id: "projects-project-1",
           title: 'project 1',
