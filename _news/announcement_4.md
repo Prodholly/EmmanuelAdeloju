@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-I passed my Comprehensive Exam (Candidacy).
+I passed my Comprehensive Exam.
