@@ -3,7 +3,7 @@ layout: page
 title: Course Modules
 permalink: /modules/
 description: Science Data Sensemaking with AI — A course for educators
-nav: true
+nav: false
 nav_order: 2
 ---
 
