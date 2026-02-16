@@ -32,7 +32,7 @@ ninja.data = [{
           },
         },{id: "nav-cv",
           title: "CV",
-          description: "Curriculum Vitae of Emmanuel Adeloju, PhD Candidate in Learning, Literacies and Technology at Arizona State University.",
+          description: "",
           section: "Navigation",
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/cv/";
