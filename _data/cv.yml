@@ -1,7 +1,7 @@
 cv:
   name: Emmanuel Adeloju
   label: PhD Candidate, Learning Literacies and Technology
-  email: eadeloju@asu.edu
+  email: "eadeloju [at] asu [dot] edu"
   location: Tempe, AZ
   image: ""
   summary: >
@@ -134,14 +134,16 @@ cv:
         location: Arizona State University, Tempe, AZ
         start_date: 2024
         end_date: 2025
-        summary: A group of graduate students focused on peer-teaching and learning non-academic skills.
+        highlights:
+          - "A group of graduate students focused on peer-teaching and learning non-academic skills."
 
       - company: Alhambra Elementary School District
         position: Science Mentor
         location: Phoenix, AZ
         start_date: 2023
         end_date: present
-        summary: Mentor for Middle School Sonoran Photovoltaics Lab students.
+        highlights:
+          - "Mentor for Middle School Sonoran Photovoltaics Lab students."
 
     Skills:
       - name: Research Methods
