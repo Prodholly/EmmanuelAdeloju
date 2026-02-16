@@ -100,36 +100,6 @@ cv:
         highlights:
           - "Supported graduate-level instruction in quantitative data analysis (SPSS). Delivered lab sessions and provided feedback on assignments and exams."
 
-      - company: Day Waterman College
-        position: Teacher of Chemistry (High School Science)
-        location: Ogun State, Nigeria
-        start_date: 2021
-        end_date: 2023
-
-      - company: Brickhall School
-        position: Teacher of Chemistry (High School Science)
-        location: Abuja, Nigeria
-        start_date: 2020
-        end_date: 2020
-
-      - company: Wellspring College
-        position: Teacher of Chemistry (High School Science)
-        location: Lagos, Nigeria
-        start_date: 2018
-        end_date: 2020
-
-      - company: All Saints Secondary School
-        position: Teacher of Biology and Mathematics (High School Science)
-        location: Anambra, Nigeria
-        start_date: 2017
-        end_date: 2018
-
-      - company: Isaac Newton College
-        position: Teacher of Chemistry (High School Science)
-        location: Ogun State, Nigeria
-        start_date: 2016
-        end_date: 2017
-
     Awards:
       - title: College Research Grant
         awarder: Mary Lou Fulton Teachers College, Arizona State University
@@ -195,26 +165,3 @@ cv:
 
       - name: Yoruba
         summary: "Native speaker"
-
-    Certificates:
-      - name: CAI IGCSE Chemistry Certification
-        issuer: Cambridge Assessment International Education
-        icon: fa-solid fa-certificate
-
-      - name: STEM CASES Certificate
-        icon: fa-solid fa-microscope
-
-      - name: Child Protection for International Schools
-        icon: fa-solid fa-shield-halved
-
-      - name: First Aid Essentials for International Schools
-        icon: fa-solid fa-kit-medical
-
-      - name: Fire Safety for International Schools
-        icon: fa-solid fa-fire-extinguisher
-
-      - name: Preventing Bullying for International Schools
-        icon: fa-solid fa-users
-
-      - name: Use of Reasonable Force in Schools
-        icon: fa-solid fa-scale-balanced
