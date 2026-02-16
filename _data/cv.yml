@@ -38,7 +38,6 @@ cv:
         start_date: 2021
         end_date: 2022
         highlights:
-          - "Research areas: Forensic hematology, DNA profiling, blood identification and pattern analysis, protein profiling, postmortem interval"
           - "Thesis: HBA AND HBB genes as molecular markers in age determination of bloodstains under different environmental conditions"
 
       - institution: National Teachers Institute Kaduna
@@ -47,8 +46,6 @@ cv:
         studyType: Postgraduate Diploma in Education
         start_date: 2018
         end_date: 2019
-        highlights:
-          - "Research areas: Teacher education, Chemistry education"
 
       - institution: Osun State University
         location: Osogbo, Nigeria
@@ -57,39 +54,43 @@ cv:
         start_date: 2012
         end_date: 2016
         highlights:
-          - "Research areas: Toxicology, Pharmacology, exposomics, DNA profiling"
           - "Thesis: Annona muricata Attenuates Cadmium-Induced Oxidative Stress and Renal Toxicity in Wistar Rats"
 
-    Research Experience:
+    Experience:
       - company: Arizona State University
-        position: Graduate Research Assistant
+        position: "Graduate Research Assistant – Safety Science & Sustainability Education"
+        location: Tempe, AZ
+        start_date: 2024
+        end_date: present
+        summary: "Advisor: Dr. Michelle Jordan"
+        highlights:
+          - "Program and Research Lead Analyst – Safety Science Education through Action-Oriented Pedagogies (ASU & UL Research Institutes): Collaborated with K-12 educators, led professional development sessions, analyzed program survey data, and presented findings at regional and national conferences."
+
+      - company: Arizona State University
+        position: "Graduate Research Assistant – Agrivoltaics K-12 Sustainability"
         location: Tempe, AZ
         start_date: 2023
         end_date: present
         summary: "Advisor: Dr. Michelle Jordan"
         highlights:
-          - "Program and Research Lead Analyst – Safety Science Education through Action-Oriented Pedagogies (ASU & UL Research Institutes, 2024–Present): Collaborated with K-12 educators to advance safety science education using Xplorlabs digital resources and the Action-Oriented Pedagogies (AOP) framework. Led professional development sessions, analyzed program survey data, and presented findings at regional and national conferences."
-          - "STEM Education Researcher and Mentor – Agrivoltaics Integration in K-12 Sustainability Projects (ASU, 2023–Present): Collaborated with teachers and students to implement agrivoltaics projects. Developed and applied machine learning models to validate student-collected data. Presented outcomes at regional and national educational conferences."
+          - "STEM Education Researcher and Mentor: Collaborated with teachers and students on agrivoltaics projects. Developed machine learning models to validate student-collected data. Presented at regional and national educational conferences."
 
       - company: Arizona State University
-        position: Graduate Research Assistant
+        position: "Graduate Research Assistant – Science Misinformation on Social Media"
         location: Tempe, AZ
         start_date: 2023
         end_date: 2024
         summary: "Advisor: Dr. Bryan Henderson"
         highlights:
-          - "Research Assistant – Student Navigation of Science Information on Social Media: Investigated how students discern and respond to science misinformation, malinformation, and disinformation across major social media platforms, with a focus on climate change communication."
-          - "Designed and developed dynamic graphic prototypes simulating user interfaces for Facebook, Instagram, Snapchat, X, and LinkedIn."
+          - "Investigated how students discern science misinformation on social media platforms, with a focus on climate change communication."
 
-    Teaching Experience:
       - company: Mary Lou Fulton Teachers College, Arizona State University
-        position: "Instructor of Record – SCN 208: Nature and Society: An Introduction to Environmental Studies"
+        position: "Instructor of Record – SCN 208: Nature and Society"
         location: Tempe, AZ
         start_date: 2025
         end_date: 2025
         highlights:
           - "Taught an undergraduate course on scientific thinking, global environmental issues, earth systems, human impacts, and evidence-based environmental solutions."
-          - "Developed and delivered lesson materials, lectures, and activities; organized community-based course projects."
 
       - company: Arizona State University
         position: "Teaching Assistant – COE 502: Introduction to Data Analysis"
@@ -97,8 +98,7 @@ cv:
         start_date: 2025
         end_date: 2025
         highlights:
-          - "Supported graduate-level instruction in quantitative data analysis covering descriptive and inferential statistics, probability distributions, regression, factor analysis, and non-normal data."
-          - "Delivered lab sessions in SPSS and provided detailed feedback on assignments, projects, and exams."
+          - "Supported graduate-level instruction in quantitative data analysis (SPSS). Delivered lab sessions and provided feedback on assignments and exams."
 
       - company: Day Waterman College
         position: Teacher of Chemistry (High School Science)
@@ -130,12 +130,6 @@ cv:
         start_date: 2016
         end_date: 2017
 
-      - company: Primary School
-        position: Teacher of Science
-        location: Nigeria
-        start_date: 2009
-        end_date: 2016
-
     Awards:
       - title: College Research Grant
         awarder: Mary Lou Fulton Teachers College, Arizona State University
@@ -153,21 +147,10 @@ cv:
         summary: Granted in recognition of remarkable dedication and invaluable contributions as a member of the ASU community.
 
     Academic Service:
-      - company: Current Issues in Education
-        position: Peer Reviewer
-        location: Arizona State University
-        start_date: 2024
-        end_date: present
-        highlights:
-          - "Reviewed manuscripts submitted to the Current Issues in Education journal."
+      - bullet: "**Peer Reviewer** – Current Issues in Education, Arizona State University (2024–present)"
+      - bullet: "**Proposal Reviewer** – NARST Annual International Conference, Graduate Student Research Symposium (2025–2026)"
 
-      - company: NARST Annual International Conference
-        position: "2026 Proposal Reviewer: Graduate Student Research Symposium"
-        location: Remote
-        start_date: 2025
-        end_date: 2026
-
-    Volunteering:
+    Volunteer:
       - company: Learning Literacies and Technology (LLT) Program
         position: LLT Program Officer
         location: Arizona State University, Tempe, AZ
