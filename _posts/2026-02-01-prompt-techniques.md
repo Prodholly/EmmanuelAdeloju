@@ -5,7 +5,6 @@ description: "A guide to choosing and applying the right prompting techniques fo
 tags: [LLMs, prompt engineering, data analysis, science education]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -77,7 +76,7 @@ Before writing effective prompts, we need to understand their building blocks. E
 
 Understanding these components allows you to intentionally craft prompts that guide the model toward the kind of response you need.
 
----
+
 
 ## The Role of Context in Prompting
 
@@ -117,7 +116,7 @@ Here, the context includes:
 
 All of that shapes how the model performs the same core task: calculating the mean of 5 numbers.
 
----
+
 
 ## Prompting Techniques Mapped to Bloom's Taxonomy
 
@@ -128,7 +127,7 @@ So, let me introduce several prompting techniques and, more importantly, help yo
 > **Important note:**  
 > I do not recommend using all of these techniques all the time. Each technique is best suited for specific levels of task complexity, which I map explicitly to **Bloom's Taxonomy** so teachers can make intentional choices.
 
----
+
 
 ## 1. Zero-Shot Prompting
 
@@ -152,7 +151,7 @@ This technique works best for simple, well-defined tasks where the goal is recal
 
 This task is entirely about remembering and recalling. No need for any reasoning or evaluation.
 
----
+
 
 ## 2. Few-Shot Prompting
 
@@ -183,7 +182,7 @@ This technique is ideal for patterned data tasks or where students have to apply
 
 The model sees the example and learns from that. Then mirrors the pattern to answer the new task.
 
----
+
 
 ## 3. Chain-of-Thought Prompting
 
@@ -210,7 +209,7 @@ In fact, there are two variations of chain-of-thought prompting:
 - **Zero-shot CoT:** Ask the model to reason step by step without providing examples.
 - **Few-shot CoT:** Provide a few step-by-step examples in the prompt to guide the model's reasoning.
 
----
+
 
 ## 4. Self-Consistency Prompting
 
@@ -232,7 +231,7 @@ This technique is especially useful for ambiguous or noisy data.
 
 You may also paste the exact prompt into your LLM multiple times and compare the outputs and pick the majority answer. Your discretion is important here too—sometimes, the majority response will also be wrong.
 
----
+
 
 ## 5. Prompt Chaining
 
@@ -261,7 +260,7 @@ In different prompts, do these:
 **Prompt 3:**
 > *"Explain what this trend suggests about the motion."*
 
----
+
 
 ## Moving Forward
 

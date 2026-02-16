@@ -5,7 +5,6 @@ description: "Translating data investigation results into clear narratives and e
 tags: [data communication, science communication, evidence-based decisions, data storytelling, science education]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -43,7 +42,7 @@ toc:
 
 Throughout this module, we continue working with our running example of investigating electrical fire incidents, now focusing on how to communicate findings and propose evidence-based actions.
 
----
+
 
 ## Why This Phase Matters
 
@@ -51,7 +50,7 @@ Data investigations do not end with models or visualizations. They end when evid
 
 Communication is not an afterthought, it is part of the analysis. How results are framed, explained, and delivered directly affects whether insights are understood, trusted, and used.
 
----
+
 
 ## From Results to Meaning
 
@@ -67,13 +66,13 @@ Now, you ask:
 - What claims can be supported by evidence?
 - What actions are reasonable given the limits of the data?
 
----
+
 
 ## Step-by-Step Communication and Action Workflow
 
 The following six-step workflow guides the process of communicating findings and proposing evidence-based actions.
 
----
+
 
 ## Step 1: Reconnect Findings to the Original Problem
 
@@ -91,7 +90,7 @@ Here, explicitly connect models and visualizations back to the problem they were
 
 > *"Summarize how the results of this analysis address the original question about electrical fire risk."*
 
----
+
 
 ## Step 2: Make Evidence-Based Claims
 
@@ -108,7 +107,7 @@ Avoid overstating conclusions and clearly acknowledge uncertainty.
 
 > *"Step by step, distinguish which conclusions are strongly supported by the data and which are tentative."*
 
----
+
 
 ## Step 3: Craft a Data Story
 
@@ -126,7 +125,7 @@ A good data story helps others follow the reasoning without needing to inspect e
 > *"Here are two examples of data stories used in public safety reports.*  
 > *Based on these, help structure a clear narrative for the electrical fire findings."*
 
----
+
 
 ## Step 4: Propose Actions Supported by Evidence
 
@@ -152,7 +151,7 @@ Actions are framed as recommendations, not prescriptions.
 **Prompt 2:**
 > *"For each action, explain what evidence supports it and what uncertainties remain."*
 
----
+
 
 ## Step 5: Tailor Communication to the Audience
 
@@ -176,7 +175,7 @@ Adapt:
 > *"Explain these findings once for a technical audience and once for a general audience.*  
 > *Check that both versions remain consistent with the evidence."*
 
----
+
 
 ## Step 6: Reflect, Revise, and Extend
 
@@ -194,7 +193,7 @@ This phase frequently leads to:
 
 This is not failure, it is how data investigations continue.
 
----
+
 
 ## Key Takeaway
 

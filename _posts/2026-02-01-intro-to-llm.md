@@ -5,7 +5,6 @@ description: "Building a shared mental model of what Large Language Models actua
 tags: [LLMs, AI literacy, education, data science]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -69,7 +68,7 @@ Without a clear mental model, it is easy to overestimate what LLMs can do or to 
 
 **Finally, and this is core to data sensemking, does the LLM help us create reliable ideas of reality from the observed data?**
 
----
+
 
 ## What Is a Large Language Model (LLM)?
 
@@ -99,7 +98,7 @@ Most LLM models teachers encounter are **general-purpose models**. This means th
   caption="Fig 1. A simplified view of how a prompt guides a Large Language Model to generate a response by predicting likely next words rather than reasoning from data."
 %}
 
----
+
 
 ## LLMs Are Pattern-Based
 
@@ -125,7 +124,7 @@ Below is a visualization of how an LLM is checking through all possible words th
   caption="<span style='color: #f0f0f0;'>Fig 2. LLMs seeking patterns to match work with the next possible word <d-cite key='ft-generative-ai'>2</d-cite>.</span>"
 %}
 
----
+
 
 ## How Do LLMs Learn?
 
@@ -184,7 +183,7 @@ Fine-tuning means adjusting a pretrained model so it performs better on specific
 **Educational implication:**  
 Even “education-focused” AI tools still rely on general language patterns, not deep disciplinary understanding.
 
----
+
 
 ## Prompting and Prompt Engineering
 
@@ -213,7 +212,7 @@ I think of prompt engineering as **lesson design for an AI collaborator**.
 
 We will discuss Prompt Engineering more in Module 2.
 
----
+
 
 ## Why LLMs Can Be Helpful for Science Data Sensemaking
 
@@ -230,7 +229,7 @@ What they cannot do reliably is:
 - detect subtle data errors, or
 - replace student reasoning or disciplinary judgment.
 
----
+
 
 ## Major Risks Teachers Need to Be Aware Of
 
@@ -256,7 +255,7 @@ Over-reliance on AI can reduce opportunities for productive struggle, discussion
 
 When teachers or students defer too often to AI-generated interpretations, their ability to independently evaluate evidence and detect errors may weaken over time.
 
----
+
 
 ## Closing Reflection
 

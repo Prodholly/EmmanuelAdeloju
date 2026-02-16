@@ -5,7 +5,6 @@ description: "Understanding how to anchor data investigations in real-world phen
 tags: [data investigation, problem framing, science education, data sensemaking]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -57,7 +56,7 @@ Framing the problem anchors a data investigation in real-world phenomena. Accord
 
 Importantly, this is not a one-time step. Throughout a data investigation, we return to the framing phase to ensure our analysis still aligns with the real-world problem we care about.
 
----
+
 
 ## Learning Goals for This Module
 
@@ -68,7 +67,7 @@ By the end of this module, teachers and students will be able to:
 - Select or evaluate datasets that align with those questions
 - Use LLMs productively to support (not replace) human sensemaking during framing
 
----
+
 
 ## Step 1: Identify the Broader Issue
 
@@ -105,7 +104,7 @@ LLMs are especially useful here for brainstorming and contextual exploration.
 
 At this stage, the LLM helps surface possibilities, not answers. Teachers and students still decide which issues are relevant and meaningful in their context.
 
----
+
 
 ## Step 2: Clarify Why the Problem Matters
 
@@ -135,7 +134,7 @@ In the electrical fire case:
 
 This supports sensemaking, but students should still discuss and refine the importance in their own words.
 
----
+
 
 ## Step 3: Develop Investigative (Research) Questions
 
@@ -173,7 +172,7 @@ Teachers and students then evaluate:
 - Which aligns with the data we can access?
 - Which best supports our learning goals?
 
----
+
 
 ## Step 4: Identify and Evaluate Available Data
 
@@ -209,7 +208,7 @@ Here, alignment matters. A dataset that lacks wire material information, even if
 
 The LLM helps identify what to look for, but teachers and students still evaluate data quality and relevance.
 
----
+
 
 ## Step 5: Revisiting the Frame (Iterative Sensemaking)
 
@@ -229,7 +228,7 @@ At this point, we return to framing, not as failure, but as scientific practice.
 
 This models authentic data science and scientific inquiry.
 
----
+
 
 ## Closing the Module
 
@@ -239,7 +238,7 @@ LLMs are powerful partners in this phase, but only when used to expand thinking,
 
 In the next module, we move from framing to exploring and preparing data, where numbers, variability, and patterns take center stage.
 
----
+
 
 **Reference:**
 

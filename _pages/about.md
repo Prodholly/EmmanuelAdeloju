@@ -1,6 +1,6 @@
 ---
 layout: about
-title: about
+title: Emmanuel Adeloju
 permalink: /
 subtitle: PhD Candidate | Learning, Literacies & Technology | Arizona State University
 

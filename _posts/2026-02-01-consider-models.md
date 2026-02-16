@@ -5,7 +5,6 @@ description: "Learning to select, evaluate, and interpret models as evidence-bui
 tags: [statistical models, data modeling, science education, data literacy, inference]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -44,7 +43,7 @@ toc:
 
 Throughout this module, we continue working with our running example of investigating electrical fire incidents, now focusing on how models help us move from patterns to evidence-based claims.
 
----
+
 
 ## Why Models Matter
 
@@ -54,7 +53,7 @@ A **model** is not just an equation, it is a simplified representation of realit
 
 In the context of electrical fire investigations, models help move from "what we see" to "what evidence supports a claim."
 
----
+
 
 ## What Counts as a Model?
 
@@ -67,7 +66,7 @@ In this module, models include:
 
 Not every model you try will be useful. A key part of this phase is choosing which models to keep, and which to discard.
 
----
+
 
 ## Modeling Is Iterative
 
@@ -79,13 +78,13 @@ Modeling rarely happens in a straight line. Often, when testing a model, you rea
 
 Going back to earlier phases is expected—and productive.
 
----
+
 
 ## Step-by-Step Modeling Workflow
 
 The following six-step workflow guides the process of selecting, evaluating, and iterating on models for data investigations.
 
----
+
 
 ## Step 1: Clarify the Modeling Goal
 
@@ -103,7 +102,7 @@ This distinction matters because different goals require different models.
 
 > *"Given this investigative question about electrical fires, is the goal better described as inference, explanation, or prediction? Explain why."*
 
----
+
 
 ## Step 2: Select Candidate Models
 
@@ -121,7 +120,7 @@ Identify several possible models that could address the question, knowing you ma
 > *"Here is my data and my research questions*  
 > *Based on those, suggest appropriate models for investigating electrical fire causes."*
 
----
+
 
 ## Step 3: Evaluate Model Fit and Usefulness
 
@@ -137,7 +136,7 @@ Models that do not add insight are set aside, not forced into the analysis.
 
 > *"Step by step, evaluate whether this model provides meaningful evidence for the research question about electrical fire risk."*
 
----
+
 
 ## Step 4: Consider Variability and Uncertainty
 
@@ -155,7 +154,7 @@ This step helps avoid overconfident claims.
 > *Do both interpretations support the same conclusion?"*
 
 
----
+
 
 ## Step 5: Balance Interpretability and Performance
 
@@ -177,7 +176,7 @@ Choose models that align with the purpose of the investigation, not just technic
 **Prompt 2:**
 > *"Now explain what this model cannot tell us."*
 
----
+
 
 ## Step 6: Iterate When Needed
 
@@ -189,7 +188,7 @@ If modeling reveals gaps or limitations, return to earlier phases:
 
 Modeling informs what to do next, not just what to conclude.
 
----
+
 
 ## Key Takeaway
 

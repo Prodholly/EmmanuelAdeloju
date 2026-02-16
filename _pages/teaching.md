@@ -10,6 +10,6 @@ calendar: true
 
 This page displays a collection of courses I taught with detailed schedules, materials, and resources. 
 
-{% include calendar.liquid calendar_id='test@gmail.com' timezone='Asia/Shanghai' %}
+{% comment %}{% include calendar.liquid calendar_id='YOUR_GOOGLE_CALENDAR_ID' timezone='America/Phoenix' %}{% endcomment %}
 
 {% include courses.liquid %}

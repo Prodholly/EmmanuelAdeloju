@@ -5,7 +5,6 @@ description: "Introducing SENSE, a structured framework for designing prompts th
 tags: [LLMs, prompt engineering, data sensemaking, science education, SENSE framework]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -50,7 +49,7 @@ Central to using LLMs for data sensemaking is engaging in a cycle of questioning
 
 Hence, when working with LLMs, prompt engineering becomes the method by which we structure our scientific inquiry necessary for data sensemaking, guiding the LLM model to found its responses in the data provided or stipulated instructions.
 
----
+
 
 ## The SENSE Framework for Data Sensemaking
 
@@ -64,7 +63,7 @@ I introduce **SENSE**, a prompt engineering framework grounded in core practices
 
 This framework helps teachers and students move from raw data to meaningful explanations that support understanding of phenomena of interest.
 
----
+
 
 ## 1. Specify the Phenomenon
 
@@ -78,7 +77,7 @@ This anchors the model in **meaning, not just numbers**.
 
 By naming the phenomenon explicitly, you help the model connect calculations to real-world scientific concepts rather than treating the data as abstract numbers.
 
----
+
 
 ## 2. Establish the Data and Variables
 
@@ -101,7 +100,7 @@ It is also important to have inspected the data to observe any anomaly or insigh
 
 Essentially, providing context ensures the LLM model grounds its reasoning in the actual structure and constraints of your data.
 
----
+
 
 ## 3. Name the Analytical Task
 
@@ -121,7 +120,7 @@ This involves any statistical tests (t-test, ANOVA, Correlation test) you want t
 
 Being specific about the analytical task helps the model focus its execution on the appropriate type of pattern recognition or comparison to make.
 
----
+
 
 ## 4. Support Claims with Evidence
 
@@ -135,7 +134,7 @@ This mirrors **scientific argumentation**.
 
 This step ensures that explanations are grounded in data/evidence rather than general statements that could apply to any dataset or cannot be traced.
 
----
+
 
 ## 5. Examine Limitations and Uncertainty
 
@@ -155,7 +154,7 @@ This step helps you engage the LLM on verifying the outputs and fixing any possi
 
 By explicitly asking for limitations, you encourage critical thinking about the strength of conclusions and the boundaries of what the data can support.
 
----
+
 
 ## Full SENSE Prompt Example
 
@@ -184,7 +183,7 @@ By explicitly asking for limitations, you encourage critical thinking about the 
 
 This integrated prompt guides the LLM through a complete cycle of scientific reasoning, from phenomenon to evidence to critical reflection.
 
----
+
 
 ## Moving Forward
 

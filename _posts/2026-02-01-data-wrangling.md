@@ -5,7 +5,6 @@ description: "Learning to clean, organize, and transform data through iterative 
 tags: [data wrangling, data cleaning, data transformation, science education, data literacy]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -45,7 +44,7 @@ Real data is almost never ready for analysis. Measurements are missing, values a
 
 In practice, this is also where most of the work happens.
 
----
+
 
 ## What You Are Doing in This Phase
 
@@ -64,13 +63,13 @@ LLMs can help by explaining options, consequences, and tradeoffs, but you remain
 - A table of descriptive statistics
 - A clear rationale for each wrangling decision
 
----
+
 
 ## Core Data Wrangling Actions
 
 The following five actions represent the fundamental work of data wrangling. Each requires scientific judgment and intentional decision-making.
 
----
+
 
 ## 1. Filtering: Focus on What Matters
 
@@ -87,7 +86,7 @@ This helps reduce noise and keeps the analysis aligned with the phenomenon you a
 
 Use the LLM model to suggest reasonable filtering criteria based on your research question, then decide whether they make scientific sense.
 
----
+
 
 ## 2. Grouping: Create Meaningful Comparisons
 
@@ -105,7 +104,7 @@ This is essential for identifying patterns and differences.
 
 Provide examples of how grouping is used in similar investigations and ask the LLM model to suggest groupings, but validate them against your data context.
 
----
+
 
 ## 3. Data Cleaning: Address Messiness Explicitly
 
@@ -128,7 +127,7 @@ There is rarely one "correct" cleaning choice—each decision affects interpreta
 
 Ask the LLM model to walk through possible cleaning options and their consequences. Use this to compare alternatives, not to outsource judgment.
 
----
+
 
 ## 4. Data Transformation: Make Data More Useful
 
@@ -149,7 +148,7 @@ This step often connects raw measurements to scientific meaning.
 
 **Second prompt:** Explain how each transformation would support the investigation.
 
----
+
 
 ## 5. Summarizing: Describe the Data Before Explaining It
 
@@ -173,7 +172,7 @@ These summaries help you understand variability and typical values.
 
 Ask the LLM model to generate summaries multiple times or in different formats to check for stability and consistency in interpretation.
 
----
+
 
 ## A Critical Reminder
 
@@ -187,6 +186,6 @@ Data wrangling is not neutral. Every choice, what to remove, how to group, what 
 
 They do not decide what is scientifically appropriate, **you do**.
 
----
+
 
 In the next module, we move from preparing data to analyzing it, where patterns become evidence and claims require justification.

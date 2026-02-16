@@ -1,189 +1,237 @@
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
+  name: Emmanuel Adeloju
+  label: PhD Candidate, Learning Literacies and Technology
+  email: eadeloju@asu.edu
+  location: Tempe, AZ
   image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  summary: >
+    PhD Candidate in Learning, Literacies and Technology at Arizona State University,
+    co-advised by Dr. Michelle Jordan and Dr. Punya Mishra. Research focuses on
+    Human-AI Interaction and Data Science Education, specifically how Large Language
+    Models can support data sensemaking in science education. Combines interdisciplinary
+    backgrounds in the sciences, teacher education, and AI research.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
-    - network: GitHub
-      username: example
     - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: emmanuel-adeloju
+    - network: GitHub
+      username: prodholly
 
   sections:
     Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
+      - institution: Arizona State University
+        location: Tempe, AZ, USA
+        url: https://asu.edu/
+        area: Learning, Literacies and Technology
         studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
+        start_date: 2023
+        end_date: 2027
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Co-advisors: Dr. Michelle Jordan & Dr. Punya Mishra"
+          - "Research areas: Human-AI Interaction, Data Science Education, LLMs for data sensemaking, AI Safety/Risks in K-12"
+          - "Mary Lou Fulton Teachers College"
 
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
+      - institution: University of Lagos
+        location: Lagos, Nigeria
+        area: Cell Biology and Genetics (Cell & Molecular Biology)
+        studyType: MSc
+        start_date: 2021
+        end_date: 2022
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Research areas: Forensic hematology, DNA profiling, blood identification and pattern analysis, protein profiling, postmortem interval"
+          - "Thesis: HBA AND HBB genes as molecular markers in age determination of bloodstains under different environmental conditions"
 
-    Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - institution: National Teachers Institute Kaduna
+        location: Kaduna, Nigeria
+        area: Education
+        studyType: Postgraduate Diploma in Education
+        start_date: 2018
+        end_date: 2019
         highlights:
-          - Relativity
-          - Description 2.
+          - "Research areas: Teacher education, Chemistry education"
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - institution: Osun State University
+        location: Osogbo, Nigeria
+        area: Biochemistry
+        studyType: BSc
+        start_date: 2012
+        end_date: 2016
         highlights:
-          - Description 1.
-          - Description 2.
+          - "Research areas: Toxicology, Pharmacology, exposomics, DNA profiling"
+          - "Thesis: Annona muricata Attenuates Cadmium-Induced Oxidative Stress and Renal Toxicity in Wistar Rats"
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+    Research Experience:
+      - company: Arizona State University
+        position: Graduate Research Assistant
+        location: Tempe, AZ
+        start_date: 2023
+        end_date: present
+        summary: "Advisor: Dr. Michelle Jordan"
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - "Program and Research Lead Analyst – Safety Science Education through Action-Oriented Pedagogies (ASU & UL Research Institutes, 2024–Present): Collaborated with K-12 educators to advance safety science education using Xplorlabs digital resources and the Action-Oriented Pedagogies (AOP) framework. Led professional development sessions, analyzed program survey data, and presented findings at regional and national conferences."
+          - "STEM Education Researcher and Mentor – Agrivoltaics Integration in K-12 Sustainability Projects (ASU, 2023–Present): Collaborated with teachers and students to implement agrivoltaics projects. Developed and applied machine learning models to validate student-collected data. Presented outcomes at regional and national educational conferences."
+
+      - company: Arizona State University
+        position: Graduate Research Assistant
+        location: Tempe, AZ
+        start_date: 2023
+        end_date: 2024
+        summary: "Advisor: Dr. Bryan Henderson"
+        highlights:
+          - "Research Assistant – Student Navigation of Science Information on Social Media: Investigated how students discern and respond to science misinformation, malinformation, and disinformation across major social media platforms, with a focus on climate change communication."
+          - "Designed and developed dynamic graphic prototypes simulating user interfaces for Facebook, Instagram, Snapchat, X, and LinkedIn."
+
+    Teaching Experience:
+      - company: Mary Lou Fulton Teachers College, Arizona State University
+        position: "Instructor of Record – SCN 208: Nature and Society: An Introduction to Environmental Studies"
+        location: Tempe, AZ
+        start_date: 2025
+        end_date: 2025
+        highlights:
+          - "Taught an undergraduate course on scientific thinking, global environmental issues, earth systems, human impacts, and evidence-based environmental solutions."
+          - "Developed and delivered lesson materials, lectures, and activities; organized community-based course projects."
+
+      - company: Arizona State University
+        position: "Teaching Assistant – COE 502: Introduction to Data Analysis"
+        location: Tempe, AZ
+        start_date: 2025
+        end_date: 2025
+        highlights:
+          - "Supported graduate-level instruction in quantitative data analysis covering descriptive and inferential statistics, probability distributions, regression, factor analysis, and non-normal data."
+          - "Delivered lab sessions in SPSS and provided detailed feedback on assignments, projects, and exams."
+
+      - company: Day Waterman College
+        position: Teacher of Chemistry (High School Science)
+        location: Ogun State, Nigeria
+        start_date: 2021
+        end_date: 2023
+
+      - company: Brickhall School
+        position: Teacher of Chemistry (High School Science)
+        location: Abuja, Nigeria
+        start_date: 2020
+        end_date: 2020
+
+      - company: Wellspring College
+        position: Teacher of Chemistry (High School Science)
+        location: Lagos, Nigeria
+        start_date: 2018
+        end_date: 2020
+
+      - company: All Saints Secondary School
+        position: Teacher of Biology and Mathematics (High School Science)
+        location: Anambra, Nigeria
+        start_date: 2017
+        end_date: 2018
+
+      - company: Isaac Newton College
+        position: Teacher of Chemistry (High School Science)
+        location: Ogun State, Nigeria
+        start_date: 2016
+        end_date: 2017
+
+      - company: Primary School
+        position: Teacher of Science
+        location: Nigeria
+        start_date: 2009
+        end_date: 2016
 
     Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - title: College Research Grant
+        awarder: Mary Lou Fulton Teachers College, Arizona State University
+        date: 2026-01-20
+        summary: Research grant awarded by the College to support dissertation research.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - title: Mary Lou Fulton Endowment Scholarship (MLFC Travel Award)
+        awarder: Mary Lou Fulton Teachers College, Arizona State University
+        date: 2025
+        summary: Awarded to support travel and presentation at a conference of choice.
 
-    Publications:
-      - title: Zur Elektrodynamik bewegter Körper
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+      - title: Graduate Support Award
+        awarder: Arizona State University
+        date: 2025
+        summary: Granted in recognition of remarkable dedication and invaluable contributions as a member of the ASU community.
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
+    Academic Service:
+      - company: Current Issues in Education
+        position: Peer Reviewer
+        location: Arizona State University
+        start_date: 2024
+        end_date: present
+        highlights:
+          - "Reviewed manuscripts submitted to the Current Issues in Education journal."
 
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+      - company: NARST Annual International Conference
+        position: "2026 Proposal Reviewer: Graduate Student Research Symposium"
+        location: Remote
+        start_date: 2025
+        end_date: 2026
+
+    Volunteering:
+      - company: Learning Literacies and Technology (LLT) Program
+        position: LLT Program Officer
+        location: Arizona State University, Tempe, AZ
+        start_date: 2025
+        end_date: 2026
+        highlights:
+          - "Serve as a representative of the LLT program, communicating with students and sharing feedback with DCTC officers."
+
+      - company: GradMeetup
+        position: Co-founder
+        location: Arizona State University, Tempe, AZ
+        start_date: 2024
+        end_date: 2025
+        summary: A group of graduate students focused on peer-teaching and learning non-academic skills.
+
+      - company: Alhambra Elementary School District
+        position: Science Mentor
+        location: Phoenix, AZ
+        start_date: 2023
+        end_date: present
+        summary: Mentor for Middle School Sonoran Photovoltaics Lab students.
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Research Methods
+        level: Expert
+        icon: fa-solid fa-flask
+        keywords: "Mixed methods research, Quantitative analysis, Qualitative analysis, Statistical analysis, Educational data science"
+
+      - name: Machine Learning & Data Science
+        level: Proficient
+        icon: fa-solid fa-brain
+        keywords: "Python, R, TensorFlow, PyTorch, Numpy, Pandas, Matplotlib, Seaborn, IBM SPSS"
+
+      - name: Programming & Web
+        level: Proficient
+        icon: fa-solid fa-code
+        keywords: "Python, R, HTML, CSS"
 
     Languages:
-      - name: German
-        summary: "Native speaker"
-
       - name: English
         summary: "Fluent"
 
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
+      - name: Yoruba
+        summary: "Native speaker"
 
     Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
+      - name: CAI IGCSE Chemistry Certification
+        issuer: Cambridge Assessment International Education
+        icon: fa-solid fa-certificate
 
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
+      - name: STEM CASES Certificate
+        icon: fa-solid fa-microscope
 
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Child Protection for International Schools
+        icon: fa-solid fa-shield-halved
 
-    Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
-        highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+      - name: First Aid Essentials for International Schools
+        icon: fa-solid fa-kit-medical
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Fire Safety for International Schools
+        icon: fa-solid fa-fire-extinguisher
 
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+      - name: Preventing Bullying for International Schools
+        icon: fa-solid fa-users
+
+      - name: Use of Reasonable Force in Schools
+        icon: fa-solid fa-scale-balanced

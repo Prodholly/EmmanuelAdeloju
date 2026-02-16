@@ -5,7 +5,6 @@ description: "Learning to evaluate data sources, understand metadata, and make i
 tags: [data investigation, data quality, metadata, data ethics, science education]
 giscus_comments: true
 date: 2026-02-01
-featured: true
 
 authors:
   - name: Emmanuel Adeloju
@@ -68,7 +67,7 @@ In real data investigations, data does not magically appear clean, complete, or 
 
 This module is where students begin to act like **data investigators, not just data users**.
 
----
+
 
 ## Learning Goals
 
@@ -80,7 +79,7 @@ By the end of this module, teachers and students will be able to:
 - Make informed decisions about storing and organizing datasets
 - Use LLMs strategically to support data evaluation and planning
 
----
+
 
 ## Running Example (Continued Context)
 
@@ -90,7 +89,7 @@ By the end of this module, teachers and students will be able to:
 
 All examples in this module connect back to this question.
 
----
+
 
 ## Step 1: Identify the Data Needed
 
@@ -119,7 +118,7 @@ Before opening any dataset, articulate what data would be useful.
 
 The LLM helps generate ideas, but teachers and students must decide what is actually feasible and relevant.
 
----
+
 
 ## Step 2: Assess Data Provenance
 
@@ -153,7 +152,7 @@ Each source implies different priorities and limitations.
 
 Here, the model is asked to evaluate the data source rather than describe it.
 
----
+
 
 ## Step 3: Read and Interpret Metadata
 
@@ -185,7 +184,7 @@ A column labeled `WIRE_TYPE` might:
 
 Few-shot prompting helps the LLM model mirror good interpretive habits.
 
----
+
 
 ## Step 4: Consider Bias and Ethical Implications
 
@@ -218,7 +217,7 @@ Electrical fires may be underreported in:
 
 This encourages multiple perspectives before settling on one interpretation.
 
----
+
 
 ## Step 5: Decide Whether Additional Data Is Needed
 
@@ -245,7 +244,7 @@ The dataset might list fire incidents but not wire material. That signals a need
 
 > *"Given this dataset's limitations, propose three ways to strengthen the investigation using additional data."*
 
----
+
 
 ## Step 6: Choose Storage Format and Organize Data
 
@@ -265,7 +264,7 @@ Once data is selected, students should standardize how it is stored.
 
 > *"Suggest a clear file naming convention for this dataset and explain why it supports good data practice."*
 
----
+
 
 ## Step 7: (Optional) Merge or Join Datasets
 
@@ -289,7 +288,7 @@ This step reinforces that data analysis decisions affect results.
 **Prompt 2:**
 > *"What problems might arise when joining on this variable?"*
 
----
+
 
 ## Closing the Module
 
@@ -299,7 +298,7 @@ LLMs play a valuable role here as thinking partners, helping students ask better
 
 In the next module, we move into exploring and visualizing data, where patterns, variability, and evidence begin to take shape.
 
----
+
 
 **Reference:**
 

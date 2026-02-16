@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 
-permalink: /
+permalink: /modules/
 description: Science Data Sensemaking with AI — A course for educators
 nav: false
 nav_order: 2
