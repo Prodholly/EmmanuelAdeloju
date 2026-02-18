@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/publications/";
           },
+        },{id: "nav-research",
+          title: "research",
+          description: "HAI Interaction Framework — Three-phase AI-Data Sensemaking",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/EmmanuelAdeloju/research/";
+          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "My GitHub profile and repositories.",
