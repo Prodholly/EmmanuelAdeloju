@@ -1,0 +1,839 @@
+---
+layout: page
+title: research
+permalink: /research/
+description: HAI Interaction Framework — Three-phase AI-Data Sensemaking
+nav: true
+nav_order: 3
+---
+
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;600;700;800&display=swap');
+
+  .research-page {
+    --bg: #0a0a0f;
+    --surface: #11111a;
+    --surface2: #1a1a28;
+    --border: #2a2a40;
+    --accent-blue: #4f8ef7;
+    --accent-teal: #2dd4bf;
+    --accent-amber: #f59e0b;
+    --accent-rose: #f43f5e;
+    --accent-purple: #a78bfa;
+    --text-primary: #e8e8f0;
+    --text-secondary: #8888aa;
+    --text-dim: #4a4a6a;
+    --tal-color: #4f8ef7;
+    --tad-color: #2dd4bf;
+    --tai-color: #a78bfa;
+    --student-color: #f59e0b;
+
+    background: var(--bg);
+    color: var(--text-primary);
+    font-family: 'Syne', sans-serif;
+    overflow-x: hidden;
+    position: relative;
+    border-radius: 12px;
+    padding: 0;
+    margin: -15px -30px;
+    padding: 0;
+  }
+
+  .research-page::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(79,142,247,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(79,142,247,0.04) 1px, transparent 1px);
+    background-size: 40px 40px;
+    pointer-events: none;
+    z-index: 0;
+    border-radius: 12px;
+  }
+
+  .research-page .canvas {
+    position: relative;
+    z-index: 1;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+  }
+
+  .research-page .header {
+    margin-bottom: 56px;
+  }
+  .research-page .header-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--accent-teal);
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .research-page .header h1 {
+    font-size: clamp(28px, 4vw, 44px);
+    font-weight: 800;
+    line-height: 1.1;
+    color: var(--text-primary);
+    max-width: 700px;
+  }
+  .research-page .header h1 span {
+    color: var(--accent-teal);
+  }
+  .research-page .header-sub {
+    margin-top: 12px;
+    font-family: 'DM Mono', monospace;
+    font-size: 14px;
+    color: var(--text-secondary);
+    max-width: 560px;
+    line-height: 1.7;
+  }
+
+  .research-page .legend {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .research-page .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+  }
+  .research-page .legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+
+  .research-page .section-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 16px;
+  }
+
+  /* PRE-STUDY */
+  .research-page .pre-study-row {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 12px;
+    align-items: stretch;
+  }
+  .research-page .pre-study-block {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px 24px;
+    flex: 1;
+    position: relative;
+    transition: border-color 0.2s;
+  }
+  .research-page .pre-study-block:hover { border-color: var(--accent-blue); }
+  .research-page .pre-study-block .block-tag {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--accent-blue);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+  .research-page .pre-study-block h3 {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .research-page .pre-study-block p {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .research-page .highlight-box {
+    border-color: rgba(79,142,247,0.35);
+    background: rgba(79,142,247,0.05);
+  }
+
+  .research-page .arrow-down {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 36px;
+    position: relative;
+  }
+  .research-page .arrow-down::before {
+    content: '';
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--border), var(--accent-teal));
+    position: absolute;
+  }
+  .research-page .arrow-down::after {
+    content: '▼';
+    font-size: 9px;
+    color: var(--accent-teal);
+    position: absolute;
+    bottom: 0;
+  }
+  .research-page .arrow-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    position: absolute;
+    left: calc(50% + 8px);
+    white-space: nowrap;
+  }
+
+  /* PHASE ROWS */
+  .research-page .phase-row {
+    display: grid;
+    grid-template-columns: 200px 1fr 1fr;
+    gap: 0;
+    margin-bottom: 0;
+    align-items: stretch;
+    min-height: 200px;
+  }
+  .research-page .phase-label-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 24px 20px 24px 0;
+    border-right: 1px solid var(--border);
+  }
+  .research-page .phase-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 999px;
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+    border: 1px solid currentColor;
+    width: fit-content;
+  }
+  .research-page .phase-badge.tal { color: var(--tal-color); background: rgba(79,142,247,0.08); }
+  .research-page .phase-badge.tad { color: var(--tad-color); background: rgba(45,212,191,0.08); }
+  .research-page .phase-badge.tai { color: var(--tai-color); background: rgba(167,139,250,0.08); }
+  .research-page .phase-full-name {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+  }
+  .research-page .phase-metaphor {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    line-height: 1.5;
+  }
+  .research-page .phase-content-col {
+    padding: 24px 20px;
+    border-right: 1px dashed var(--border);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .research-page .phase-content-col:last-child { border-right: none; }
+  .research-page .col-header {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-dim);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  /* Interaction nodes */
+  .research-page .inode {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px 16px;
+    transition: all 0.2s;
+    cursor: default;
+  }
+  .research-page .inode:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.4);
+  }
+  .research-page .inode.tal-node:hover { border-color: var(--tal-color); }
+  .research-page .inode.tad-node:hover { border-color: var(--tad-color); }
+  .research-page .inode.tai-node:hover { border-color: var(--tai-color); }
+  .research-page .inode.student-node:hover { border-color: var(--student-color); }
+  .research-page .inode-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 6px;
+  }
+  .research-page .inode-icon {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .research-page .inode-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-primary);
+  }
+  .research-page .inode-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+  .research-page .inode-tag {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+  }
+  .research-page .tag-tal { background: rgba(79,142,247,0.12); color: var(--tal-color); }
+  .research-page .tag-tad { background: rgba(45,212,191,0.12); color: var(--tad-color); }
+  .research-page .tag-tai { background: rgba(167,139,250,0.12); color: var(--tai-color); }
+  .research-page .tag-student { background: rgba(245,158,11,0.12); color: var(--student-color); }
+  .research-page .tag-reflect { background: rgba(244,63,94,0.12); color: var(--accent-rose); }
+  .research-page .tag-triad { background: rgba(167,139,250,0.12); color: var(--accent-purple); }
+
+  .research-page .phases-container {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .research-page .phase-row-wrapper {
+    border-bottom: 1px solid var(--border);
+  }
+  .research-page .phase-row-wrapper:last-child { border-bottom: none; }
+
+  /* Tooltips */
+  .research-page .expandable { position: relative; }
+  .research-page .expand-tooltip {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 8px);
+    left: 0;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px;
+    width: 260px;
+    z-index: 100;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  .research-page .expandable:hover .expand-tooltip { display: block; }
+  .research-page .term-tip {
+    position: relative;
+    display: inline;
+    border-bottom: 1px dashed var(--accent-teal);
+    cursor: help;
+    color: var(--accent-teal);
+  }
+  .research-page .term-tip .term-def {
+    display: none;
+    position: absolute;
+    bottom: calc(100% + 6px);
+    left: 0;
+    background: var(--surface2);
+    border: 1px solid var(--accent-teal);
+    border-radius: 6px;
+    padding: 8px 12px;
+    width: 220px;
+    z-index: 200;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+    white-space: normal;
+  }
+  .research-page .term-tip:hover .term-def { display: block; }
+
+  /* RQ badge */
+  .research-page .rq-badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    background: rgba(45,212,191,0.08);
+    color: var(--accent-teal);
+    border: 1px solid rgba(45,212,191,0.2);
+    margin-top: 8px;
+    width: fit-content;
+  }
+
+  /* Outcomes */
+  .research-page .outcomes-section {
+    margin-top: 40px;
+  }
+  .research-page .outcomes-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-top: 16px;
+  }
+  .research-page .outcome-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    transition: all 0.2s;
+  }
+  .research-page .outcome-card:hover {
+    border-color: var(--accent-teal);
+    box-shadow: 0 0 24px rgba(45,212,191,0.06);
+  }
+  .research-page .outcome-num {
+    font-family: 'DM Mono', monospace;
+    font-size: 30px;
+    font-weight: 300;
+    color: var(--border);
+    margin-bottom: 8px;
+    letter-spacing: -0.02em;
+  }
+  .research-page .outcome-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+  .research-page .outcome-desc {
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    color: var(--text-secondary);
+    line-height: 1.6;
+  }
+
+  /* Dual loop */
+  .research-page .dual-loop-section {
+    margin-top: 40px;
+  }
+  .research-page .dual-loop-container {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 32px;
+    margin-top: 16px;
+    display: flex;
+    gap: 32px;
+    align-items: center;
+  }
+  .research-page .loop-diagram {
+    flex-shrink: 0;
+    width: 280px;
+    height: 200px;
+    position: relative;
+  }
+  .research-page .loop-diagram svg { width: 100%; height: 100%; }
+  .research-page .loop-text { flex: 1; }
+  .research-page .loop-text h3 {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: var(--text-primary);
+  }
+  .research-page .loop-text p {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+    margin-bottom: 12px;
+  }
+  .research-page .loop-concept {
+    display: inline-block;
+    margin: 2px 4px 2px 0;
+    padding: 3px 10px;
+    border-radius: 4px;
+    font-family: 'DM Mono', monospace;
+    font-size: 12px;
+    background: var(--surface2);
+    color: var(--text-secondary);
+    border: 1px solid var(--border);
+  }
+
+  /* Footer note */
+  .research-page .footer-note {
+    margin-top: 48px;
+    padding: 16px 20px;
+    background: var(--surface);
+    border-left: 3px solid var(--accent-teal);
+    border-radius: 0 8px 8px 0;
+  }
+  .research-page .footer-note p {
+    font-family: 'DM Mono', monospace;
+    font-size: 13px;
+    color: var(--text-secondary);
+    line-height: 1.7;
+  }
+  .research-page .footer-note strong {
+    color: var(--accent-teal);
+    font-weight: 500;
+  }
+
+  /* Responsive */
+  @media (max-width: 900px) {
+    .research-page .phase-row { grid-template-columns: 1fr; }
+    .research-page .phase-label-col { border-right: none; border-bottom: 1px solid var(--border); padding: 16px; }
+    .research-page .outcomes-grid { grid-template-columns: 1fr; }
+    .research-page .dual-loop-container { flex-direction: column; }
+    .research-page .loop-diagram { width: 100%; }
+    .research-page .pre-study-row { flex-direction: column; }
+  }
+</style>
+
+<div class="research-page">
+<div class="canvas">
+
+  <!-- HEADER -->
+  <div class="header">
+    <div class="header-label">HAI Interaction Framework · Dissertation Research</div>
+    <h1>Three-phase AI-Data<br><span>Sensemaking</span></h1>
+    <div style="margin-top:10px; margin-bottom:4px; font-size:16px; font-weight:700; color:var(--text-primary); letter-spacing:0.01em;">Emmanuel Adeloju</div>
+    <div style="font-family:'DM Mono',monospace; font-size:13px; color:var(--accent-teal); margin-bottom:4px;">eadeloju [at] asu [dot] edu</div>
+    <div class="header-sub">
+      Three Phase AI-Data Sensemaking Professional Learning Experience. Hover nodes to explore.
+    </div>
+  </div>
+
+  <!-- LEGEND -->
+  <div class="legend">
+    <div class="legend-item"><div class="legend-dot" style="background:var(--tal-color)"></div>TAL · Teacher-as-Learner</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--tad-color)"></div>TAD · Teacher-as-Designer</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--tai-color)"></div>TAI · Teacher-as-Implementer</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--student-color)"></div>Student-AI Dyad</div>
+    <div class="legend-item"><div class="legend-dot" style="background:var(--accent-rose)"></div>Reflective Practice Loop</div>
+  </div>
+
+  <!-- STAGE 0: PRE-STUDY -->
+  <div class="section-label">Stage 0 · Pre-Study · Contextual Probe</div>
+  <div class="pre-study-row">
+    <div class="pre-study-block highlight-box">
+      <div class="block-tag">User Baseline</div>
+      <h3>Teacher Prior State</h3>
+      <p>Existing mental models of AI, disciplinary content knowledge (Physics / Biology), 14+ yrs instructional experience, minimal GenAI exposure</p>
+    </div>
+    <div class="pre-study-block">
+      <div class="block-tag">Contextual Probe</div>
+      <h3>Student Survey</h3>
+      <p>Teacher-administered instrument capturing student prior knowledge of AI and data science — feeds directly into TAL scaffolding design</p>
+    </div>
+    <div class="pre-study-block">
+      <div class="block-tag">Case Boundaries</div>
+      <h3>Study Context</h3>
+      <p>Two bounded cases · Teacher A (Physics, Gr.11) · Teacher B (Biology, Gr.9) · Distinct schools, distinct timelines, RPP structure</p>
+    </div>
+  </div>
+
+  <div class="arrow-down" style="margin-bottom:20px;">
+    <span class="arrow-label">enters system as</span>
+  </div>
+
+  <!-- RQ REFERENCE PANEL -->
+  <div style="margin-bottom:32px;">
+    <div class="section-label">Research Questions · Guiding the Three Phases</div>
+    <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
+      <div style="background:var(--surface); border:1px solid rgba(244,63,94,0.25); border-radius:10px; padding:16px;">
+        <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent-rose); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:6px;">RQ1 · Process</div>
+        <div style="font-size:14px; font-weight:700; color:var(--text-primary); margin-bottom:6px; line-height:1.4;">Reflective Practice</div>
+        <div style="font-family:'DM Mono',monospace; font-size:12px; color:var(--text-secondary); line-height:1.6;">How do teachers engage in reflection-in-action, reflection-on-action, and reflection-for-action as they learn, design, and implement AI tools for data sensemaking?</div>
+      </div>
+      <div style="background:var(--surface); border:1px solid rgba(79,142,247,0.25); border-radius:10px; padding:16px;">
+        <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent-blue); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:6px;">RQ2 · Substance</div>
+        <div style="font-size:14px; font-weight:700; color:var(--text-primary); margin-bottom:6px; line-height:1.4;">Knowledge Shifts</div>
+        <div style="font-family:'DM Mono',monospace; font-size:12px; color:var(--text-secondary); line-height:1.6;">What shifts occur in teachers' perceptions, subject matter knowledge, and pedagogical content knowledge for AI-mediated data sensemaking across the three phases?</div>
+      </div>
+      <div style="background:var(--surface); border:1px solid rgba(45,212,191,0.25); border-radius:10px; padding:16px;">
+        <div style="font-family:'DM Mono',monospace; font-size:11px; color:var(--accent-teal); letter-spacing:0.14em; text-transform:uppercase; margin-bottom:6px;">RQ3 · Experiential</div>
+        <div style="font-size:14px; font-weight:700; color:var(--text-primary); margin-bottom:6px; line-height:1.4;">Influential Experiences</div>
+        <div style="font-family:'DM Mono',monospace; font-size:12px; color:var(--text-secondary); line-height:1.6;">What aspects of the AI-data sensemaking PLE were most influential in shaping teachers' reflective practice, knowledge development, and pedagogical decisions?</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PHASES CONTAINER -->
+  <div class="phases-container">
+
+    <!-- TAL ROW -->
+    <div class="phase-row-wrapper">
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="phase-badge tal">TAL · Phase 1</div>
+          <div class="phase-full-name">Teacher-as-Learner</div>
+          <div class="phase-metaphor">Direct User<br>Exploratory Interaction<br>4 hrs · 2 sessions</div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">Interaction Modality</div>
+          <div class="inode tal-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--tal-color)"></div>
+              <div class="inode-title">Teacher ↔ LLM (Direct)</div>
+            </div>
+            <div class="inode-desc">Prompt-response loop. Teacher engages ChatGPT/LLM for <span class="term-tip">data sensemaking<span class="term-def">construction of explanations from data</span></span>, visualization, and interpretation tasks. Primarily conversational modality.</div>
+            <span class="inode-tag tag-tal">conversational AI</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Exploratory Use</strong> — user builds mental models through unstructured discovery within scaffolded task boundaries.</div>
+          </div>
+          <div class="inode tal-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--tal-color)"></div>
+              <div class="inode-title">Knowledge Building Activity</div>
+            </div>
+            <div class="inode-desc">Collaborative question framing → LLM refinement → Dataset identification. Teacher learns to treat LLM as epistemic partner.</div>
+            <span class="inode-tag tag-tal">epistemic scaffolding</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Cognitive Offloading</strong> — strategic delegation of cognitive tasks to AI while maintaining user agency over framing.</div>
+          </div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">UX Events & HAI Constructs</div>
+          <div class="inode tal-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-rose)"></div>
+              <div class="inode-title">Trust Calibration Moments</div>
+            </div>
+            <div class="inode-desc">Surprise, confusion, and recalibration events when LLM outputs are unexpected, incomplete, or inaccurate.</div>
+            <span class="inode-tag tag-reflect">reflection-in-action</span>
+            <div class="expand-tooltip">RQ1 Touchpoint: Moments where teachers engage in <strong>reflection-in-action</strong> — updating mental models of AI capability in real time. Core data source for documenting reflective practice during TAL.</div>
+          </div>
+          <div class="inode tal-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-rose)"></div>
+              <div class="inode-title">Affordance Recognition</div>
+            </div>
+            <div class="inode-desc">Teacher identifies what LLM can/cannot do for data sensemaking. Develops TPACK-informed AI content knowledge (TK + CK).</div>
+            <span class="inode-tag tag-tal">TPACK formation</span>
+            <div class="expand-tooltip">RQ2 Touchpoint: Teacher develops TPACK — shifts in technological knowledge (TK), content knowledge (CK), and their integration. Baseline perceptions of AI capability begin to be revised here.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAL → TAD transition -->
+    <div style="background:rgba(244,63,94,0.04); border-bottom:1px solid var(--border); padding:10px 24px; display:flex; align-items:center; gap:12px;">
+      <span style="font-size:13px;">↩</span>
+      <span style="font-family:'DM Mono',monospace; font-size:12px; color:var(--accent-rose);">Recursive boundary — TAL insights actively reshape TAD design decisions. Teachers may re-enter TAL during TAD to test prompts.</span>
+    </div>
+
+    <!-- TAD ROW -->
+    <div class="phase-row-wrapper">
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="phase-badge tad">TAD · Phase 2</div>
+          <div class="phase-full-name">Teacher-as-Designer</div>
+          <div class="phase-metaphor">Co-Configuration<br>Human–AI–Human Triad<br>4 hrs · 2 sessions</div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">Interaction Modality</div>
+          <div class="inode tad-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--tad-color)"></div>
+              <div class="inode-title">Teacher + Researcher + LLM</div>
+            </div>
+            <div class="inode-desc">Three-actor interaction triad. First time LLM shifts from tool to collaborator. Teacher + researcher co-prompt, evaluate, and refine AI outputs.</div>
+            <span class="inode-tag tag-triad">human-AI-human triad</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Collaborative Human-AI Teaming</strong> — distributed cognition across human and AI agents with negotiated agency and accountability.</div>
+          </div>
+          <div class="inode tad-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--tad-color)"></div>
+              <div class="inode-title">Prompt Engineering as Design</div>
+            </div>
+            <div class="inode-desc">Structured prompt engineering framework used to generate instructional materials. Teacher learns to configure AI outputs for pedagogical goals.</div>
+            <span class="inode-tag tag-tad">system shaping</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Appropriation</strong> — user adapts a general AI tool to fit specific professional and contextual needs.</div>
+          </div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">UX Events & HAI Constructs</div>
+          <div class="inode tad-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-purple)"></div>
+              <div class="inode-title">Participatory Design Moments</div>
+            </div>
+            <div class="inode-desc">Teacher transitions from passive user to active system shaper. Evaluates AI lesson drafts for disciplinary and pedagogical alignment.</div>
+            <span class="inode-tag tag-tad">co-design agency</span>
+            <div class="expand-tooltip">RQ3 Touchpoint: Co-design moments are key experiential elements — the specific decisions, negotiations, and surprises during TAD that most influence teachers' knowledge development and pedagogical choices.</div>
+          </div>
+          <div class="inode tad-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-rose)"></div>
+              <div class="inode-title">Critical AI Evaluation</div>
+            </div>
+            <div class="inode-desc">Teacher assesses LLM-generated instructional content for accuracy, relevance, and pedagogical fit. TAL-informed skepticism applied.</div>
+            <span class="inode-tag tag-reflect">reflection-on-action</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Algorithmic Accountability</strong> — user critically interrogates AI outputs rather than accepting them uncritically.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TAD → TAI transition -->
+    <div style="background:rgba(167,139,250,0.04); border-bottom:1px solid var(--border); padding:10px 24px; display:flex; align-items:center; gap:12px;">
+      <span style="font-size:13px;">↩</span>
+      <span style="font-family:'DM Mono',monospace; font-size:12px; color:var(--accent-purple);">Recursive boundary — Co-designed artifacts carry embedded teacher knowledge into TAI. Implementation feedback may trigger TAD revision.</span>
+    </div>
+
+    <!-- TAI ROW -->
+    <div class="phase-row-wrapper">
+      <div class="phase-row">
+        <div class="phase-label-col">
+          <div class="phase-badge tai">TAI · Phase 3</div>
+          <div class="phase-full-name">Teacher-as-Implementer</div>
+          <div class="phase-metaphor">Interaction Broker<br>Hub-and-Spoke Model<br>Classroom Enactment</div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">Interaction Modality</div>
+          <div class="inode tai-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--tai-color)"></div>
+              <div class="inode-title">Teacher as Proxy Interactor</div>
+            </div>
+            <div class="inode-desc">Teacher no longer primary AI user — now monitors and mediates 25-30 simultaneous student-AI interaction streams in real time.</div>
+            <span class="inode-tag tag-tai">interaction brokering</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Mediated Interaction</strong> — teacher operates as an intermediary layer between students and AI, shaping the quality and direction of student-AI interactions.</div>
+          </div>
+          <div class="inode student-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--student-color)"></div>
+              <div class="inode-title">Student ↔ LLM Dyads (×N)</div>
+            </div>
+            <div class="inode-desc">Multiple parallel student-AI interaction pairs. Students engage LLM for <span class="term-tip">data sensemaking<span class="term-def">construction of explanations from data</span></span> guided by teacher-designed scaffolds.</div>
+            <span class="inode-tag tag-student">distributed HAI</span>
+            <div class="expand-tooltip">HAI Concept: <strong>Distributed Human-AI Interaction</strong> — simultaneous, parallel human-AI dyads operating within a teacher-mediated environment.</div>
+          </div>
+        </div>
+        <div class="phase-content-col">
+          <div class="col-header">UX Events & HAI Constructs</div>
+          <div class="inode tai-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-rose)"></div>
+              <div class="inode-title">Real-Time Adaptive Facilitation</div>
+            </div>
+            <div class="inode-desc">Teacher observes student-AI interactions, intervenes when prompts fail, recalibrates scaffolds mid-lesson. Reflection-in-action at scale.</div>
+            <span class="inode-tag tag-reflect">reflection-in-action</span>
+            <div class="expand-tooltip">RQ1 Touchpoint: Prime site for <strong>reflection-in-action</strong> at scale — teacher must simultaneously monitor AI interactions across 25-30 student dyads and adapt facilitation strategies in real time.</div>
+          </div>
+          <div class="inode tai-node expandable">
+            <div class="inode-header">
+              <div class="inode-icon" style="background:var(--accent-rose)"></div>
+              <div class="inode-title">Post-Enactment Reflection</div>
+            </div>
+            <div class="inode-desc">Reflection-on-action and reflection-for-action. Teacher evaluates student outcomes, AI behavior, and plans next iteration of design.</div>
+            <span class="inode-tag tag-reflect">reflection-for-action</span>
+            <div class="expand-tooltip">RQ1 + RQ3 Touchpoint: <strong>Reflection-on-action</strong> and <strong>reflection-for-action</strong> close the learning cycle. Post-enactment interviews capture which TAI experiences were most influential in shaping future pedagogical decisions.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end phases container -->
+
+  <!-- DUAL LOOP SECTION -->
+  <div class="dual-loop-section">
+    <div class="section-label">Core HAI Architecture · Dual Interaction Loop</div>
+    <div class="dual-loop-container">
+      <div class="loop-diagram">
+        <svg viewBox="0 0 280 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <ellipse cx="140" cy="100" rx="120" ry="80" stroke="#4f8ef7" stroke-width="1.5" stroke-dasharray="6 3" opacity="0.4"/>
+          <ellipse cx="140" cy="100" rx="72" ry="48" stroke="#2dd4bf" stroke-width="1.5" stroke-dasharray="4 2" opacity="0.5"/>
+          <circle cx="140" cy="60" r="22" fill="#11111a" stroke="#4f8ef7" stroke-width="1.5"/>
+          <text x="140" y="56" text-anchor="middle" fill="#4f8ef7" font-family="DM Mono, monospace" font-size="8">TEACHER</text>
+          <text x="140" y="67" text-anchor="middle" fill="#8888aa" font-family="DM Mono, monospace" font-size="7">Broker</text>
+          <circle cx="220" cy="130" r="20" fill="#11111a" stroke="#a78bfa" stroke-width="1.5"/>
+          <text x="220" y="126" text-anchor="middle" fill="#a78bfa" font-family="DM Mono, monospace" font-size="8">LLM</text>
+          <text x="220" y="137" text-anchor="middle" fill="#8888aa" font-family="DM Mono, monospace" font-size="7">Agent</text>
+          <circle cx="60" cy="130" r="20" fill="#11111a" stroke="#f59e0b" stroke-width="1.5"/>
+          <text x="60" y="126" text-anchor="middle" fill="#f59e0b" font-family="DM Mono, monospace" font-size="8">STUDENT</text>
+          <text x="60" y="137" text-anchor="middle" fill="#8888aa" font-family="DM Mono, monospace" font-size="7">×N</text>
+          <path d="M158 72 L204 117" stroke="#4f8ef7" stroke-width="1" marker-end="url(#arr1)"/>
+          <path d="M208 118 L162 75" stroke="#4f8ef7" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arr1)"/>
+          <path d="M122 72 L78 117" stroke="#2dd4bf" stroke-width="1" marker-end="url(#arr2)"/>
+          <path d="M74 118 L118 75" stroke="#2dd4bf" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arr2)"/>
+          <path d="M80 130 L196 130" stroke="#f59e0b" stroke-width="1" marker-end="url(#arr3)"/>
+          <path d="M196 134 L80 134" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3 2" marker-end="url(#arr3)"/>
+          <text x="140" y="18" text-anchor="middle" fill="#4f8ef7" font-family="DM Mono, monospace" font-size="8" opacity="0.7">Loop 1: Teacher–AI</text>
+          <text x="140" y="105" text-anchor="middle" fill="#2dd4bf" font-family="DM Mono, monospace" font-size="7" opacity="0.7">Loop 2: Facilitation</text>
+          <defs>
+            <marker id="arr1" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#4f8ef7"/>
+            </marker>
+            <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#2dd4bf"/>
+            </marker>
+            <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+              <path d="M0,0 L0,6 L6,3 z" fill="#f59e0b"/>
+            </marker>
+          </defs>
+        </svg>
+      </div>
+      <div class="loop-text">
+        <h3>Two Nested Interaction Loops</h3>
+        <p>The outer loop captures the <strong style="color:var(--tal-color)">Teacher–AI direct interaction</strong> across TAL and TAD phases — the teacher builds mental models, calibrates trust, and develops TPACK through iterative engagement with LLM-based tools.</p>
+        <p>The inner loop captures the <strong style="color:var(--tad-color)">Teacher–Student–AI facilitation loop</strong> during TAI — where the teacher's role shifts from direct user to interaction broker, orchestrating multiple simultaneous student-AI dyads.</p>
+        <p>HAI researchers would describe this nested structure as a <em>multi-level human-AI teaming system</em> with distinct interaction modalities at each layer.</p>
+        <div>
+          <span class="loop-concept">cognitive offloading</span>
+          <span class="loop-concept">trust calibration</span>
+          <span class="loop-concept">appropriation</span>
+          <span class="loop-concept">supervisory control</span>
+          <span class="loop-concept">mental model formation</span>
+          <span class="loop-concept">algorithmic experience</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- OUTCOMES -->
+  <div class="outcomes-section">
+    <div class="section-label">Expected Outcomes · Aligned to Research Questions</div>
+    <div class="outcomes-grid">
+      <div class="outcome-card">
+        <div class="outcome-num">RQ1</div>
+        <div class="outcome-title">Reflective Practice Across Phases</div>
+        <div class="outcome-desc">Documents how teachers engage in reflection-in-action (adapting in real time during TAI), reflection-on-action (evaluating after TAL/TAD/TAI sessions), and reflection-for-action (planning forward iterations) — revealing the texture and function of reflective practice as teachers move through learning, designing, and implementing AI tools for <span class="term-tip">data sensemaking<span class="term-def">construction of explanations from data</span></span>.</div>
+        <span class="rq-badge">Process · Schön's Reflective Practice</span>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">RQ2</div>
+        <div class="outcome-title">Knowledge & Perception Shifts</div>
+        <div class="outcome-desc">Captures measurable shifts in teachers' perceptions of AI, subject matter knowledge of data science, and pedagogical content knowledge for AI-mediated instruction across TAL, TAD, and TAI. Quantified and characterized through mixed-methods instruments including TPACK surveys, interviews, and artifact analysis.</div>
+        <span class="rq-badge">Substance · TPACK · TK+CK+PCK integration</span>
+      </div>
+      <div class="outcome-card">
+        <div class="outcome-num">RQ3</div>
+        <div class="outcome-title">Influential Experiential Elements</div>
+        <div class="outcome-desc">Identifies which specific activities, interactions, and moments across the three phases were most influential in shaping teachers' reflective practice, knowledge development, and pedagogical decisions — providing design principles for future AI-integrated professional learning experiences in data science education.</div>
+        <span class="rq-badge">Experiential · Design Principles</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- FOOTER NOTE -->
+  <div class="footer-note">
+    <p><strong>Framework context:</strong> This visualization maps the HAI interaction architecture of a three-phase professional learning experience (PLE) designed to support teachers in integrating LLM-based tools for data sensemaking in science education. The framework draws on Schön's reflective practice, TPACK, and Human-AI Interaction theory.</p>
+  </div>
+
+</div>
+</div>
