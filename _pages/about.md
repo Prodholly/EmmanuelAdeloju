@@ -2,7 +2,7 @@
 layout: about
 title: Emmanuel Adeloju
 permalink: /
-subtitle: PhD Candidate | Learning, Literacies & Technology | Arizona State University
+subtitle: Human-AI Interaction | User Research | Data Science
 
 profile:
   align: right
