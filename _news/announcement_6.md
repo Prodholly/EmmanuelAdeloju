@@ -5,4 +5,4 @@ inline: true
 related_posts: false
 ---
 
-Received a **College Research Grant** from Mary Lou Fulton Teachers College to support my dissertation research.
+Received a **College Dissertation Research Grant**.

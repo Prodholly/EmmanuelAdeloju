@@ -15,6 +15,9 @@ nav_order: 2
 <h2 class="bibliography">Journal Articles</h2>
 {% bibliography -q @article %}
 
+<h2 class="bibliography">Blog Posts</h2>
+{% bibliography -q @misc[keywords=blog] %}
+
 <h2 class="bibliography">Book Chapters</h2>
 {% bibliography -q @incollection %}
 
