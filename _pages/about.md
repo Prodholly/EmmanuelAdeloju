@@ -2,7 +2,7 @@
 layout: about
 title: Emmanuel Adeloju
 permalink: /
-subtitle: Human-AI Interaction | User Research | Data Science
+subtitle: <strong>Human-AI Interaction</strong> | <strong>AI Safety</strong> | <strong>User Research</strong> | <strong>Data Science</strong>
 
 profile:
   align: right
