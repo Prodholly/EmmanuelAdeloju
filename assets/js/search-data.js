@@ -55,7 +55,7 @@ ninja.data = [{
         
           title: "What AI Sycophancy Means for K-12 Students",
         
-        description: "With great power comes great responsibility; I would adapt it to: with great power comes great risks.",
+        description: "With great power comes great responsibility (risks)",
         section: "Posts",
         handler: () => {
           
