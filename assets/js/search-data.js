@@ -51,9 +51,9 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/teaching/";
           },
-        },{id: "post-what-ai-sycophancy-means-for-students",
+        },{id: "post-what-ai-sycophancy-means-for-k-12-students",
         
-          title: "What AI Sycophancy Means for Students",
+          title: "What AI Sycophancy Means for K-12 Students",
         
         description: "With great power comes great responsibility; I would adapt it to: with great power comes great risks.",
         section: "Posts",
