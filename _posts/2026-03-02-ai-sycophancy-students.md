@@ -1,7 +1,7 @@
 ---
 layout: distill
 title: "What AI Sycophancy Means for K-12 Students"
-description: "With great power comes great responsibility; I would adapt it to: with great power comes great risks."
+description: "With great power comes great responsibility (risks)"
 tags: [AI, sycophancy, education, K-12, human-AI interaction]
 giscus_comments: false
 date: 2026-03-02
@@ -21,7 +21,7 @@ toc:
 
 ---
 
-> *"With great power comes great responsibility; I would adapt it to: with great power comes great risks."*
+> *With great power comes great responsibility (risks)*
 
 <div class="l-page">
 {% include figure.liquid path="assets/img/header.png" class="img-fluid" zoomable=false %}
