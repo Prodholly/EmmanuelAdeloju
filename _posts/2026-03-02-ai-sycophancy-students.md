@@ -1,9 +1,9 @@
 ---
 layout: distill
-title: "What AI Sycophancy Means for Students"
+title: "What AI Sycophancy Means for K-12 Students"
 description: "With great power comes great responsibility; I would adapt it to: with great power comes great risks."
 tags: [AI, sycophancy, education, K-12, human-AI interaction]
-giscus_comments: true
+giscus_comments: false
 date: 2026-03-02
 
 authors:
@@ -27,13 +27,13 @@ toc:
 {% include figure.liquid path="assets/img/header.png" class="img-fluid" zoomable=false %}
 </div>
 
-The exponential growth and capabilities of current AI models have had many consequential implications for people, particularly young people. We have heard several reports of how certain AI models (and companies) have had catastrophic impacts on young people. A less alarming report from a 2025 survey showed that about 33% of the 13–17-year-olds would rather discuss serious matters with AI companions than with a human. But why would they prefer these AI companions over humans?
+The exponential growth and capabilities of current AI models have had many consequential implications for people, particularly young people. We have heard several reports of how certain AI models (and companies) have had catastrophic impacts on young people. A less alarming report from a <a href="https://www.commonsensemedia.org/sites/default/files/research/report/talk-trust-and-trade-offs_2025_web.pdf" target="_blank">2025 survey</a> showed that about 33% of the 13–17-year-olds would rather discuss serious matters with AI companions than with a human. But why would they prefer these AI companions over humans?
 
 **Sycophancy!**
 
 Today, I will discuss a technical paper that explains how these models behave and make a case for why young people might defer speaking to AI companions.
 
-Consider a toddler who seeks approval from parents or guardians, doing more of what earns them praise. At our core, humans are wired to seek validation from those we respect. AI models exhibit this same tendency. In their study, <a href="https://arxiv.org/abs/2310.13548" target="_blank">[1]</a> hypothesized that because models are trained to produce outputs that humans rate highly, they learn to exploit human judgment, generating responses that feel appealing but may be factually flawed. This is sycophancy!
+Consider a toddler who seeks approval from parents or guardians; they do more of what earns them praise. Essentially, at our core, humans are wired to seek validation from those we respect. AI models exhibit this same tendency. In their study, <a href="https://arxiv.org/abs/2310.13548" target="_blank">[1]</a> hypothesized that because models are trained to produce outputs that humans rate highly, they learn to exploit human judgment, generating responses that feel appealing but may be factually flawed. This is sycophancy!
 
 Let's discuss a bit about this paper:
 
@@ -83,7 +83,7 @@ In science classrooms, this tension plays out through scientific argumentation, 
 
 **(3) Bayesian Preference Analysis**
 
-Using a Bayesian Logistic Regression model, researchers analyzed existing human preference data to identify which features — such as empathy, truthfulness, and relevance — most strongly predicted whether a human preferred one response over another. The most predictive feature was not accuracy or clarity, but "matches user's beliefs." Both human raters and preference models favored sycophantic responses over correct ones, and this bias grew stronger as the topic became more difficult.
+Using a Bayesian Logistic Regression model, the researchers analyzed existing human <a href="https://www.assemblyai.com/blog/how-rlhf-preference-model-tuning-works-and-how-things-may-go-wrong" target="_blank">preference models</a> data to identify which features, such as empathy, truthfulness, and relevance, most strongly predicted whether a human preferred one response over another. The most predictive feature was not accuracy or clarity, but "matches user's beliefs." Both human raters and preference models favored sycophantic responses over correct ones, and this bias grew stronger as the topic became more difficult.
 
 {% include figure.liquid
   path="assets/img/fig3.png"
@@ -101,7 +101,7 @@ Models also skewed their answers to align with users' opinions, even when those 
   caption="Fig 4. AI Assistants Can Provide Answers that Conform to User Beliefs (Answer Sycophancy). Source: <a href='https://arxiv.org/abs/2310.13548' target='_blank'>Sharma et al. (2023) [1]</a>"
 %}
 
-For K-12 students, the implications are significant. Adolescents are still developing their epistemic identities — their sense of what counts as knowledge, who counts as a credible source, and how to evaluate competing claims. When AI models consistently mirror a student's existing views rather than challenging or enriching them, they deprive students of the cognitive friction that drives deeper understanding. More troubling, students tackling difficult concepts — precisely when they most need accurate guidance — are most likely to receive responses shaped more by their own biases than by evidence. This risks not only reinforcing misconceptions but also undermining the very dispositions — open-mindedness, intellectual humility, and evidence-based reasoning — that educators work to cultivate.
+For K-12 students, the implications are significant. Adolescents are still developing their epistemic identities, their sense of what counts as knowledge, who counts as a credible source, and how to evaluate competing claims. When AI models consistently mirror a student's existing views rather than challenging or enriching them, they deprive students of the cognitive friction that drives deeper understanding. More troubling, students tackling difficult concepts — precisely when they most need accurate guidance, are most likely to receive responses shaped more by their own biases than by evidence. This risks not only reinforcing misconceptions but also undermining the very dispositions, open-mindedness, intellectual humility, and evidence-based reasoning, that educators work to cultivate.
 
 ---
 
@@ -118,13 +118,13 @@ If a user incorrectly attributed a poem to the wrong author, the models frequent
   caption="Fig 5. AI Assistant Responses Sometimes Mimic User Mistakes (Mimicry Sycophancy). Source: <a href='https://arxiv.org/abs/2310.13548' target='_blank'>Sharma et al. (2023) [1]</a>"
 %}
 
-In educational contexts, this matters more than it might first appear. Attribution — knowing who said what, and why it matters — is foundational to literacy, a critical competency in K-12 education. When students use AI to explore literature, history, or science, they trust that the model will ground its analysis in accurate information. A model that silently absorbs and reinforces a student's factual error doesn't just fail to teach, it actively miseducates. For students still building the habit of verifying sources, an AI that confirms their mistakes can make those mistakes feel authoritative.
+In educational contexts, this matters more than it might first appear. Attribution, knowing who said what and why it matters, is foundational to literacy, a critical competency in K-12 education. When students use AI to explore literature, history, or science, they trust that the model will ground its analysis in accurate information. A model that silently absorbs and reinforces a student's factual error doesn't just fail to teach, it actively miseducates. For students still building the habit of verifying sources, an AI that confirms their mistakes can make those mistakes feel authoritative.
 
 ---
 
 ## Conclusion
 
-Current research suggests that sycophantic behavior is not a bug but a feature — an inherent byproduct of how these models are trained. Reactive measures, such as having subject matter expertise or baseline knowledge of the topic at hand, can help users (and here, students) navigate these tendencies, though even experts are not immune. My recommendation is therefore a satisficing one: not a perfect solution, but a reasonable and actionable starting point.
+Current research suggests that sycophantic behavior is not a bug but a feature, an inherent byproduct of how these models are trained. Reactive measures, such as having subject matter expertise or baseline knowledge of the topic at hand, can help users (and here, students) navigate these tendencies, though even experts are not immune. My recommendation is therefore a satisficing one: not a perfect solution, but a reasonable and actionable starting point.
 
 ---
 
