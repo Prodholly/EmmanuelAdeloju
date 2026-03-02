@@ -51,7 +51,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/teaching/";
           },
-        },{id: "post-prompting-techniques-for-science-data-analysis-and-sensemaking",
+        },{id: "post-what-ai-sycophancy-means-for-students",
+        
+          title: "What AI Sycophancy Means for Students",
+        
+        description: "With great power comes great responsibility; I would adapt it to: with great power comes great risks.",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/ai-sycophancy-students/";
+          
+        },
+      },{id: "post-prompting-techniques-for-science-data-analysis-and-sensemaking",
         
           title: "Prompting Techniques for Science Data Analysis and Sensemaking",
         
