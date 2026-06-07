@@ -12,20 +12,8 @@ nav_order: 2
 
 <div class="publications">
 
-<h2 class="bibliography">Journal Articles</h2>
-{% bibliography -q @article %}
-
-<h2 class="bibliography">Blog Posts</h2>
-{% bibliography -q @misc[keywords=blog] %}
-
-<h2 class="bibliography">Book Chapters</h2>
-{% bibliography -q @incollection %}
-
 <h2 class="bibliography">Peer-Reviewed Conference Papers</h2>
 {% bibliography -q @inproceedings %}
-
-<h2 class="bibliography">Conference Presentations</h2>
-{% bibliography -q @conference %}
 
 <h2 class="bibliography">Poster Presentations</h2>
 {% bibliography -q @misc[keywords=poster] %}
@@ -33,10 +21,22 @@ nav_order: 2
 <h2 class="bibliography">Workshop Presentations</h2>
 {% bibliography -q @misc[keywords=workshop] %}
 
+<h2 class="bibliography">Conference Presentations</h2>
+{% bibliography -q @conference %}
+
 <h2 class="bibliography">Invited Talks &amp; Panels</h2>
 {% bibliography -q @misc[keywords=invited] %}
 
 <h2 class="bibliography">Reports &amp; Culminating Products</h2>
 {% bibliography -q @techreport %}
+
+<h2 class="bibliography">Blog Posts</h2>
+{% bibliography -q @misc[keywords=blog] %}
+
+<h2 class="bibliography">Book Chapters</h2>
+{% bibliography -q @incollection %}
+
+<h2 class="bibliography">Journal Articles</h2>
+{% bibliography -q @article %}
 
 </div>
