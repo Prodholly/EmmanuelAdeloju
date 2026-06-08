@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/publications/";
           },
-        },{id: "nav-research",
-          title: "research",
-          description: "HAI Interaction Framework — Three-phase AI-Data Sensemaking",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/EmmanuelAdeloju/research/";
-          },
         },{id: "nav-repositories",
           title: "repositories",
           description: "My GitHub profile and repositories.",
@@ -192,6 +185,9 @@ ninja.data = [{
           description: "",
           section: "News",},{id: "news-paper-accepted-at-society-for-information-technology-amp-amp-teacher-education-site-2026-march-23-27-philadelphia-education-by-design-navigating-wicked-problems-with-generative-ai-and-collaborative-learning",
           title: 'Paper accepted at Society for Information Technology &amp;amp;amp; Teacher Education (SITE) 2026 (March...',
+          description: "",
+          section: "News",},{id: "news-gave-an-invited-guest-lecture-on-ai-for-research-to-graduate-students-in-dr-michelle-jordan-s-class-at-arizona-state-university",
+          title: 'Gave an invited guest lecture on AI for Research to graduate students in...',
           description: "",
           section: "News",},{id: "news-awarded-the-cvpr26-broadening-participation-scholarship-award",
           title: 'Awarded the CVPR26 Broadening Participation Scholarship Award.',
