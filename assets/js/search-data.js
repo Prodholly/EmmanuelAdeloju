@@ -44,7 +44,18 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/teaching/";
           },
-        },{id: "post-what-ai-sycophancy-means-for-k-12-students",
+        },{id: "post-on-conducting-interviews-a-guide-for-ux-and-hai-researchers",
+        
+          title: "On Conducting Interviews: A guide for UX and HAI Researchers",
+        
+        description: "",
+        section: "Posts",
+        handler: () => {
+          
+            window.location.href = "/EmmanuelAdeloju/blog/2026/on-conducting-interviews/";
+          
+        },
+      },{id: "post-what-ai-sycophancy-means-for-k-12-students",
         
           title: "What AI Sycophancy Means for K-12 Students",
         
