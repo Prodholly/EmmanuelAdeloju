@@ -180,6 +180,7 @@ kramdown:
 include: ["_pages", "_scripts"]
 exclude:
   - _pages/research.html
+  - _pages/cv.md
   - bin/
   - CONTRIBUTING.md
   - CUSTOMIZE.md

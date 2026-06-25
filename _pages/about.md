@@ -13,6 +13,7 @@ profile:
     <p>Learning, Literacies and Technology</p>
     <p>Email: eadeloju [at] asu [dot] edu</p>
     <p>Arizona State University</p>
+    <p><a href="/EmmanuelAdeloju/assets/pdf/Emmanuel_ADELOJU_UX.pdf" target="_blank">Check My CV</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
