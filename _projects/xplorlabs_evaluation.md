@@ -859,7 +859,7 @@ body { overflow-x: hidden; }
 <!-- ═══ CALL TO ACTION ════════════════════════════════ -->
 <div id="xp-cta" class="xp-cta xp-reveal">
   <h2>Let&rsquo;s Talk</h2>
-  <p>I am actively looking for <strong>UX Researcher</strong> or <strong>Research Scientist</strong> roles and would be happy to connect. If my work resonates with what your team is building, reach out at <strong>eadeloju[at]asu[dot]edu</strong>. You can also visit my homepage to see my full CV and other work.</p>
+  <p>I am actively looking for <span style="background:rgba(255,198,39,.25);color:#fff;font-weight:900;padding:2px 8px;border-radius:4px;font-size:1rem;">UX Researcher</span> or <span style="background:rgba(255,198,39,.25);color:#fff;font-weight:900;padding:2px 8px;border-radius:4px;font-size:1rem;">Research Scientist</span> roles and would be happy to connect. If my work resonates with what your team is building, reach out at <span style="background:#FFC627;color:#111;font-weight:900;padding:2px 10px;border-radius:4px;font-size:.95rem;letter-spacing:.02em;">eadeloju[at]asu[dot]edu</span>. You can also visit my homepage to see my full CV and other work.</p>
   <a href="{{ '/' | relative_url }}" class="xp-cta-link outline">View My Homepage &amp; CV</a>
   <a href="mailto:eadeloju@asu.edu" class="xp-cta-link">Get in Touch</a>
 </div>

@@ -1,0 +1,764 @@
+---
+layout: page
+title: "Teaching Statistics to People Who Were Scared of It"
+description: "Graduate Teaching Assistant for COE 502 Introduction to Data Analysis, Spring 2025. I led weekly SPSS labs, taught full sessions, and graded assignments for a cohort of graduate students across 19 modules of applied quantitative methods."
+img: assets/img/stat_teaching_1.jpg
+importance: 2
+category: work
+---
+
+<style>
+/* =============================================
+   COE 502 TEACHING — PORTFOLIO PAGE
+   ============================================= */
+
+.post > header.post-header { display: none !important; }
+body { overflow-x: hidden; }
+
+:root {
+  --st-blue:   #1a3a5c;
+  --st-teal:   #1a6b72;
+  --st-gold:   #e8a020;
+  --st-light:  #f5f8fc;
+  --st-border: #dce6f0;
+  --st-text:   #333;
+  --st-muted:  #555;
+  --st-r: 8px;
+}
+
+/* ---- REVEAL ---- */
+.st-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s cubic-bezier(.22,.68,0,1.2),
+              transform .6s cubic-bezier(.22,.68,0,1.2);
+}
+.st-reveal.st-in { opacity: 1; transform: translateY(0); }
+.st-reveal.d1 { transition-delay:.05s; }
+.st-reveal.d2 { transition-delay:.14s; }
+.st-reveal.d3 { transition-delay:.23s; }
+.st-reveal.d4 { transition-delay:.32s; }
+
+/* ---- HERO ---- */
+.st-hero {
+  position: relative;
+  height: 500px;
+  background-size: cover;
+  background-position: center 25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 3rem;
+}
+.st-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top,rgba(10,25,47,.9) 0%,rgba(10,25,47,.5) 55%,rgba(10,25,47,.2) 100%);
+}
+.st-hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 2rem;
+  max-width: 680px;
+  width: 100%;
+}
+.st-eyebrow {
+  font-size: .66rem; font-weight: 700; letter-spacing: .18em;
+  text-transform: uppercase; color: #7ecfda;
+  margin-bottom: .75rem;
+}
+.st-hero-title {
+  font-size: clamp(1.6rem,3.8vw,2.5rem);
+  font-weight: 800; color: #fff;
+  line-height: 1.15; margin: 0 0 .6rem;
+}
+.st-hero-sub {
+  font-size: .97rem; color: rgba(255,255,255,.75);
+  line-height: 1.55; margin: 0 0 1.4rem;
+  min-height: 1.5em;
+}
+.st-hero-chips {
+  display: flex; flex-wrap: wrap;
+  gap: 8px; justify-content: center;
+}
+.st-hero-chip {
+  background: rgba(255,255,255,.1);
+  border: 1px solid rgba(255,255,255,.22);
+  border-radius: 20px; padding: 5px 14px;
+  font-size: .73rem; font-weight: 600;
+  color: #fff; letter-spacing: .04em;
+  backdrop-filter: blur(6px);
+}
+
+/* ---- SECTIONS ---- */
+.st-section { margin-bottom: 4rem; scroll-margin-top: 80px; }
+.st-label {
+  display: inline-block; font-size: .63rem;
+  font-weight: 800; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--st-blue);
+  background: rgba(26,58,92,.07); border-radius: 4px;
+  padding: 3px 10px; margin-bottom: .6rem;
+}
+.st-section h2 {
+  font-size: 1.5rem; font-weight: 800;
+  color: #111; margin: 0 0 1rem; line-height: 1.2;
+}
+.st-divider {
+  border: none; border-top: 1px solid var(--st-border);
+  margin: 3rem 0;
+}
+.st-body-p { font-size: .93rem; line-height: 1.78; color: var(--st-muted); margin-bottom: .9rem; }
+
+/* ---- INTRO BANNER ---- */
+.st-intro-banner {
+  background: #fff;
+  border: 1px solid var(--st-border);
+  border-left: 4px solid var(--st-blue);
+  border-radius: var(--st-r);
+  padding: 1.8rem 2rem;
+  margin-bottom: 3rem;
+}
+.st-intro-banner p { font-size: .93rem; color: var(--st-text); line-height: 1.78; margin: 0 0 .6rem; }
+.st-intro-banner p:last-child { margin: 0; }
+.st-course-meta {
+  display: flex; flex-wrap: wrap; gap: 10px;
+  margin-top: 1rem;
+}
+.st-meta-pill {
+  font-size: .72rem; font-weight: 700;
+  padding: 4px 12px; border-radius: 14px;
+  background: var(--st-light); color: var(--st-blue);
+  border: 1px solid var(--st-border);
+  letter-spacing: .04em;
+}
+
+/* ---- ROLE CARDS ---- */
+.st-role-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px; margin: 1.2rem 0;
+}
+@media (max-width: 640px) { .st-role-grid { grid-template-columns: 1fr; } }
+.st-role-card {
+  background: var(--st-light);
+  border-radius: var(--st-r);
+  padding: 1.3rem 1.4rem;
+  border-top: 3px solid var(--st-blue);
+  position: relative;
+}
+.st-role-icon { font-size: 1.6rem; margin-bottom: .5rem; display: block; }
+.st-role-card h3 {
+  font-size: .82rem; font-weight: 800;
+  text-transform: uppercase; letter-spacing: .08em;
+  color: var(--st-blue); margin: 0 0 .5rem;
+}
+.st-role-card p { font-size: .82rem; color: var(--st-muted); line-height: 1.6; margin: 0; }
+
+/* ---- CURRICULUM CLUSTERS ---- */
+.st-clusters { display: grid; grid-template-columns: repeat(2,1fr); gap: 14px; margin: 1.4rem 0; }
+@media (max-width: 600px) { .st-clusters { grid-template-columns: 1fr; } }
+
+.st-cluster {
+  border: 1px solid var(--st-border);
+  border-radius: var(--st-r);
+  overflow: hidden;
+  cursor: pointer;
+}
+.st-cluster-head {
+  display: flex; align-items: center; gap: 12px;
+  padding: 13px 16px;
+  background: var(--st-blue); color: #fff;
+  user-select: none;
+}
+.st-cluster-head.c1 { background: var(--st-blue); }
+.st-cluster-head.c2 { background: var(--st-teal); }
+.st-cluster-head.c3 { background: #6b3a8c; }
+.st-cluster-head.c4 { background: #b75a00; }
+.st-cluster-icon { font-size: 1.2rem; }
+.st-cluster-title { font-size: .84rem; font-weight: 800; flex: 1; }
+.st-cluster-count {
+  font-size: .68rem; font-weight: 700;
+  background: rgba(255,255,255,.2);
+  padding: 2px 8px; border-radius: 10px;
+}
+.st-cluster-toggle { font-size: .75rem; transition: transform .25s; }
+.st-cluster.open .st-cluster-toggle { transform: rotate(180deg); }
+
+.st-cluster-body {
+  max-height: 0; overflow: hidden;
+  transition: max-height .38s cubic-bezier(.4,0,.2,1);
+  background: #fff;
+}
+.st-cluster.open .st-cluster-body { max-height: 600px; }
+
+.st-module-list { list-style: none; padding: 0; margin: 0; }
+.st-module-list li {
+  display: flex; gap: 10px; align-items: flex-start;
+  padding: 9px 16px;
+  border-bottom: 1px solid var(--st-border);
+  font-size: .8rem; color: var(--st-text); line-height: 1.5;
+}
+.st-module-list li:last-child { border-bottom: none; }
+.st-module-num {
+  font-size: .63rem; font-weight: 900; color: #bbb;
+  min-width: 22px; padding-top: 2px;
+  letter-spacing: .04em;
+}
+.st-module-spss {
+  display: inline-block; font-size: .6rem; font-weight: 700;
+  background: var(--st-teal); color: #fff;
+  padding: 1px 6px; border-radius: 4px; margin-left: 6px;
+  letter-spacing: .04em; vertical-align: middle;
+}
+
+/* ---- SPSS SKILLS TABLE ---- */
+.st-spss-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(185px,1fr));
+  gap: 10px; margin: 1.2rem 0;
+}
+.st-spss-card {
+  background: var(--st-light); border-radius: var(--st-r);
+  padding: 11px 14px;
+  border-left: 3px solid var(--st-teal);
+  font-size: .8rem; color: var(--st-text); line-height: 1.5;
+}
+.st-spss-card strong { display: block; color: var(--st-teal); font-size: .73rem; text-transform: uppercase; letter-spacing: .07em; margin-bottom: 3px; }
+
+/* ---- SKILLS BRIDGE ---- */
+.st-bridge {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  gap: 10px;
+  align-items: center;
+  margin: 1.2rem 0;
+}
+@media (max-width: 640px) {
+  .st-bridge { grid-template-columns: 1fr; }
+  .st-bridge-arrow { display: none; }
+}
+.st-bridge-row { display: contents; }
+.st-bridge-left {
+  background: var(--st-light); border-radius: var(--st-r);
+  padding: 11px 14px; font-size: .81rem; color: var(--st-text);
+  line-height: 1.5; border-left: 3px solid var(--st-blue);
+}
+.st-bridge-right {
+  background: #fff; border-radius: var(--st-r);
+  padding: 11px 14px; font-size: .81rem; color: var(--st-text);
+  line-height: 1.5; border-left: 3px solid var(--st-gold);
+}
+.st-bridge-arrow {
+  text-align: center; font-size: 1.1rem;
+  color: #bbb; grid-column: 2;
+}
+.st-bridge-header {
+  font-size: .63rem; font-weight: 800; letter-spacing: .14em;
+  text-transform: uppercase; padding: 4px 14px;
+  border-radius: 4px; display: inline-block; margin-bottom: .7rem;
+}
+.st-bridge-header.teach { background: var(--st-blue); color: #fff; }
+.st-bridge-header.uxr   { background: var(--st-gold); color: #111; }
+
+/* ---- PHOTO GRID 2x3 ---- */
+.st-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  margin: 1.4rem 0;
+}
+@media (max-width: 580px) { .st-photo-grid { grid-template-columns: repeat(2,1fr); } }
+.st-photo-item {
+  position: relative; overflow: hidden;
+  border-radius: var(--st-r); cursor: default;
+  aspect-ratio: 4/3;
+}
+.st-photo-item img {
+  width: 100%; height: 100%; object-fit: cover;
+  display: block;
+  transition: transform .45s cubic-bezier(.22,.68,0,1.2);
+}
+.st-photo-item:hover img { transform: scale(1.06); }
+.st-photo-cap {
+  position: absolute; bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent,rgba(10,25,47,.82));
+  color: #fff; padding: 28px 10px 10px;
+  font-size: .71rem; line-height: 1.4;
+  transform: translateY(100%); transition: transform .3s ease;
+}
+.st-photo-item:hover .st-photo-cap { transform: translateY(0); }
+
+/* ---- PULL QUOTE ---- */
+.st-pull {
+  font-size: clamp(.95rem,2.1vw,1.18rem);
+  line-height: 1.72; color: #222;
+  border-left: 4px solid var(--st-gold);
+  padding-left: 1.4rem;
+  margin: 1.4rem 0 1.8rem;
+  font-style: italic;
+}
+
+/* ---- SKILL TAGS ---- */
+.st-tags { display: flex; flex-wrap: wrap; gap: 7px; margin: 1.2rem 0; }
+.st-tag {
+  font-size: .67rem; font-weight: 700;
+  padding: 4px 11px; border-radius: 14px;
+  background: var(--st-light); color: #555;
+  letter-spacing: .05em; text-transform: uppercase;
+  border: 1px solid var(--st-border);
+}
+
+/* ---- CALL TO ACTION ---- */
+.st-cta {
+  background: linear-gradient(135deg, var(--st-blue) 0%, #0d2240 100%);
+  border-radius: var(--st-r);
+  padding: 2.5rem 2.2rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+.st-cta h2 { color: #fff; font-size: 1.4rem; font-weight: 800; margin: 0 0 .6rem; }
+.st-cta p  {
+  color: rgba(255,255,255,.82); font-size: .92rem;
+  line-height: 1.7; margin: 0 0 1.2rem;
+  max-width: 560px; margin-left: auto; margin-right: auto;
+}
+.st-role-highlight {
+  background: rgba(255,255,255,.15);
+  color: #fff; font-weight: 900;
+  padding: 2px 9px; border-radius: 4px;
+  font-size: 1rem;
+}
+.st-email-highlight {
+  background: #e8a020; color: #111;
+  font-weight: 900; padding: 2px 10px;
+  border-radius: 4px; font-size: .95rem;
+  letter-spacing: .02em;
+}
+.st-cta-link {
+  display: inline-block;
+  font-weight: 800; font-size: .82rem;
+  letter-spacing: .06em; padding: 10px 24px;
+  border-radius: 22px; text-decoration: none;
+  margin: 0 6px 8px;
+  transition: transform .18s, box-shadow .18s;
+}
+.st-cta-link.primary {
+  background: #e8a020; color: #111;
+}
+.st-cta-link.outline {
+  background: transparent; color: #fff;
+  border: 2px solid rgba(255,255,255,.5);
+}
+.st-cta-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.3); }
+.st-cta-link.outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+/* ---- SIDENAV ---- */
+.st-sidenav {
+  position: fixed; left: 16px; top: 50%;
+  transform: translateY(-50%);
+  width: 130px; padding: 12px 0 12px 12px;
+  border-left: 2px solid var(--st-blue);
+  z-index: 300; line-height: 2.1;
+}
+.st-sidenav a {
+  display: block; font-size: .65rem;
+  text-transform: uppercase; letter-spacing: .09em;
+  color: #bbb; text-decoration: none;
+  transition: color .2s;
+}
+.st-sidenav a.sta,
+.st-sidenav a:hover { color: var(--st-blue); font-weight: 700; }
+@media (max-width: 1320px) { .st-sidenav { display: none; } }
+</style>
+
+<!-- Side Navigation -->
+<nav class="st-sidenav" aria-label="Page sections">
+  <a href="#st-top">Top</a>
+  <a href="#st-context">Context</a>
+  <a href="#st-role">My Role</a>
+  <a href="#st-curriculum">Curriculum</a>
+  <a href="#st-spss">SPSS Labs</a>
+  <a href="#st-bridge">Skills Bridge</a>
+  <a href="#st-gallery">Gallery</a>
+  <a href="#st-reflect">Reflection</a>
+  <a href="#st-cta">Contact</a>
+</nav>
+
+<!-- ═══ HERO ═══════════════════════════════════════ -->
+<div class="st-hero" id="st-top"
+     style="background-image:url('{{ '/assets/img/stat_teaching_1.jpg' | relative_url }}');">
+  <div class="st-hero-content">
+    <div class="st-eyebrow">Graduate Teaching Assistant &nbsp;&middot;&nbsp; Spring 2025 &nbsp;&middot;&nbsp; SPSS &nbsp;&middot;&nbsp; Quantitative Methods</div>
+    <h1 class="st-hero-title">COE 502: Introduction<br>to Data Analysis</h1>
+    <p class="st-hero-sub" id="st-tw">&nbsp;</p>
+    <div class="st-hero-chips">
+      <span class="st-hero-chip">19 modules</span>
+      <span class="st-hero-chip">Weekly SPSS labs</span>
+      <span class="st-hero-chip">Graduate students</span>
+      <span class="st-hero-chip">Full lectures</span>
+      <span class="st-hero-chip">Grading &amp; feedback</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ CONTEXT ══════════════════════════════════════ -->
+<div id="st-context" class="st-reveal" style="scroll-margin-top:80px; margin-bottom:3rem;">
+<div class="st-intro-banner">
+  <p>Teaching statistics to graduate students who are not statistics majors is its own research problem. Most of the people who walk into COE 502 are educators, policy researchers, and curriculum designers. They came to ASU to study how people learn, not to run t-tests. My job, as the Teaching Assistant for Dr. Audrey Beardsley, was to make quantitative methods feel like a tool they could actually use, not a requirement they had to survive.</p>
+  <p>Every Wednesday evening, Dr. Beardsley taught the theory. I followed with a live SPSS lab. I also took on full lecture sessions for several modules and wrote feedback on every graded assignment. By the end of the semester, we had moved through everything from descriptive statistics and graphical representation to factorial ANOVA, linear regression, chi-square, and non-parametric tests. That is not a light curriculum for people who signed up because they wanted to understand education, not variance.</p>
+  <div class="st-course-meta">
+    <span class="st-meta-pill">COE 502</span>
+    <span class="st-meta-pill">Spring 2025</span>
+    <span class="st-meta-pill">Mary Lou Fulton Teachers College</span>
+    <span class="st-meta-pill">Dr. Audrey Beardsley</span>
+    <span class="st-meta-pill">Wednesdays 4:30–7:15 PM</span>
+    <span class="st-meta-pill">Tempe, COOR L1-72</span>
+  </div>
+</div>
+</div>
+
+<!-- ═══ MY ROLE ═══════════════════════════════════════ -->
+<div id="st-role" class="st-section st-reveal">
+<span class="st-label">What I Did</span>
+<h2>Three Jobs in One Room</h2>
+<p class="st-body-p">I was not just grading papers in the back. My role had three distinct modes that I switched between across every class session and the time between them.</p>
+
+<div class="st-role-grid">
+  <div class="st-role-card st-reveal d1">
+    <span class="st-role-icon">🖥️</span>
+    <h3>Lab Instructor</h3>
+    <p>Every class session, after Dr. Beardsley finished the theoretical portion, I took over and led the SPSS lab. I walked students through importing data, running the appropriate procedure, interpreting the output window, and catching the errors they made along the way. I designed the lab exercises to directly mirror what was just taught so that the gap between theory and practice was as short as possible.</p>
+  </div>
+  <div class="st-role-card st-reveal d2" style="border-top-color:var(--st-teal);">
+    <span class="st-role-icon">📢</span>
+    <h3>Lecturer</h3>
+    <p>For several modules across the semester, I led the full class session including both the theory and the lab. I prepared the lecture materials, sequenced the content, and managed the classroom from start to finish. Standing at the front of a graduate-level statistics class and making variance intuitive before the software portion is a different kind of pressure than the lab, and I found it clarified my own understanding considerably.</p>
+  </div>
+  <div class="st-role-card st-reveal d3" style="border-top-color:#6b3a8c;">
+    <span class="st-role-icon">✏️</span>
+    <h3>Grader &amp; Feedback Writer</h3>
+    <p>I graded all assignments across the semester, 1300 total points worth of problem sets, descriptive statistics assignments, correlation tasks, and the final take-home assessment. I wrote specific, actionable feedback on every submission. When students confused standard error with standard deviation, or ran the wrong test for their data type, I explained why it mattered, not just what the correct answer was.</p>
+  </div>
+</div>
+</div>
+
+<hr class="st-divider">
+
+<!-- ═══ CURRICULUM ════════════════════════════════════ -->
+<div id="st-curriculum" class="st-section st-reveal">
+<span class="st-label">Course Curriculum</span>
+<h2>What I Taught Across 19 Modules</h2>
+<p class="st-body-p">The curriculum ran the full arc of applied quantitative methods, from reading a frequency table to running a factorial ANOVA in SPSS. Click any cluster to see the modules and what I covered in the lab for each.</p>
+
+<div class="st-clusters">
+
+  <!-- Cluster 1 -->
+  <div class="st-cluster" id="stc0">
+    <div class="st-cluster-head c1" onclick="stToggle(0)">
+      <span class="st-cluster-icon">📊</span>
+      <span class="st-cluster-title">Describing &amp; Visualizing Data</span>
+      <span class="st-cluster-count">4 modules</span>
+      <span class="st-cluster-toggle">▼</span>
+    </div>
+    <div class="st-cluster-body">
+      <ul class="st-module-list">
+        <li><span class="st-module-num">M1</span><span>Statistics or Sadistics? Foundations of statistical thinking, types of data, and why this matters for research <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M2</span><span>Computing averages: mean, median, and mode; when each is appropriate and how to run and read descriptive output <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M3</span><span>Understanding variability: range, variance, standard deviation; building intuition for spread before hypothesis testing <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M4</span><span>Creating graphs: histograms, bar charts, box plots, and scatter plots; I ran the full graphical output session in SPSS and discussed when each visual tells a different story <span class="st-module-spss">SPSS</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cluster 2 -->
+  <div class="st-cluster" id="stc1">
+    <div class="st-cluster-head c2" onclick="stToggle(1)">
+      <span class="st-cluster-icon">🔗</span>
+      <span class="st-cluster-title">Measuring Relationships</span>
+      <span class="st-cluster-count">3 modules</span>
+      <span class="st-cluster-toggle">▼</span>
+    </div>
+    <div class="st-cluster-body">
+      <ul class="st-module-list">
+        <li><span class="st-module-num">M5</span><span>Correlation coefficients: Pearson r, interpretation, and the classic lesson that correlation is not causation; students computed r by hand and then reproduced it in SPSS <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M6</span><span>Reliability and validity: internal consistency (Cronbach&rsquo;s alpha), construct validity, and why measurement quality matters before any inferential test <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M15</span><span>Testing relationships using the correlation coefficient: deeper dive into bivariate relationships, scatterplots, and regression setup <span class="st-module-spss">SPSS</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cluster 3 -->
+  <div class="st-cluster" id="stc2">
+    <div class="st-cluster-head c3" onclick="stToggle(2)">
+      <span class="st-cluster-icon">⚖️</span>
+      <span class="st-cluster-title">Hypothesis Testing &amp; Inference</span>
+      <span class="st-cluster-count">8 modules</span>
+      <span class="st-cluster-toggle">▼</span>
+    </div>
+    <div class="st-cluster-body">
+      <ul class="st-module-list">
+        <li><span class="st-module-num">M7</span><span>Hypothesis testing: null and alternative hypotheses, directional vs. non-directional tests, threats to validity <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M8</span><span>Probability and the normal distribution: z-scores, the bell curve, and probability as the engine behind every statistical test <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M9</span><span>Statistical significance: what p-values mean, what they do not mean, and why this distinction is more important than most textbooks admit <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M10</span><span>One-sample z-test: comparing a sample mean to a known population value; running the logic step by step <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M11</span><span>Independent samples t-test: comparing the means of two unrelated groups; I ran this module as a full lecture and lab <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M12</span><span>Paired samples t-test: pre/post and matched-pairs designs; directly relevant to how survey experiments are analyzed in UX research <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M13</span><span>One-way ANOVA: comparing three or more group means, F-statistic, post-hoc tests <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M14</span><span>Factorial ANOVA: two-way designs, main effects, interaction effects; I walked through interpreting interaction plots by hand and in SPSS <span class="st-module-spss">SPSS</span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Cluster 4 -->
+  <div class="st-cluster" id="stc3">
+    <div class="st-cluster-head c4" onclick="stToggle(3)">
+      <span class="st-cluster-icon">🧮</span>
+      <span class="st-cluster-title">Advanced &amp; Special Topics</span>
+      <span class="st-cluster-count">4 modules</span>
+      <span class="st-cluster-toggle">▼</span>
+    </div>
+    <div class="st-cluster-body">
+      <ul class="st-module-list">
+        <li><span class="st-module-num">M16</span><span>Linear regression: simple regression, interpreting coefficients, R-squared, and running the full output in SPSS <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M17</span><span>Chi-square and non-parametric tests: tests for categorical data and what to do when normality assumptions cannot be met <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">M18</span><span>Other important procedures: factor analysis, special topics in regression, and distributional considerations <span class="st-module-spss">SPSS</span></span></li>
+        <li><span class="st-module-num">Final</span><span>Take-home final assessment: I graded every submission and wrote detailed APA-format feedback on statistical write-ups</span></li>
+      </ul>
+    </div>
+  </div>
+
+</div>
+</div>
+
+<hr class="st-divider">
+
+<!-- ═══ SPSS LABS ═════════════════════════════════════ -->
+<div id="st-spss" class="st-section st-reveal">
+<span class="st-label">SPSS Lab Practice</span>
+<h2>What I Did in the Labs Every Week</h2>
+<p class="st-body-p">Reading about a t-test is not the same as watching your own data produce one. The lab portion of every session was where the concepts either clicked or fell apart, and my job was to make them click. Here is what I covered across the lab curriculum in SPSS:</p>
+
+<div class="st-spss-grid">
+  <div class="st-spss-card st-reveal d1">
+    <strong>Data Entry &amp; Import</strong>
+    Defining variable types, measurement levels, value labels, and importing datasets correctly
+  </div>
+  <div class="st-spss-card st-reveal d2">
+    <strong>Descriptive Output</strong>
+    Running Frequencies, Descriptives, and Explore; reading the output table and flagging anomalies
+  </div>
+  <div class="st-spss-card st-reveal d3">
+    <strong>Graphical Analysis</strong>
+    Building histograms, bar charts, box plots, and scatter plots; choosing the right visual for the data type
+  </div>
+  <div class="st-spss-card st-reveal d4">
+    <strong>Reliability Analysis</strong>
+    Running Cronbach&rsquo;s alpha and interpreting item-total statistics for survey instruments
+  </div>
+  <div class="st-spss-card st-reveal d1">
+    <strong>Correlation</strong>
+    Bivariate correlations, significance flags, and reading the full correlation matrix
+  </div>
+  <div class="st-spss-card st-reveal d2">
+    <strong>t-Tests</strong>
+    Independent and paired samples; Levene&rsquo;s test for equality of variance; interpreting the two-row output
+  </div>
+  <div class="st-spss-card st-reveal d3">
+    <strong>ANOVA &amp; Post-hoc</strong>
+    One-way and factorial ANOVA; Tukey and Bonferroni post-hoc tests; reading interaction plots
+  </div>
+  <div class="st-spss-card st-reveal d4">
+    <strong>Regression</strong>
+    Simple linear regression; coefficient table, R-square, and residuals; writing up results in APA format
+  </div>
+  <div class="st-spss-card st-reveal d1">
+    <strong>Non-parametric Tests</strong>
+    Chi-square goodness-of-fit and independence; Mann-Whitney U; Wilcoxon signed-rank
+  </div>
+  <div class="st-spss-card st-reveal d2">
+    <strong>Output Interpretation</strong>
+    Every session ended with me walking through what the output was telling us, what it was not, and how to write it up
+  </div>
+</div>
+</div>
+
+<hr class="st-divider">
+
+<!-- ═══ SKILLS BRIDGE ════════════════════════════════ -->
+<div id="st-bridge" class="st-section st-reveal">
+<span class="st-label">Why This Matters for UX Research</span>
+<h2>From the Classroom to the Research Lab</h2>
+<p class="st-body-p">The parallel between teaching stats to anxious graduate students and doing quantitative UX research is direct. In both cases, I am the person who understands the numbers and has to make them legible to people who do not. The stakes are just different on each side of the table.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:.8rem 0 1.2rem;">
+  <div><span class="st-bridge-header teach">In the Classroom</span></div>
+  <div><span class="st-bridge-header uxr">In a UX Research Role</span></div>
+</div>
+
+<div class="st-bridge">
+  <div class="st-bridge-left">I ran live SPSS labs translating statistical theory into applied practice for every module</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I can run quantitative analysis pipelines and communicate the outputs to cross-functional teams</div>
+
+  <div class="st-bridge-left">I chose when to use independent vs. paired t-tests, ANOVA vs. chi-square, based on data type and research question</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I can select appropriate statistical procedures for survey experiments, A/B tests, and pre/post study designs</div>
+
+  <div class="st-bridge-left">I taught reliability analysis (Cronbach&rsquo;s alpha) and survey instrument validation</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I can evaluate the psychometric quality of survey instruments used in UX research</div>
+
+  <div class="st-bridge-left">I gave written APA-format feedback on every student statistical write-up, explaining why conclusions were or were not supported</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I can write up quantitative findings with the precision and caveats that distinguish rigorous research from p-value fishing</div>
+
+  <div class="st-bridge-left">I built graphical labs covering every major visualization type and taught students to choose the right one</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I know which visualization best represents a finding and why the wrong one misleads stakeholders</div>
+
+  <div class="st-bridge-left">I explained statistical significance and effect size to students who kept confusing the two</div>
+  <div class="st-bridge-arrow">→</div>
+  <div class="st-bridge-right">I will not overstate a statistically significant but practically trivial finding in a research report</div>
+</div>
+</div>
+
+<hr class="st-divider">
+
+<!-- ═══ GALLERY ═══════════════════════════════════════ -->
+<div id="st-gallery" class="st-section st-reveal">
+<span class="st-label">Gallery</span>
+<h2>From the Classroom</h2>
+<p style="font-size:.85rem;color:#888;margin-bottom:1.2rem;">Hover any photo for context. Six images from the classroom sessions I led during Spring 2025.</p>
+
+<div class="st-photo-grid">
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_1.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">Leading one of the weekly SPSS lab sessions for COE 502, Spring 2025.</figcaption>
+  </div>
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_2.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">Walking graduate students through SPSS output interpretation during a lab session.</figcaption>
+  </div>
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_3.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">Full lecture session I led independently for one of the modules on inferential statistics.</figcaption>
+  </div>
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_4.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">Working through hypothesis testing concepts with the graduate cohort.</figcaption>
+  </div>
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_5.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">Demonstrating how to run and read ANOVA output in SPSS during the classroom lab.</figcaption>
+  </div>
+  <div class="st-photo-item">
+    <img src="{{ '/assets/img/stat_teaching_6.jpg' | relative_url }}" alt="Teaching COE 502" loading="lazy">
+    <figcaption class="st-photo-cap">End-of-session discussion after running regression analysis together in SPSS.</figcaption>
+  </div>
+</div>
+</div>
+
+<hr class="st-divider">
+
+<!-- ═══ REFLECTION ════════════════════════════════════ -->
+<div id="st-reflect" class="st-section st-reveal">
+<span class="st-label">Reflection</span>
+<h2>What I Take From This</h2>
+
+<blockquote class="st-pull">
+  The best thing about teaching statistics is that it forces you to understand your own assumptions. Every time I stood in front of that room and someone asked why, I had to actually know. Not just know how to run the procedure, but know what the procedure was doing and why it was the right one. That is the same standard I hold myself to in research.
+</blockquote>
+
+<p class="st-body-p">There is something specific about being responsible for how other people understand quantitative methods that sharpens your own command of them. I noticed this most when grading. Reading a student&rsquo;s incorrect interpretation of a significant result and having to explain the error precisely enough that they would not make it again, that is a different kind of understanding than knowing the right answer yourself.</p>
+<p class="st-body-p">I also got a genuine appreciation for what it means to communicate statistics to people who did not choose to be there. Graduate students in education programs signed up to study learning and teaching, not probability distributions. Earning their engagement required making the content feel useful, not just rigorous. That is exactly the challenge in UX research: not impressing statisticians, but giving PMs and designers enough of the right quantitative context to make better decisions.</p>
+<p class="st-body-p">The SPSS expertise I built here is directly transferable to any analysis environment. The thinking habits it reinforced, choosing the right test, questioning your assumptions before interpreting output, writing up findings with appropriate caveats, those are not software-specific. They travel.</p>
+
+<div class="st-tags">
+  <span class="st-tag">SPSS</span>
+  <span class="st-tag">Quantitative Methods</span>
+  <span class="st-tag">Descriptive Statistics</span>
+  <span class="st-tag">Inferential Statistics</span>
+  <span class="st-tag">t-Tests</span>
+  <span class="st-tag">ANOVA</span>
+  <span class="st-tag">Linear Regression</span>
+  <span class="st-tag">Correlation</span>
+  <span class="st-tag">Chi-Square</span>
+  <span class="st-tag">Reliability Analysis</span>
+  <span class="st-tag">Data Visualization</span>
+  <span class="st-tag">Statistical Communication</span>
+  <span class="st-tag">Curriculum Delivery</span>
+  <span class="st-tag">Grading &amp; Feedback</span>
+</div>
+</div>
+
+<!-- ═══ CALL TO ACTION ════════════════════════════════ -->
+<div id="st-cta" class="st-cta st-reveal">
+  <h2>Let&rsquo;s Talk</h2>
+  <p>I am actively looking for <span class="st-role-highlight">UX Researcher</span> or <span class="st-role-highlight">Research Scientist</span> roles and would be happy to connect. Reach out at <span class="st-email-highlight">eadeloju[at]asu[dot]edu</span> and visit my homepage to see my full CV and other work.</p>
+  <a href="{{ '/' | relative_url }}" class="st-cta-link outline">View My Homepage &amp; CV</a>
+  <a href="mailto:eadeloju@asu.edu" class="st-cta-link primary">Get in Touch</a>
+</div>
+
+<script>
+(function(){
+
+/* Full-bleed hero */
+function fillHero(){
+  var h=document.querySelector('.st-hero'); if(!h) return;
+  var off=h.getBoundingClientRect().left+(window.pageXOffset||0);
+  h.style.marginLeft='-'+off+'px';
+  h.style.width=window.innerWidth+'px';
+}
+fillHero();
+window.addEventListener('resize',fillHero);
+
+/* Typewriter */
+var tw=document.getElementById('st-tw');
+var line='Teaching graduate students to run — and understand — statistics in SPSS.';
+var ci=0;
+function type(){
+  if(!tw||ci>=line.length) return;
+  tw.textContent+=line.charAt(ci++);
+  setTimeout(type,30);
+}
+setTimeout(type,700);
+
+/* Scroll reveal */
+var ro=new IntersectionObserver(function(entries){
+  entries.forEach(function(e){
+    if(e.isIntersecting){ e.target.classList.add('st-in'); ro.unobserve(e.target); }
+  });
+},{threshold:0.10});
+document.querySelectorAll('.st-reveal').forEach(function(el){ ro.observe(el); });
+
+/* Curriculum cluster toggle */
+var openIdx=-1;
+window.stToggle=function(idx){
+  var clusters=document.querySelectorAll('.st-cluster');
+  if(openIdx===idx){
+    clusters[idx].classList.remove('open');
+    openIdx=-1; return;
+  }
+  clusters.forEach(function(c){ c.classList.remove('open'); });
+  clusters[idx].classList.add('open');
+  openIdx=idx;
+};
+
+/* Sidenav scroll-spy */
+var ids=['st-top','st-context','st-role','st-curriculum','st-spss','st-bridge','st-gallery','st-reflect','st-cta'];
+var navLinks=document.querySelectorAll('.st-sidenav a');
+window.addEventListener('scroll',function(){
+  var sy=window.pageYOffset+140, cur=ids[0];
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el&&el.offsetTop<=sy) cur=id;
+  });
+  navLinks.forEach(function(a){
+    a.classList.toggle('sta', a.getAttribute('href')==='#'+cur);
+  });
+},{passive:true});
+
+})();
+</script>
