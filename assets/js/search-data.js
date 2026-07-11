@@ -244,6 +244,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/EmmanuelAdeloju/projects/9_project/";
+            },},{id: "projects-program-evaluation",
+          title: 'Program Evaluation',
+          description: "This is a mixed-methods program evaluation where I co-developed survey instrument with the team, ran full statistical analysis in R, conducted focus group research, and instructional artifact review across a full academic year with a national cohort of educators.",
+          section: "Projects",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/projects/xplorlabs_evaluation/";
             },},{id: "teachings-introduction-to-data-analysis",
           title: 'Introduction to Data Analysis',
           description: "Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.",
