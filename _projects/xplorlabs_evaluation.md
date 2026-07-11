@@ -39,27 +39,30 @@ body { overflow-x: hidden; }
 .xp-reveal.d3 { transition-delay:.25s; }
 .xp-reveal.d4 { transition-delay:.35s; }
 
-/* ---- HERO ---- */
+/* ---- HERO (centered) ---- */
 .xp-hero {
   position: relative;
   height: 520px;
   background-size: cover;
   background-position: center 30%;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 3rem;
 }
 .xp-hero::after {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top,rgba(8,8,8,.88) 0%,rgba(8,8,8,.38) 55%,transparent 100%);
+  background: linear-gradient(to top,rgba(8,8,8,.88) 0%,rgba(8,8,8,.45) 55%,rgba(0,0,0,.25) 100%);
 }
 .xp-hero-content {
   position: relative;
   z-index: 2;
-  padding: 2.5rem 2rem;
-  max-width: 700px;
+  padding: 2rem;
+  max-width: 680px;
+  width: 100%;
+  text-align: center;
 }
 .xp-eyebrow {
   font-size: .67rem;
@@ -87,6 +90,7 @@ body { overflow-x: hidden; }
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
+  justify-content: center;
 }
 .xp-hero-chip {
   background: rgba(255,255,255,.1);
@@ -127,9 +131,10 @@ body { overflow-x: hidden; }
   margin: 3rem 0;
 }
 
-/* ---- FRAMING BANNER ---- */
+/* ---- FRAMING BANNER (light) ---- */
 .xp-frame-banner {
-  background: #0e0e0e;
+  background: #fff;
+  border: 1px solid var(--xp-border);
   border-radius: var(--xp-r);
   padding: 2rem 2.2rem;
   margin-bottom: 3.5rem;
@@ -143,54 +148,67 @@ body { overflow-x: hidden; }
   width: 4px;
   background: linear-gradient(to bottom, var(--xp-gold), var(--xp-red));
 }
-.xp-frame-lead {
-  font-size: 1.2rem;
-  font-weight: 700;
-  color: #fff;
-  margin: 0 0 .65rem;
-  line-height: 1.45;
-}
 .xp-frame-body {
-  font-size: .9rem;
-  color: rgba(255,255,255,.7);
-  line-height: 1.72;
-  margin: 0;
-  max-width: 640px;
+  font-size: .93rem;
+  color: #333;
+  line-height: 1.78;
+  margin: 0 0 .6rem;
+  max-width: 680px;
+}
+.xp-frame-ps {
+  font-size: .78rem;
+  color: #888;
+  font-style: italic;
+  margin: .8rem 0 0;
 }
 
-/* ---- SVG ARCHITECTURE ---- */
+/* ---- SVG ARCHITECTURE (triangle funnel) ---- */
 .xp-arch-wrap {
   background: var(--xp-light);
   border-radius: var(--xp-r);
-  padding: 2rem 1.5rem 2.5rem;
+  padding: 1.5rem 1rem 2rem;
   overflow-x: auto;
 }
-.xp-arch-wrap svg { width: 100%; min-width: 580px; display: block; }
+.xp-arch-wrap svg { width: 100%; min-width: 560px; display: block; }
 
-.xp-strand { fill: none; stroke-linecap: round; }
-.xp-node-c { opacity: 0; transition: opacity .3s ease; }
-.xp-node-t { opacity: 0; font-size: 10px; transition: opacity .3s ease; }
-.xp-conv   { fill: none; stroke-linecap: round; opacity: 0; transition: opacity .35s ease; }
-.xp-synth  { opacity: 0; transition: opacity .4s ease; }
+/* pill headers */
+.xp-pill { opacity: 0; transition: opacity .4s ease; }
+/* strand vertical lines */
+.xp-vline { fill: none; stroke-linecap: round; stroke-dasharray: 200; stroke-dashoffset: 200; }
+/* milestone nodes */
+.xp-mnode { opacity: 0; transition: opacity .3s ease; }
+.xp-mtext { opacity: 0; transition: opacity .3s ease; font-size: 9.5px; font-family: -apple-system,sans-serif; }
+/* converging lines */
+.xp-conv2 { fill: none; stroke-linecap: round; opacity: 0; transition: opacity .4s ease; }
+/* synthesis group */
+.xp-synth2 { opacity: 0; transition: opacity .45s ease; }
 
-.xp-arch-wrap.anim .strand-s { animation: xpDraw .7s ease .1s forwards; }
-.xp-arch-wrap.anim .strand-i { animation: xpDraw .7s ease .3s forwards; }
-.xp-arch-wrap.anim .strand-a { animation: xpDraw .7s ease .5s forwards; }
-.xp-arch-wrap.anim .ns1 { transition-delay:.55s; }
-.xp-arch-wrap.anim .ns2 { transition-delay:.65s; }
-.xp-arch-wrap.anim .ns3 { transition-delay:.75s; }
-.xp-arch-wrap.anim .ni1 { transition-delay:.70s; }
-.xp-arch-wrap.anim .ni2 { transition-delay:.85s; }
-.xp-arch-wrap.anim .na1 { transition-delay:.75s; }
-.xp-arch-wrap.anim .na2 { transition-delay:.85s; }
-.xp-arch-wrap.anim .na3 { transition-delay:.95s; }
-.xp-arch-wrap.anim .xp-node-c,
-.xp-arch-wrap.anim .xp-node-t { opacity: 1; }
-.xp-arch-wrap.anim .xp-conv   { opacity: 1; transition-delay:1.05s; }
-.xp-arch-wrap.anim .xp-synth  { opacity: 1; transition-delay:1.30s; }
+/* animation triggers */
+.xp-arch-wrap.anim .xp-pill       { opacity: 1; }
+.xp-arch-wrap.anim .xp-pill.p0    { transition-delay:.05s; }
+.xp-arch-wrap.anim .xp-pill.p1    { transition-delay:.15s; }
+.xp-arch-wrap.anim .xp-pill.p2    { transition-delay:.25s; }
 
-@keyframes xpDraw {
-  from { stroke-dashoffset: 600; }
+.xp-arch-wrap.anim .vl-s { animation: xpVDraw .55s ease .35s forwards; }
+.xp-arch-wrap.anim .vl-i { animation: xpVDraw .4s  ease .35s forwards; }
+.xp-arch-wrap.anim .vl-a { animation: xpVDraw .55s ease .35s forwards; }
+
+.xp-arch-wrap.anim .xp-mnode,
+.xp-arch-wrap.anim .xp-mtext { opacity: 1; }
+.xp-arch-wrap.anim .ms0  { transition-delay:.65s; }
+.xp-arch-wrap.anim .ms1  { transition-delay:.75s; }
+.xp-arch-wrap.anim .ms2  { transition-delay:.85s; }
+.xp-arch-wrap.anim .mi0  { transition-delay:.65s; }
+.xp-arch-wrap.anim .mi1  { transition-delay:.75s; }
+.xp-arch-wrap.anim .ma0  { transition-delay:.65s; }
+.xp-arch-wrap.anim .ma1  { transition-delay:.75s; }
+.xp-arch-wrap.anim .ma2  { transition-delay:.85s; }
+
+.xp-arch-wrap.anim .xp-conv2  { opacity: 1; transition-delay:.98s; }
+.xp-arch-wrap.anim .xp-synth2 { opacity: 1; transition-delay:1.22s; }
+
+@keyframes xpVDraw {
+  from { stroke-dashoffset: 200; }
   to   { stroke-dashoffset: 0; }
 }
 
@@ -215,41 +233,58 @@ body { overflow-x: hidden; }
 }
 .xp-ri-icon { font-size: 1.05rem; flex-shrink: 0; margin-top: 2px; }
 
-/* ---- METHODS MATRIX ---- */
-.xp-matrix-wrap {
-  overflow-x: auto;
+/* ---- BURST CHART ---- */
+.xp-burst-wrap {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2rem;
+  align-items: start;
+  margin: 1.5rem 0;
+}
+@media (max-width: 640px) {
+  .xp-burst-wrap { grid-template-columns: 1fr; }
+}
+#xp-burst-svg { width: 100%; cursor: pointer; display: block; }
+.xp-burst-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: .5rem;
+}
+.xp-burst-leg-item {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: .75rem;
+  font-weight: 600;
+  color: #444;
+  cursor: pointer;
+  padding: 4px 10px 4px 6px;
+  border-radius: 6px;
+  border: 1px solid transparent;
+  transition: border-color .18s, background .18s;
+}
+.xp-burst-leg-item:hover { background: var(--xp-light); border-color: var(--xp-border); }
+.xp-burst-leg-swatch { width: 12px; height: 12px; border-radius: 3px; flex-shrink: 0; }
+.xp-burst-detail {
+  background: var(--xp-light);
   border-radius: var(--xp-r);
-  border: 1px solid var(--xp-border);
+  border-left: 4px solid var(--xp-red);
+  padding: 1.2rem 1.4rem;
+  min-height: 140px;
+  transition: all .2s ease;
 }
-.xp-matrix { width: 100%; border-collapse: collapse; font-size: .81rem; }
-.xp-matrix th {
-  background: #0e0e0e;
-  color: #fff;
-  padding: 11px 14px;
-  text-align: center;
+.xp-burst-detail h4 { margin: 0 0 .4rem; font-size: .95rem; font-weight: 800; }
+.xp-burst-detail p  { font-size: .83rem; color: #444; line-height: 1.65; margin: .4rem 0 .7rem; }
+.xp-dim-badge {
+  display: inline-flex; align-items: center; gap: 4px;
+  margin: 3px 4px 3px 0;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: .69rem;
   font-weight: 700;
-  font-size: .71rem;
-  letter-spacing: .07em;
-  text-transform: uppercase;
-  white-space: nowrap;
+  letter-spacing: .03em;
 }
-.xp-matrix th:first-child { text-align: left; min-width: 170px; }
-.xp-matrix td {
-  padding: 10px 14px;
-  border-top: 1px solid var(--xp-border);
-  text-align: center;
-  transition: background .18s;
-}
-.xp-matrix td:first-child { text-align: left; font-weight: 600; color: #222; font-size: .8rem; }
-.xp-matrix tr:hover td { background: rgba(140,29,64,.04); }
-.xp-dot { display: inline-block; width: 18px; height: 18px; border-radius: 50%; }
-.xp-dot.m1 { background: var(--xp-red); }
-.xp-dot.m2 { background: var(--xp-navy); }
-.xp-dot.m3 { background: var(--xp-forest); }
-.xp-dot.m4 { background: #b75a00; }
-.xp-dot.m5 { background: #5b2c8b; }
-.xp-dot.m6 { background: #2c6e87; }
-.xp-mbadge { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 7px; vertical-align: middle; }
 
 /* ---- HORIZONTAL TIMELINE ---- */
 .xp-tl-rail {
@@ -303,7 +338,7 @@ body { overflow-x: hidden; }
   color: #fff;
   transform: scale(1.12);
 }
-.xp-phase-date { font-size: .61rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--xp-red); line-height: 1.3; }
+.xp-phase-date  { font-size: .61rem; font-weight: 700; text-transform: uppercase; letter-spacing: .06em; color: var(--xp-red); line-height: 1.3; }
 .xp-phase-label { font-size: .69rem; font-weight: 600; color: #666; line-height: 1.35; max-width: 96px; }
 .xp-phase-detail {
   display: none;
@@ -378,10 +413,11 @@ body { overflow-x: hidden; }
 .xp-artifact-card h4 { font-size: .73rem; font-weight: 800; text-transform: uppercase; letter-spacing: .08em; color: var(--xp-forest); margin: 0 0 6px; }
 .xp-artifact-card p { font-size: .79rem; color: #555; line-height: 1.6; margin: 0; }
 
-/* ---- SYNTHESIS BLOCK ---- */
+/* ---- SYNTHESIS BLOCK (light) ---- */
 .xp-synth-block {
-  background: #0e0e0e;
-  color: rgba(255,255,255,.8);
+  background: var(--xp-light);
+  color: #333;
+  border-left: 4px solid var(--xp-gold);
   border-radius: var(--xp-r);
   padding: 1.6rem 2rem;
   margin: 1.2rem 0;
@@ -389,7 +425,7 @@ body { overflow-x: hidden; }
   line-height: 1.72;
 }
 .xp-synth-block p { margin: 0; }
-.xp-synth-block strong { color: var(--xp-gold); }
+.xp-synth-block strong { color: var(--xp-red); }
 
 /* ---- GALLERY ---- */
 .xp-gallery { columns: 2 240px; column-gap: 12px; margin: 1.5rem 0; }
@@ -430,6 +466,37 @@ body { overflow-x: hidden; }
   border: 1px solid var(--xp-border);
 }
 
+/* ---- CALL TO ACTION ---- */
+.xp-cta {
+  background: linear-gradient(135deg, var(--xp-red) 0%, #5a1129 100%);
+  border-radius: var(--xp-r);
+  padding: 2.5rem 2.2rem;
+  text-align: center;
+  margin: 3rem 0;
+}
+.xp-cta h2 { color: #fff; font-size: 1.4rem; font-weight: 800; margin: 0 0 .6rem; }
+.xp-cta p  { color: rgba(255,255,255,.82); font-size: .92rem; line-height: 1.7; margin: 0 0 1rem; max-width: 560px; margin-left: auto; margin-right: auto; }
+.xp-cta a.xp-cta-link {
+  display: inline-block;
+  background: var(--xp-gold);
+  color: #111;
+  font-weight: 800;
+  font-size: .82rem;
+  letter-spacing: .06em;
+  padding: 10px 24px;
+  border-radius: 22px;
+  text-decoration: none;
+  margin: 0 6px 8px;
+  transition: transform .18s, box-shadow .18s;
+}
+.xp-cta a.xp-cta-link:hover { transform: translateY(-2px); box-shadow: 0 6px 18px rgba(0,0,0,.25); }
+.xp-cta a.xp-cta-link.outline {
+  background: transparent;
+  color: #fff;
+  border: 2px solid rgba(255,255,255,.5);
+}
+.xp-cta a.xp-cta-link.outline:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
 /* ---- SIDENAV ---- */
 .xp-sidenav {
   position: fixed; left: 16px; top: 50%;
@@ -448,35 +515,13 @@ body { overflow-x: hidden; }
 .xp-sidenav a.xpa,
 .xp-sidenav a:hover { color: var(--xp-red); font-weight: 700; }
 @media (max-width: 1320px) { .xp-sidenav { display: none; } }
-
-/* ---- DARK MODE ---- */
-@media (prefers-color-scheme: dark) {
-  .xp-section h2 { color: #eee; }
-  .xp-frame-banner { background: #080808; }
-  .xp-arch-wrap { background: #161616; }
-  .xp-resp-item { background: #1a1a1a; color: #ccc; }
-  .xp-matrix th { background: #111; }
-  .xp-matrix td:first-child { color: #ddd; }
-  .xp-phase-circle { background: #1a1a1a; border-color: #333; color: #666; box-shadow: 0 0 0 4px #0e0e0e; }
-  .xp-phase-detail { background: #111; color: #bbb; border-color: #2a2a2a; }
-  .xp-analysis-divider { background: #2a2a2a; }
-  .xp-analysis-panel p { color: #bbb; }
-  .xp-phases li { color: #bbb; border-color: #222; }
-  .xp-artifact-card { background: #1a1a1a; }
-  .xp-artifact-card p { color: #aaa; }
-  .xp-synth-block { background: #080808; }
-  .xp-pull { color: #ddd; }
-  .xp-body p { color: #bbb; }
-  .xp-tag { background: #1e1e1e; color: #999; border-color: #2a2a2a; }
-  .xp-label { background: rgba(255,198,39,.1); }
-}
 </style>
 
 <!-- Side Navigation -->
 <nav class="xp-sidenav" aria-label="Page sections">
   <a href="#xp-top">Top</a>
-  <a href="#xp-lens">Lens</a>
-  <a href="#xp-arch">Architecture</a>
+  <a href="#xp-lens">Context</a>
+  <a href="#xp-arch">Design</a>
   <a href="#xp-role">My Role</a>
   <a href="#xp-matrix">Framework</a>
   <a href="#xp-tl">Timeline</a>
@@ -484,6 +529,7 @@ body { overflow-x: hidden; }
   <a href="#xp-rec">Synthesis</a>
   <a href="#xp-gal">Gallery</a>
   <a href="#xp-ref">Reflection</a>
+  <a href="#xp-cta">Contact</a>
 </nav>
 
 <!-- ═══ HERO ═══════════════════════════════════════ -->
@@ -505,8 +551,8 @@ body { overflow-x: hidden; }
 <!-- ═══ LENS ════════════════════════════════════════ -->
 <div id="xp-lens" class="xp-reveal" style="scroll-margin-top:80px;">
 <div class="xp-frame-banner">
-  <p class="xp-frame-lead">While this is a program evaluation of a fellowship, I&rsquo;m presenting it as product research.</p>
-  <p class="xp-frame-body">The platform (Xplorlabs.org) the fellowship was based on  is a suite of open-access STEM safety science resources developed by UL Research Institutes for educators across the US annually. The Fellowship was structured to onboard and move educators from awareness to active classroom integration. My job was to understand whether that adoption actually changed how educators taught, and what role the platform played in that change. I treated educators as the users, their classrooms as the use context, and the fellowship experience as the adoption journey. To offer a comprehensive insight for the stakeholders and teams, I used both quantitative and qualitative. For this project, I took the mindset is researcher-as-listener mindset.</p>
+  <p class="xp-frame-body">The platform (Xplorlabs.org) the fellowship was based on is a suite of open-access STEM safety science resources developed by UL Research Institutes for educators across the US annually. The Fellowship was structured to onboard and move educators from awareness to active classroom integration. My job was to understand whether that adoption actually changed how educators taught, and what role the platform played in that change. I treated educators as the users, their classrooms as the use context, and the fellowship experience as the adoption journey. To offer a comprehensive insight for the stakeholders and teams, I used both quantitative and qualitative methods. For this project, I took the mindset of researcher-as-listener. Importantly, I worked within a team and duly acknowledge that!</p>
+  <p class="xp-frame-ps">PS: While this is a program evaluation of a fellowship, I&rsquo;m presenting it as product research.</p>
 </div>
 </div>
 
@@ -514,50 +560,62 @@ body { overflow-x: hidden; }
 <div id="xp-arch" class="xp-section xp-reveal" style="scroll-margin-top:80px;">
 <span class="xp-label">The Design</span>
 <h2>How the Strands Connect</h2>
-<p style="font-size:.9rem;color:#666;margin-bottom:1.2rem;">Three independent data streams, each designed to answer a different kind of question about the adoption journey, converge into a single synthesis. The diagram animates when you scroll to it.</p>
+<p style="font-size:.9rem;color:#555;margin-bottom:1.2rem;">Three independent data streams, each answering a different kind of question about the adoption journey, funnel into a single synthesis. The diagram draws itself as you scroll to it.</p>
 
 <div class="xp-arch-wrap" id="xp-arch-el">
-<svg viewBox="0 0 900 200" xmlns="http://www.w3.org/2000/svg"
-     aria-label="Evaluation architecture: three data strands converging to synthesis">
+<svg viewBox="0 0 760 296" xmlns="http://www.w3.org/2000/svg"
+     aria-label="Three evaluation strands converging to synthesis">
 
-  <text x="6" y="54"  font-size="12" font-weight="700" fill="#8C1D40" font-family="-apple-system,sans-serif">Survey</text>
-  <text x="6" y="103" font-size="12" font-weight="700" fill="#1a3a5c" font-family="-apple-system,sans-serif">Interviews</text>
-  <text x="6" y="152" font-size="12" font-weight="700" fill="#1e5631" font-family="-apple-system,sans-serif">Artifacts</text>
+  <!-- Pill headers -->
+  <g class="xp-pill p0">
+    <rect x="28" y="14" width="166" height="36" rx="18" fill="#8C1D40"/>
+    <text x="111" y="37" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="-apple-system,sans-serif">Survey</text>
+  </g>
+  <g class="xp-pill p1">
+    <rect x="297" y="14" width="166" height="36" rx="18" fill="#1a3a5c"/>
+    <text x="380" y="37" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="-apple-system,sans-serif">Interviews</text>
+  </g>
+  <g class="xp-pill p2">
+    <rect x="566" y="14" width="166" height="36" rx="18" fill="#1e5631"/>
+    <text x="649" y="37" text-anchor="middle" font-size="13" font-weight="800" fill="#fff" font-family="-apple-system,sans-serif">Artifacts</text>
+  </g>
 
-  <line class="xp-strand strand-s" x1="90" y1="50"  x2="690" y2="50"
-        stroke="#8C1D40" stroke-width="2.5" stroke-dasharray="600" stroke-dashoffset="600"/>
-  <line class="xp-strand strand-i" x1="90" y1="100" x2="690" y2="100"
-        stroke="#1a3a5c" stroke-width="2.5" stroke-dasharray="600" stroke-dashoffset="600"/>
-  <line class="xp-strand strand-a" x1="90" y1="150" x2="690" y2="150"
-        stroke="#1e5631" stroke-width="2.5" stroke-dasharray="600" stroke-dashoffset="600"/>
+  <!-- Vertical strand lines -->
+  <line class="xp-vline vl-s" x1="111" y1="50" x2="111" y2="180" stroke="#8C1D40" stroke-width="2.5"/>
+  <line class="xp-vline vl-i" x1="380" y1="50" x2="380" y2="148" stroke="#1a3a5c" stroke-width="2.5"/>
+  <line class="xp-vline vl-a" x1="649" y1="50" x2="649" y2="180" stroke="#1e5631" stroke-width="2.5"/>
 
-  <circle class="xp-node-c ns1" cx="200" cy="50"  r="7" fill="#8C1D40"/>
-  <text   class="xp-node-t ns1" x="200" y="36"  text-anchor="middle" fill="#8C1D40" font-family="-apple-system,sans-serif">Baseline</text>
-  <circle class="xp-node-c ns2" cx="430" cy="50"  r="7" fill="#8C1D40"/>
-  <text   class="xp-node-t ns2" x="430" y="36"  text-anchor="middle" fill="#8C1D40" font-family="-apple-system,sans-serif">Mid-year</text>
-  <circle class="xp-node-c ns3" cx="660" cy="50"  r="7" fill="#8C1D40"/>
-  <text   class="xp-node-t ns3" x="660" y="36"  text-anchor="middle" fill="#8C1D40" font-family="-apple-system,sans-serif">Post-program</text>
+  <!-- Survey milestones -->
+  <circle class="xp-mnode ms0" cx="111" cy="88"  r="6" fill="#8C1D40"/>
+  <text   class="xp-mtext ms0" x="118" y="92"  fill="#8C1D40">Baseline</text>
+  <circle class="xp-mnode ms1" cx="111" cy="126" r="6" fill="#8C1D40"/>
+  <text   class="xp-mtext ms1" x="118" y="130" fill="#8C1D40">Mid-year</text>
+  <circle class="xp-mnode ms2" cx="111" cy="164" r="6" fill="#8C1D40"/>
+  <text   class="xp-mtext ms2" x="118" y="168" fill="#8C1D40">Post-program</text>
 
-  <circle class="xp-node-c ni1" cx="200" cy="100" r="7" fill="#1a3a5c"/>
-  <text   class="xp-node-t ni1" x="200" y="120" text-anchor="middle" fill="#1a3a5c" font-family="-apple-system,sans-serif">Protocol design</text>
-  <circle class="xp-node-c ni2" cx="660" cy="100" r="7" fill="#1a3a5c"/>
-  <text   class="xp-node-t ni2" x="660" y="120" text-anchor="middle" fill="#1a3a5c" font-family="-apple-system,sans-serif">Focus groups</text>
+  <!-- Interview milestones -->
+  <circle class="xp-mnode mi0" cx="380" cy="90"  r="6" fill="#1a3a5c"/>
+  <text   class="xp-mtext mi0" x="270" y="94"  text-anchor="end" fill="#1a3a5c">Protocol design</text>
+  <circle class="xp-mnode mi1" cx="380" cy="130" r="6" fill="#1a3a5c"/>
+  <text   class="xp-mtext mi1" x="270" y="134" text-anchor="end" fill="#1a3a5c">Focus groups</text>
 
-  <circle class="xp-node-c na1" cx="200" cy="150" r="7" fill="#1e5631"/>
-  <text   class="xp-node-t na1" x="200" y="168" text-anchor="middle" fill="#1e5631" font-family="-apple-system,sans-serif">Coding scheme</text>
-  <circle class="xp-node-c na2" cx="430" cy="150" r="7" fill="#1e5631"/>
-  <text   class="xp-node-t na2" x="430" y="168" text-anchor="middle" fill="#1e5631" font-family="-apple-system,sans-serif">Iteration</text>
-  <circle class="xp-node-c na3" cx="660" cy="150" r="7" fill="#1e5631"/>
-  <text   class="xp-node-t na3" x="660" y="168" text-anchor="middle" fill="#1e5631" font-family="-apple-system,sans-serif">Final artifacts</text>
+  <!-- Artifact milestones -->
+  <circle class="xp-mnode ma0" cx="649" cy="88"  r="6" fill="#1e5631"/>
+  <text   class="xp-mtext ma0" x="642" y="92"  text-anchor="end" fill="#1e5631">Coding scheme</text>
+  <circle class="xp-mnode ma1" cx="649" cy="126" r="6" fill="#1e5631"/>
+  <text   class="xp-mtext ma1" x="642" y="130" text-anchor="end" fill="#1e5631">Iteration</text>
+  <circle class="xp-mnode ma2" cx="649" cy="164" r="6" fill="#1e5631"/>
+  <text   class="xp-mtext ma2" x="642" y="168" text-anchor="end" fill="#1e5631">Final artifacts</text>
 
-  <line class="xp-conv" x1="690" y1="50"  x2="845" y2="100" stroke="#8C1D40" stroke-width="2" stroke-dasharray="4 3"/>
-  <line class="xp-conv" x1="690" y1="100" x2="845" y2="100" stroke="#1a3a5c" stroke-width="2" stroke-dasharray="4 3"/>
-  <line class="xp-conv" x1="690" y1="150" x2="845" y2="100" stroke="#1e5631" stroke-width="2" stroke-dasharray="4 3"/>
+  <!-- Converging lines -->
+  <line class="xp-conv2" x1="111" y1="182" x2="380" y2="244" stroke="#8C1D40" stroke-width="2" stroke-dasharray="5 3"/>
+  <line class="xp-conv2" x1="380" y1="150" x2="380" y2="244" stroke="#1a3a5c" stroke-width="2" stroke-dasharray="5 3"/>
+  <line class="xp-conv2" x1="649" y1="182" x2="380" y2="244" stroke="#1e5631" stroke-width="2" stroke-dasharray="5 3"/>
 
-  <circle class="xp-synth" cx="862" cy="100" r="36" fill="#0e0e0e"/>
-  <circle class="xp-synth" cx="862" cy="100" r="28" fill="none" stroke="#FFC627" stroke-width="1.5" opacity=".55"/>
-  <text class="xp-synth" x="862" y="96"  text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff" font-family="-apple-system,sans-serif">SYNTH</text>
-  <text class="xp-synth" x="862" y="110" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff" font-family="-apple-system,sans-serif">ESIS</text>
+  <!-- Synthesis node -->
+  <circle class="xp-synth2" cx="380" cy="264" r="28" fill="#8C1D40"/>
+  <circle class="xp-synth2" cx="380" cy="264" r="22" fill="none" stroke="#FFC627" stroke-width="1.8"/>
+  <text class="xp-synth2" x="380" y="268" text-anchor="middle" font-size="11" font-weight="900" fill="#fff" font-family="-apple-system,sans-serif" letter-spacing=".06em">SYNTHESIS</text>
 </svg>
 </div>
 </div>
@@ -568,7 +626,7 @@ body { overflow-x: hidden; }
 <div id="xp-role" class="xp-section">
 <span class="xp-label">My Role</span>
 <h2 class="xp-reveal">Product Evaluation Researcher</h2>
-<p class="xp-reveal d1" style="font-size:.95rem;line-height:1.75;color:#444;">I was involved in the program from day one and present at key events as a member of the cross-institutional evaluation team at Arizona State University, observing the fellowship unfold in real time, while simultaneously co-designing the instruments to measure it. That dual position is both a methodological advantage and a discipline problem: I saw things no survey captures or even interviews cannot, but I also developed opinions. My job, however, was to use the former and manage the latter.</p>
+<p class="xp-reveal d1" style="font-size:.95rem;line-height:1.75;color:#444;">I was involved in the program from day one and present at key events as a member of the cross-institutional evaluation team at Arizona State University, observing the fellowship unfold in real time, while simultaneously co-designing the instruments to measure it. That dual position is both a methodological advantage and a discipline problem: I saw things none of our surveys captured and neither did the interviews help. What eventually helped was my active engagement with the participant every step of the way. I had sufficient context for most of the questions that made us scratch our heads.</p>
 <p class="xp-reveal d2" style="font-size:.95rem;line-height:1.75;color:#444;margin-bottom:1.4rem;">My responsibilities included the full product research lifecycle including but not limited to co-authoring the evaluation logic model to running analysis pipelines and writing the final stakeholder report. I will now share what my experience was like:</p>
 
 <div class="xp-resp-grid">
@@ -585,68 +643,20 @@ body { overflow-x: hidden; }
 
 <hr class="xp-divider">
 
-<!-- ═══ METHODS MATRIX ═══════════════════════════════ -->
+<!-- ═══ METHODS FRAMEWORK (interactive burst chart) ══ -->
 <div id="xp-matrix" class="xp-section xp-reveal">
 <span class="xp-label">Research Framework</span>
 <h2>What Each Method Was Built to Answer</h2>
-<p style="font-size:.9rem;color:#666;margin-bottom:1.2rem;">The evaluation framework organized inquiry across four dimensions of the educator adoption experience: <strong>Confidence</strong>, <strong>Attitudes</strong>, <strong>Knowledge</strong>, and <strong>Application</strong>. Each method was chosen because it addressed something the others could not. Hover a row.</p>
+<p style="font-size:.9rem;color:#555;margin-bottom:1.4rem;">I organized my inquiry across four dimensions of the educator adoption experience: <strong>Confidence</strong>, <strong>Attitudes</strong>, <strong>Knowledge</strong>, and <strong>Application</strong>. Each method was chosen because it addressed something the others could not. <strong>Click or tap a segment</strong> to explore what each method covers.</p>
 
-<div class="xp-matrix-wrap">
-<table class="xp-matrix">
-  <thead>
-    <tr>
-      <th>Method</th>
-      <th>Confidence</th>
-      <th>Attitudes</th>
-      <th>Knowledge</th>
-      <th>Application</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td><span class="xp-mbadge" style="background:var(--xp-red)"></span>T-STEM Survey</td>
-      <td><span class="xp-dot m1"></span></td>
-      <td><span class="xp-dot m1"></span></td>
-      <td><span class="xp-dot m1"></span></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td><span class="xp-mbadge" style="background:var(--xp-navy)"></span>Focus Group Interviews</td>
-      <td><span class="xp-dot m2"></span></td>
-      <td><span class="xp-dot m2"></span></td>
-      <td><span class="xp-dot m2"></span></td>
-      <td><span class="xp-dot m2"></span></td>
-    </tr>
-    <tr>
-      <td><span class="xp-mbadge" style="background:var(--xp-forest)"></span>Artifact Analysis</td>
-      <td></td>
-      <td></td>
-      <td><span class="xp-dot m3"></span></td>
-      <td><span class="xp-dot m3"></span></td>
-    </tr>
-    <tr>
-      <td><span class="xp-mbadge" style="background:#b75a00"></span>Welch&rsquo;s t-Tests (R)</td>
-      <td><span class="xp-dot m4"></span></td>
-      <td></td>
-      <td><span class="xp-dot m4"></span></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td><span class="xp-mbadge" style="background:#5b2c8b"></span>Thematic Analysis</td>
-      <td><span class="xp-dot m5"></span></td>
-      <td><span class="xp-dot m5"></span></td>
-      <td><span class="xp-dot m5"></span></td>
-      <td><span class="xp-dot m5"></span></td>
-    </tr>
-    <tr>
-      <td><span class="xp-mbadge" style="background:#2c6e87"></span>Logic Model Framework</td>
-      <td></td>
-      <td></td>
-      <td><span class="xp-dot m6"></span></td>
-      <td><span class="xp-dot m6"></span></td>
-    </tr>
-  </tbody>
-</table>
+<div class="xp-burst-wrap">
+  <div>
+    <svg id="xp-burst-svg" viewBox="0 0 280 280" aria-label="Interactive method coverage chart"></svg>
+    <div class="xp-burst-legend" id="xp-burst-legend"></div>
+  </div>
+  <div class="xp-burst-detail" id="xp-burst-detail">
+    <p style="color:#aaa;font-size:.85rem;margin:0;padding-top:.5rem;">Select a segment or a method in the legend to see what dimensions it covers and how I used it.</p>
+  </div>
 </div>
 </div>
 
@@ -656,7 +666,7 @@ body { overflow-x: hidden; }
 <div id="xp-tl" class="xp-section xp-reveal">
 <span class="xp-label">Evaluation Timeline</span>
 <h2>Twelve Months of Data Collection</h2>
-<p style="font-size:.9rem;color:#666;margin-bottom:1.5rem;">Click a phase to see what data collection and product research work happened at each stage.</p>
+<p style="font-size:.9rem;color:#555;margin-bottom:1.5rem;">Click a phase to see what data collection and product research work I did at each stage.</p>
 
 <div class="xp-tl-rail">
   <button class="xp-phase-btn" onclick="xpPh(0,this)">
@@ -696,13 +706,13 @@ body { overflow-x: hidden; }
   </button>
 </div>
 
-<div class="xp-phase-detail" id="xppd0"><strong>Pre-adoption baseline.</strong> The pre-program T-STEM survey was deployed at the virtual kickoff, establishing baseline measures across all four adoption dimensions. Field notes from the onboarding session helped contextualize early instrument responses and identify items that needed refinement before subsequent checkpoints.</div>
-<div class="xp-phase-detail" id="xppd1"><strong>Field observation, Tempe, Arizona.</strong> I attended the three-day in-person Fellowship Summit, co-facilitating a lab tour for participants while collecting detailed observational notes. Being present at this event gave me the contextual grounding to interpret survey responses accurately later, and directly shaped the focus group protocols I designed for year-end participant interviews.</div>
-<div class="xp-phase-detail" id="xppd2"><strong>Participant engagement, Atlanta, Georgia.</strong> At a three-day research convening, I facilitated a structured reflection session with program participants, documenting how direct engagement with safety science research was influencing their instructional thinking and their relationship to the platform. This fed directly into the qualitative strand.</div>
+<div class="xp-phase-detail" id="xppd0"><strong>Pre-adoption baseline.</strong> The pre-program T-STEM survey was sent out at the virtual kickoff, establishing baseline measures across all four adoption dimensions. Field notes from the onboarding session helped contextualize early instrument responses and identify items that needed refinement before subsequent checkpoints.</div>
+<div class="xp-phase-detail" id="xppd1"><strong>Field observation, Tempe, Arizona.</strong> I attended the three-day in-person Fellowship Summit, co-facilitating a lab tour for participants while collecting detailed observational notes. Being present at this event gave me the contextual grounding to interpret survey responses later, and shaped the focus group protocols I co-designed for year-end participant interviews.</div>
+<div class="xp-phase-detail" id="xppd2"><strong>Participant engagement, Atlanta, Georgia.</strong> At a three-day research symposium, I co-facilitated a structured reflection session with program participants, documenting how direct engagement with safety science research was influencing their instructional thinking and their relationship to the platform.</div>
 <div class="xp-phase-detail" id="xppd3"><strong>Longitudinal qualitative touchpoints.</strong> Monthly virtual community sessions served as ongoing observation points across the program year, tracking shifts in how participants talked about the platform, their confidence in using it, and how their instructional designs evolved through the artifact checkpoints submitted each month.</div>
-<div class="xp-phase-detail" id="xppd4"><strong>Post-adoption survey and structured focus groups.</strong> The post-program T-STEM survey was deployed, and I facilitated structured focus group sessions with both participant cohorts. Protocols were designed to surface the mechanisms behind adoption changes, and not just what changed, but what drove it and how participants planned to sustain it.</div>
-<div class="xp-phase-detail" id="xppd5"><strong>Final artifact collection.</strong> I attended the in-person celebration where participants showcased completed instructional artifacts in a gallery walk. Collecting final versions here completed the longitudinal artifact record, covering first draft through final version, for every participant, across the full adoption arc.</div>
-<div class="xp-phase-detail" id="xppd6"><strong>Full analysis pipeline.</strong> Ran Welch&rsquo;s t-tests and descriptive statistics in R with ggplot2 visualizations. Applied Braun &amp; Clarke&rsquo;s six-phase thematic analysis to all interview transcripts. Coded instructional artifacts using the pre-developed scheme. Synthesized across all three strands, organized by evaluation question, to produce the final report.</div>
+<div class="xp-phase-detail" id="xppd4"><strong>Post-adoption survey and structured focus groups.</strong> The post-program T-STEM survey was administered, and I co-facilitated structured focus group sessions with both participant cohorts. Protocols were designed to surface what drove adoption changes and how participants planned to sustain it.</div>
+<div class="xp-phase-detail" id="xppd5"><strong>Final artifact collection.</strong> I attended the in-person celebration where participants showcased completed instructional artifacts in a gallery walk. Collecting final versions here completed the longitudinal artifact record, covering first draft through final version, for every participant.</div>
+<div class="xp-phase-detail" id="xppd6"><strong>I ran the full analysis pipeline.</strong> I ran Welch&rsquo;s t-tests and descriptive statistics in R with ggplot2 visualizations. I also applied Braun &amp; Clarke&rsquo;s six-phase thematic analysis to all interview transcripts. Instructional artifacts were also coded using the pre-developed scheme. I then synthesized across all three strands, organized by evaluation question, to produce the final report.</div>
 </div>
 
 <hr class="xp-divider">
@@ -711,13 +721,13 @@ body { overflow-x: hidden; }
 <div id="xp-an" class="xp-section xp-reveal">
 <span class="xp-label">Analysis Pipeline</span>
 <h2>Running the Numbers &amp; the Themes in Parallel</h2>
-<p style="font-size:.9rem;color:#666;margin-bottom:1.5rem;">Both strands ran simultaneously, each informing how I interpreted the other. The quantitative data told me <em>what</em> changed in educators&rsquo; relationship to the platform. The qualitative data told me <em>why it mattered</em> to the people living through it.</p>
+<p style="font-size:.9rem;color:#555;margin-bottom:1.5rem;">Both strands ran simultaneously, each informing how I interpreted the other. The quantitative data showed <em>what</em> changed in educators&rsquo; work using the platform. The qualitative data told me <em>why it mattered</em> to the people living through it.</p>
 
 <div class="xp-analysis-grid">
   <div class="xp-analysis-panel">
     <span class="xp-analysis-head quant">Quantitative</span>
-    <p><strong>Instrument adaptation.</strong> I mapped T-STEM&rsquo;s existing items to the Fellowship&rsquo;s content domains (safety science, sustainability, Action-Oriented Pedagogies, and platform resources) and wrote new items for constructs the original scale didn&rsquo;t cover. This required reading the program&rsquo;s logic model alongside the instrument&rsquo;s validation literature to make principled decisions about what to preserve and what to adapt.</p>
-    <p><strong>Statistical pipeline.</strong> I selected Welch&rsquo;s independent samples t-test because it does not assume equal variance, a more defensible choice for this participant profile than the standard alternative. Before running any inferential tests, I generated descriptive statistics and exploratory boxplots to examine distributions and flag anomalies that could affect interpretation.</p>
+    <p><strong>Instrument adaptation.</strong> I worked with the team to map T-STEM&rsquo;s existing items to the Fellowship&rsquo;s content domains (safety science, sustainability, Action-Oriented Pedagogies, and platform resources) and co-wrote new items for constructs the original scale didn&rsquo;t cover. This required reading the program&rsquo;s logic model alongside the instrument&rsquo;s validation literature to make principled decisions about what to preserve and what to adapt.</p>
+    <p><strong>Statistical pipeline.</strong> After discussing with my supervisors and presenting the analysis techniques I would suggest, I went on to use Welch&rsquo;s independent samples t-test because it does not assume equal variance, which of course was a more defensible choice for this participant profile than the standard alternative. Before running any inferential tests, I generated descriptive statistics and exploratory boxplots to examine distributions and flag anomalies that could affect interpretation.</p>
     {% include figure.liquid loading="eager" path="assets/img/xplorlabs_ranalysis.png" title="R analysis environment" class="img-fluid rounded" %}
     <p style="font-size:.73rem;color:#888;margin-top:6px;line-height:1.5;">R environment: survey data pipeline, Welch&rsquo;s t-test code, and a pre/post confidence boxplot. Statistical values redacted.</p>
   </div>
@@ -726,7 +736,7 @@ body { overflow-x: hidden; }
 
   <div class="xp-analysis-panel">
     <span class="xp-analysis-head qual">Qualitative</span>
-    <p><strong>Reflexive thematic analysis.</strong> I applied Braun &amp; Clarke&rsquo;s six-phase framework to all focus group transcripts. This is not a mechanical coding procedure. It requires genuine engagement with the data at every step and a willingness to return to earlier phases when new readings reveal patterns underweighted the first time.</p>
+    <p><strong>Reflexive thematic analysis.</strong> I applied Braun &amp; Clarke&rsquo;s six-phase framework to all focus group transcripts. This requires deep engagement with the data at every step and a willingness to return to earlier phases when new readings reveal patterns underweighted the first time.</p>
     <ol class="xp-phases">
       <li><strong>Familiarization:</strong> Multiple transcript readings before any coding. Resisting premature closure.</li>
       <li><strong>Initial coding:</strong> Line-by-line inductive coding across the full dataset.</li>
@@ -738,7 +748,7 @@ body { overflow-x: hidden; }
   </div>
 </div>
 
-<p style="font-size:.88rem;color:#666;margin-top:1.5rem;"><strong>Artifact analysis</strong> served as the third lens, coding educator-produced instructional documents across multiple versions per participant to trace how their platform integration evolved. When survey and interview data told different stories, the artifacts provided the third point of evidence that resolved the tension, or confirmed that both patterns were real in different participant subgroups.</p>
+<p style="font-size:.88rem;color:#555;margin-top:1.5rem;"><strong>Artifact analysis</strong> served as the third lens, coding educator-produced instructional documents across multiple versions per participant to trace how their platform integration evolved. When survey and interview data told different stories, the artifacts provided the third point of evidence that resolved the tension, or confirmed that both patterns were real in different participant subgroups.</p>
 
 <div class="xp-artifact-row">
   <div class="xp-artifact-card"><h4>Coding Scheme</h4><p>Built from the logic model, with dimensions including content alignment, pedagogical approach, and platform resource integration.</p></div>
@@ -757,7 +767,7 @@ body { overflow-x: hidden; }
 <p style="font-size:.95rem;line-height:1.75;color:#444;margin-bottom:1.2rem;">I approached this by organizing the synthesis around each evaluation question, assembling evidence from all three strands before drawing any conclusion, then framing recommendations explicitly in the program&rsquo;s own logic model so stakeholders could engage with them without having to re-learn the research vocabulary.</p>
 
 <div class="xp-synth-block">
-  <p>Convergence across strands <strong>raised confidence</strong> in a pattern. Divergence <strong>prompted investigation</strong>: did two sources disagree because they were measuring different things, or because one had a limitation the other did not? The answer shaped both the conclusion and the recommendation that followed it.</p>
+  <p>Convergence across strands <strong>raised my confidence</strong> in a pattern. Divergence <strong>prompted investigation</strong>: did two sources disagree because they were measuring different things, or because one had a limitation the other did not? The answer shaped both the conclusion and the recommendation that followed it.</p>
 </div>
 
 <p style="font-size:.95rem;line-height:1.75;color:#444;margin-top:1.2rem;">Recommendations were written to influence program strategy, naming what to change in the platform&rsquo;s onboarding model, what to sustain, and what to examine more closely in the next adoption cycle. The goal was to give decision-makers evidence they could act on, not just a report they could file.</p>
@@ -769,20 +779,20 @@ body { overflow-x: hidden; }
 <div id="xp-presenting" class="xp-section xp-reveal">
 <span class="xp-label">Stakeholder Communication</span>
 <h2>Presenting to the People Who Make the Decisions</h2>
-<p style="font-size:.95rem;line-height:1.75;color:#444;margin-bottom:1.4rem;">The final evaluation was prepared for product and program leadership. This required a deliberate translation step, moving from the vocabulary of research methods to the vocabulary of product design and program improvement. What you foreground, and what you relegate to the appendix, is itself a research judgment.</p>
+<p style="font-size:.95rem;line-height:1.75;color:#444;margin-bottom:1.4rem;">The final evaluation was prepared for product and program leadership. This required a deliberate translation step, moving from the vocabulary of research methods to the vocabulary of product design and program improvement. Importantly, different participants applied what they learned from the fellowship in their unique context, as such, the presentation images (left panel) while still about safety science, does not immediately look like it without checking other slides.</p>
 
 <div class="row">
   <div class="col-sm mt-3 mt-md-0">
-    {% include figure.liquid loading="eager" path="assets/img/xplorlabs_presenting.jpg" title="Facilitating a reflection session at a research symposium" class="img-fluid rounded z-depth-1" %}
-    <p style="font-size:.74rem;color:#888;margin-top:6px;line-height:1.45;">Facilitating a structured reflection session with program participants at a national safety science research convening, Atlanta, GA.</p>
+    {% include figure.liquid loading="eager" path="assets/img/xplorlabs_presenting.jpg" title="Giving a presentation as AZSTA, Mesa, Arizona" class="img-fluid rounded z-depth-1" %}
+    <p style="font-size:.74rem;color:#888;margin-top:6px;line-height:1.45;">Giving a presentation as AZSTA, Mesa, Arizona.</p>
   </div>
   <div class="col-sm mt-3 mt-md-0">
     {% include figure.liquid loading="eager" path="assets/img/xplorlabs_podium.jpg" title="Presenting research at a professional conference" class="img-fluid rounded z-depth-1" %}
-    <p style="font-size:.74rem;color:#888;margin-top:6px;line-height:1.45;">Presenting research at a professional academic venue, demonstrating the same communication skills that make an evaluation report land with product stakeholders.</p>
+    <p style="font-size:.74rem;color:#888;margin-top:6px;line-height:1.45;">Also presenting alongside participants at NSTA in Philadelphia.</p>
   </div>
 </div>
 
-<p style="font-size:.95rem;line-height:1.75;color:#444;margin-top:1.4rem;">I organized the stakeholder presentation around the evaluation questions and logic model that had framed the work from the beginning, giving the audience a scaffold they already owned. Where the data told a more complex story than a clean summary would convey, I made that complexity explicit and showed what it meant for future product and program decisions. Good research storytelling does not hide complexity; it makes complexity navigable.</p>
+<p style="font-size:.95rem;line-height:1.75;color:#444;margin-top:1.4rem;">I focused the stakeholder presentation around the evaluation questions and logic model that had framed the work from the beginning. Where the data told a more complex story than a clean summary would convey, I made that complexity explicit and showed what it meant for future product and program decisions in the form of recommendations. Unfortunately, I cannot share the findings and will leave this section here.</p>
 </div>
 
 <hr class="xp-divider">
@@ -796,7 +806,7 @@ body { overflow-x: hidden; }
 <div class="xp-gallery">
   <figure class="xp-gal-item">
     <img src="{{ '/assets/img/xplorlabs_workshop.jpg' | relative_url }}" alt="Educators in a hands-on science session at the Fellowship Summit" loading="lazy">
-    <figcaption class="xp-gal-cap">Educator-users engaged in a hands-on safety science session at the Fellowship Summit in Tempe, Arizona, a key field observation site for the qualitative data strand.</figcaption>
+    <figcaption class="xp-gal-cap">Participants engaged in a hands-on safety science session at the Fellowship Summit at UPenn; an exciting trip we all made all the way from Arizona to Philly. I did not eat Philly steaks unfortunately.</figcaption>
   </figure>
   <figure class="xp-gal-item">
     <img src="{{ '/assets/img/xplorlabs_ranalysis.png' | relative_url }}" alt="R analysis pipeline" loading="lazy">
@@ -804,11 +814,11 @@ body { overflow-x: hidden; }
   </figure>
   <figure class="xp-gal-item">
     <img src="{{ '/assets/img/xplorlabs_atlanta.jpg' | relative_url }}" alt="Atlanta, Georgia" loading="lazy">
-    <figcaption class="xp-gal-cap">Atlanta, Georgia, site of the national research convening where participants engaged directly with safety science and environmental health researchers.</figcaption>
+    <figcaption class="xp-gal-cap">Atlanta, Georgia, where we had the national research symposium.</figcaption>
   </figure>
   <figure class="xp-gal-item">
     <img src="{{ '/assets/img/xplorlabs_podium.jpg' | relative_url }}" alt="Presenting at a research conference" loading="lazy">
-    <figcaption class="xp-gal-cap">Presenting research at a professional academic conference, with the same communication discipline that makes product research findings useful to stakeholders.</figcaption>
+    <figcaption class="xp-gal-cap">Presenting research at NSTA, Philly.</figcaption>
   </figure>
 </div>
 </div>
@@ -821,13 +831,13 @@ body { overflow-x: hidden; }
 <h2>What I Carry Forward</h2>
 
 <blockquote class="xp-pull">
-  Product evaluation is user research with higher stakes and a harder audience. The educators are the users. The platform is the product. The logic model is the research question. The report is the deliverable. The job, in every case, is to understand people well enough to say something useful about them, and honest enough to say it even when it complicates the story the product team came in hoping to hear.
+  Product evaluation is user research with higher stakes and a harder audience. The participants are the users. The platform is the product. The logic model is the research question. The report is the deliverable. The job, in every case, is to understand people well enough to say something useful about them, and honest enough to say it even when it complicates the story the product team came in hoping to hear.
 </blockquote>
 
 <div class="xp-body">
   <p>This project clarified something I had suspected but not tested at this scale: the decisions that most shape an evaluation&rsquo;s validity are made before any data is collected. Which constructs to measure, which instrument to adapt, what to observe rather than quantify. Those choices ripple through everything that follows. Getting them right requires genuine familiarity with the product and its adoption context, not just command of the methodological toolkit.</p>
-  <p>Running quantitative and qualitative pipelines in parallel forces a kind of interpretive discipline you don&rsquo;t get from either method alone. When the two strands agreed, I gained confidence. When they disagreed, I had to sit with the tension until I understood why. That investigation almost always produced a more precise account of the adoption experience than either strand would have suggested on its own.</p>
-  <p>What I take into the next project is a sharper instinct for the translation problem: making research evidence legible and actionable to the people who need it to make product and program decisions. That is not a lesser version of research. It is where research earns its value.</p>
+  <p>Running quantitative and qualitative pipelines in parallel forces a kind of interpretive discipline you don&rsquo;t get from either method alone. When the two strands agreed, I gained confidence. Better still, I had less doubt. When they disagreed, I had to sit with the tension until I understood why. That investigation almost always produced a more precise account of the adoption experience than either strand would have suggested on its own. Even when both methods produce contesting results, that could also be valuable, but that was not the case for this project.</p>
+  <p>While I have led and participated in several month-long projects, this is the longest project I have been fully immersed in all the way; although I was part of the cohort before this particular one I am reporting about and also the one after it; I was not taking leading role in those. This was a one-shot opportunity.</p>
 </div>
 
 <div class="xp-tags">
@@ -846,6 +856,14 @@ body { overflow-x: hidden; }
 </div>
 </div>
 
+<!-- ═══ CALL TO ACTION ════════════════════════════════ -->
+<div id="xp-cta" class="xp-cta xp-reveal">
+  <h2>Let&rsquo;s Talk</h2>
+  <p>I am actively looking for <strong>UX Researcher</strong> or <strong>Research Scientist</strong> roles and would be happy to connect. If my work resonates with what your team is building, reach out at <strong>eadeloju[at]asu[dot]edu</strong>. You can also visit my homepage to see my full CV and other work.</p>
+  <a href="{{ '/' | relative_url }}" class="xp-cta-link outline">View My Homepage &amp; CV</a>
+  <a href="mailto:eadeloju@asu.edu" class="xp-cta-link">Get in Touch</a>
+</div>
+
 <script>
 (function(){
 
@@ -859,13 +877,12 @@ function fillHero(){
 fillHero();
 window.addEventListener('resize',fillHero);
 
-/* Typewriter */
-var lines=['A mixed-methods evaluation of educator platform adoption.','Told through the lens of product and UX research.'];
+/* Typewriter — single line only */
+var lines=['A mixed-methods program evaluation of educator platform adoption.'];
 var tw=document.getElementById('xp-tw'); var li=0,ci=0,txt='';
 function type(){
   if(!tw||li>=lines.length) return;
   if(ci<lines[li].length){ txt+=lines[li].charAt(ci++); tw.textContent=txt; setTimeout(type,34); }
-  else if(li<lines.length-1){ li++;ci=0;txt+=' '; setTimeout(type,400); }
 }
 setTimeout(type,700);
 
@@ -879,16 +896,139 @@ setTimeout(function(){ document.querySelectorAll('.xpc').forEach(countUp); },900
 /* Scroll reveal */
 var ro=new IntersectionObserver(function(entries){
   entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('xp-in'); ro.unobserve(e.target); } });
-},{threshold:0.12});
+},{threshold:0.10});
 document.querySelectorAll('.xp-reveal').forEach(function(el){ ro.observe(el); });
 
-/* SVG animation */
+/* SVG architecture animation */
 var arch=document.getElementById('xp-arch-el');
 if(arch){
   var ao=new IntersectionObserver(function(entries){
     entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('anim'); ao.unobserve(e.target); } });
-  },{threshold:0.3});
+  },{threshold:0.25});
   ao.observe(arch);
+}
+
+/* ---- INTERACTIVE BURST CHART ---- */
+var methods=[
+  {name:'T-STEM Survey',          short:'T-STEM',       color:'#8C1D40', dims:[1,1,1,0],
+   desc:'I adapted the validated T-STEM scale to measure educator confidence, attitudes, and knowledge at three time points across the program year. I added new items for constructs the original instrument did not cover.'},
+  {name:'Focus Group Interviews', short:'Focus Groups',  color:'#1a3a5c', dims:[1,1,1,1],
+   desc:'I designed and facilitated structured focus group sessions with both educator cohorts to surface adoption mechanisms, platform experience, and plans for sustained use after the fellowship ended.'},
+  {name:'Artifact Analysis',      short:'Artifacts',     color:'#1e5631', dims:[0,0,1,1],
+   desc:'I coded educator-produced instructional materials from first draft to final version to trace how platform integration evolved longitudinally across the program year.'},
+  {name:"Welch's t-Tests (R)",   short:'t-Tests (R)',   color:'#b75a00', dims:[1,0,1,0],
+   desc:'I ran independent-samples Welch\'s t-tests in R with ggplot2 visualizations to measure pre/post shifts without the equal-variance assumption, a more defensible choice for this participant profile.'},
+  {name:'Thematic Analysis',      short:'Thematic TA',  color:'#5b2c8b', dims:[1,1,1,1],
+   desc:'I applied Braun & Clarke\'s six-phase reflexive thematic analysis to all focus group transcripts, moving through familiarization, coding, theme generation, review, definition, and write-up.'},
+  {name:'Logic Model Framework',  short:'Logic Model',  color:'#2c6e87', dims:[0,0,1,1],
+   desc:'The program logic model served as my organizing framework, grounding evaluation questions in program theory and ensuring my recommendations were legible to program and product stakeholders.'}
+];
+var dimNames=['Confidence','Attitudes','Knowledge','Application'];
+var dimColors=['#8C1D40','#1a3a5c','#1e5631','#b75a00'];
+
+var svg=document.getElementById('xp-burst-svg');
+var legend=document.getElementById('xp-burst-legend');
+var detail=document.getElementById('xp-burst-detail');
+if(!svg||!legend||!detail) return;
+
+var NS='http://www.w3.org/2000/svg';
+var cx=140,cy=140,ro=128,ri=58,n=methods.length;
+var TAU=2*Math.PI, gap=0.03;
+var slices=[];
+
+function pt(a,r){ return [(cx+r*Math.cos(a)).toFixed(2),(cy+r*Math.sin(a)).toFixed(2)]; }
+
+function makePath(i,scale){
+  var seg=TAU/n, a0=-Math.PI/2+i*seg+gap/2, a1=a0+seg-gap;
+  var o0=pt(a0,ro*scale),o1=pt(a1,ro*scale),i1=pt(a1,ri*scale),i0=pt(a0,ri*scale);
+  return 'M'+o0.join(',')+'A'+(ro*scale)+','+(ro*scale)+' 0 0 1 '+o1.join(',')
+        +'L'+i1.join(',')+'A'+(ri*scale)+','+(ri*scale)+' 0 0 0 '+i0.join(',')+'Z';
+}
+
+methods.forEach(function(m,i){
+  var seg=TAU/n, a0=-Math.PI/2+i*seg+gap/2, a1=a0+seg-gap;
+  var mid=(a0+a1)/2, lr=(ro+ri)/2;
+
+  var path=document.createElementNS(NS,'path');
+  path.setAttribute('d',makePath(i,1));
+  path.setAttribute('fill',m.color);
+  path.setAttribute('opacity','0.82');
+  path.style.transition='d .18s ease, opacity .18s, transform .18s';
+  path.style.transformOrigin=cx+'px '+cy+'px';
+  path.style.cursor='pointer';
+  svg.appendChild(path);
+
+  /* short label inside slice — only if large enough (always 60deg so fine) */
+  var lx=(cx+lr*Math.cos(mid)).toFixed(1), ly=(cy+lr*Math.sin(mid)).toFixed(1);
+  var txt=document.createElementNS(NS,'text');
+  txt.setAttribute('x',lx); txt.setAttribute('y',ly);
+  txt.setAttribute('text-anchor','middle'); txt.setAttribute('dominant-baseline','middle');
+  txt.setAttribute('font-size','8.5'); txt.setAttribute('font-weight','800');
+  txt.setAttribute('fill','#fff'); txt.setAttribute('pointer-events','none');
+  txt.setAttribute('font-family','-apple-system,sans-serif');
+  /* break short name onto 2 lines if needed */
+  var words=m.short.split(' ');
+  if(words.length===1){
+    txt.textContent=words[0];
+  } else {
+    var t1=document.createElementNS(NS,'tspan');
+    t1.setAttribute('x',lx); t1.setAttribute('dy','-0.55em');
+    t1.textContent=words.slice(0,Math.ceil(words.length/2)).join(' ');
+    var t2=document.createElementNS(NS,'tspan');
+    t2.setAttribute('x',lx); t2.setAttribute('dy','1.2em');
+    t2.textContent=words.slice(Math.ceil(words.length/2)).join(' ');
+    txt.appendChild(t1); txt.appendChild(t2);
+  }
+  svg.appendChild(txt);
+  slices.push({path:path});
+
+  function activate(){
+    slices.forEach(function(s,j){
+      s.path.setAttribute('opacity', j===i ? '1' : '0.45');
+      s.path.style.transform = j===i ? 'scale(1.07)' : '';
+    });
+    showBurstDetail(i);
+  }
+  path.addEventListener('mouseenter',activate);
+  path.addEventListener('click',activate);
+
+  /* legend item */
+  var li=document.createElement('div');
+  li.className='xp-burst-leg-item';
+  li.innerHTML='<span class="xp-burst-leg-swatch" style="background:'+m.color+'"></span>'+m.name;
+  li.addEventListener('click',function(){ activate(); });
+  legend.appendChild(li);
+});
+
+/* center label */
+var cTxt=document.createElementNS(NS,'text');
+cTxt.setAttribute('x',cx); cTxt.setAttribute('y',cy-5);
+cTxt.setAttribute('text-anchor','middle'); cTxt.setAttribute('font-size','10');
+cTxt.setAttribute('font-weight','700'); cTxt.setAttribute('fill','#aaa');
+cTxt.setAttribute('font-family','-apple-system,sans-serif'); cTxt.textContent='6';
+var cTxt2=document.createElementNS(NS,'text');
+cTxt2.setAttribute('x',cx); cTxt2.setAttribute('y',cy+8);
+cTxt2.setAttribute('text-anchor','middle'); cTxt2.setAttribute('font-size','9');
+cTxt2.setAttribute('fill','#aaa'); cTxt2.setAttribute('font-family','-apple-system,sans-serif');
+cTxt2.textContent='methods';
+svg.appendChild(cTxt); svg.appendChild(cTxt2);
+
+svg.addEventListener('mouseleave',function(){
+  slices.forEach(function(s){ s.path.setAttribute('opacity','0.82'); s.path.style.transform=''; });
+});
+
+function showBurstDetail(i){
+  var m=methods[i];
+  var dimHtml=dimNames.map(function(d,j){
+    var on=m.dims[j];
+    return '<span class="xp-dim-badge" style="background:'+(on?dimColors[j]:'#f0f0f0')+';color:'+(on?'#fff':'#bbb')+';border:1px solid '+(on?dimColors[j]:'#e0e0e0')+';">'+
+      (on?'&#10003; ':'')+d+'</span>';
+  }).join('');
+  detail.innerHTML='<h4 style="margin:0 0 .35rem;color:'+m.color+';">'+m.name+'</h4>'
+    +'<p>'+m.desc+'</p>'
+    +'<div><span style="font-size:.65rem;font-weight:800;letter-spacing:.1em;text-transform:uppercase;color:#999;">Dimensions covered</span>'
+    +'<div style="margin-top:.4rem;">'+dimHtml+'</div></div>';
+  detail.style.borderLeftColor=m.color;
 }
 
 /* Timeline phase toggle */
@@ -896,14 +1036,20 @@ var activePh=-1;
 window.xpPh=function(idx,btn){
   var btns=document.querySelectorAll('.xp-phase-btn');
   var panels=document.querySelectorAll('.xp-phase-detail');
-  if(activePh===idx){ panels[idx].classList.remove('active'); btn.classList.remove('active'); activePh=-1; return; }
+  if(activePh===idx){
+    panels[idx].classList.remove('active');
+    btn.classList.remove('active');
+    activePh=-1; return;
+  }
   btns.forEach(function(b){ b.classList.remove('active'); });
   panels.forEach(function(p){ p.classList.remove('active'); });
-  btn.classList.add('active'); panels[idx].classList.add('active'); activePh=idx;
+  btn.classList.add('active');
+  panels[idx].classList.add('active');
+  activePh=idx;
 };
 
 /* Sidenav scroll-spy */
-var ids=['xp-top','xp-lens','xp-arch','xp-role','xp-matrix','xp-tl','xp-an','xp-rec','xp-gal','xp-ref'];
+var ids=['xp-top','xp-lens','xp-arch','xp-role','xp-matrix','xp-tl','xp-an','xp-rec','xp-gal','xp-ref','xp-cta'];
 var nl=document.querySelectorAll('.xp-sidenav a');
 window.addEventListener('scroll',function(){
   var sy=window.pageYOffset+140,cur=ids[0];
