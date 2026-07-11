@@ -251,6 +251,11 @@ ninja.data = [{
           description: "another project with an image 🎉",
           section: "Projects",handler: () => {
               window.location.href = "/EmmanuelAdeloju/projects/9_project/";
+            },},{id: "projects-teaching-statistics-to-people-who-were-scared-of-it",
+          title: 'Teaching Statistics to People Who Were Scared of It',
+          description: "Graduate Teaching Assistant for COE 502 Introduction to Data Analysis, Spring 2025. I led weekly SPSS labs, taught full sessions, and graded assignments for a cohort of graduate students across 19 modules of applied quantitative methods.",
+          section: "Projects",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/projects/coe502_teaching/";
             },},{id: "projects-program-evaluation",
           title: 'Program Evaluation',
           description: "This is a mixed-methods program evaluation where I co-developed survey instrument with the team, ran full statistical analysis in R, conducted focus group research, and instructional artifact review across a full academic year with a national cohort of educators.",
