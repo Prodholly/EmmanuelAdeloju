@@ -406,8 +406,8 @@ body { overflow-x: hidden; }
 <!-- ═══ CONTEXT ══════════════════════════════════════ -->
 <div id="st-context" class="st-reveal" style="scroll-margin-top:80px; margin-bottom:3rem;">
 <div class="st-intro-banner">
-  <p>Teaching statistics to graduate students who are not statistics majors is its own research problem. Most of the people who walk into COE 502 are educators, policy researchers, and curriculum designers. They came to ASU to study how people learn, not to run t-tests. My job, as the Teaching Assistant for Dr. Audrey Beardsley, was to make quantitative methods feel like a tool they could actually use, not a requirement they had to survive.</p>
-  <p>Every Wednesday evening, Dr. Beardsley taught the theory. I followed with a live SPSS lab. I also took on full lecture sessions for several modules and wrote feedback on every graded assignment. By the end of the semester, we had moved through everything from descriptive statistics and graphical representation to factorial ANOVA, linear regression, chi-square, and non-parametric tests. That is not a light curriculum for people who signed up because they wanted to understand education, not variance.</p>
+  <p>Teaching statistics to graduate students who arrive with little to no prior statistics background is its own research problem. COE 502 draws masters and doctoral students from across the university, not just the college of education. Some are curriculum designers, some are policy researchers, some come from engineering or the social sciences taking a required methods course. What they mostly have in common is that quantitative methods is not their first language. My job, as the Teaching Assistant for Dr. Audrey Beardsley, was to make it feel like a tool they could actually use, not a requirement they had to survive.</p>
+  <p>Every Wednesday evening, Dr. Beardsley taught the theory. I followed with a live SPSS lab. I also took on full lecture sessions for several modules and wrote feedback on every graded assignment. By the end of the semester, we had moved through everything from descriptive statistics and graphical representation to factorial ANOVA, linear regression, chi-square, and non-parametric tests.</p>
   <div class="st-course-meta">
     <span class="st-meta-pill">COE 502</span>
     <span class="st-meta-pill">Spring 2025</span>
@@ -434,7 +434,7 @@ body { overflow-x: hidden; }
   <div class="st-role-card st-reveal d2" style="border-top-color:var(--st-teal);">
     <span class="st-role-icon">📢</span>
     <h3>Lecturer</h3>
-    <p>For several modules across the semester, I led the full class session including both the theory and the lab. I prepared the lecture materials, sequenced the content, and managed the classroom from start to finish. Standing at the front of a graduate-level statistics class and making variance intuitive before the software portion is a different kind of pressure than the lab, and I found it clarified my own understanding considerably.</p>
+    <p>For some modules across the semester, I led the full class session including both the theory and the lab. I prepared the lecture materials, sequenced the content, and managed the classroom from start to finish. Standing at the front of a graduate-level statistics class and making variance intuitive before the software portion is a different kind of pressure than the lab, and I found it clarified my own understanding considerably.</p>
   </div>
   <div class="st-role-card st-reveal d3" style="border-top-color:#6b3a8c;">
     <span class="st-role-icon">✏️</span>
@@ -450,7 +450,7 @@ body { overflow-x: hidden; }
 <div id="st-curriculum" class="st-section st-reveal">
 <span class="st-label">Course Curriculum</span>
 <h2>What I Taught Across 19 Modules</h2>
-<p class="st-body-p">The curriculum ran the full arc of applied quantitative methods, from reading a frequency table to running a factorial ANOVA in SPSS. Click any cluster to see the modules and what I covered in the lab for each.</p>
+<p class="st-body-p">The curriculum ran the full content of applied quantitative methods, from reading a frequency table to running a factorial ANOVA in SPSS. Click any cluster to see the modules and what I covered in the lab for each.</p>
 
 <div class="st-clusters">
 
@@ -672,8 +672,8 @@ body { overflow-x: hidden; }
 </blockquote>
 
 <p class="st-body-p">There is something specific about being responsible for how other people understand quantitative methods that sharpens your own command of them. I noticed this most when grading. Reading a student&rsquo;s incorrect interpretation of a significant result and having to explain the error precisely enough that they would not make it again, that is a different kind of understanding than knowing the right answer yourself.</p>
-<p class="st-body-p">I also got a genuine appreciation for what it means to communicate statistics to people who did not choose to be there. Graduate students in education programs signed up to study learning and teaching, not probability distributions. Earning their engagement required making the content feel useful, not just rigorous. That is exactly the challenge in UX research: not impressing statisticians, but giving PMs and designers enough of the right quantitative context to make better decisions.</p>
-<p class="st-body-p">The SPSS expertise I built here is directly transferable to any analysis environment. The thinking habits it reinforced, choosing the right test, questioning your assumptions before interpreting output, writing up findings with appropriate caveats, those are not software-specific. They travel.</p>
+<p class="st-body-p">I also got a genuine appreciation for what it means to communicate statistics to people arriving from different disciplines and different levels of comfort with numbers. Masters and doctoral students from multiple colleges, many with no prior stats coursework, had to be met where they were. Earning their engagement required making the content feel useful, not just rigorous. That is exactly the challenge in UX research: not impressing statisticians, but giving PMs and designers enough of the right quantitative context to make better decisions.</p>
+<p class="st-body-p">The SPSS expertise I built here is directly transferable to any analysis environment. The thinking habits it reinforced, choosing the right test, questioning your assumptions before interpreting output, writing up findings with appropriate caveats, those are not software-specific. Importantly, I also use R (and packages) and Python (and libraries) for data science and machine learning projects; but the foundational statistical knowledge never changes even though the tool may change.</p>
 
 <div class="st-tags">
   <span class="st-tag">SPSS</span>
@@ -716,7 +716,7 @@ window.addEventListener('resize',fillHero);
 
 /* Typewriter */
 var tw=document.getElementById('st-tw');
-var line='Teaching graduate students to run — and understand — statistics in SPSS.';
+var line='Teaching graduate students to run, and genuinely understand, statistics in SPSS.';
 var ci=0;
 function type(){
   if(!tw||ci>=line.length) return;
