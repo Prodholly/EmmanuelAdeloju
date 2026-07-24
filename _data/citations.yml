@@ -1,5 +1,5 @@
 metadata:
-  last_updated: '2026-05-22'
+  last_updated: '2026-07-24'
 papers:
   nxcqT2QAAAAJ:9yKSN-GCB0IC:
     citations: 0
@@ -29,3 +29,7 @@ papers:
     citations: 2
     title: Examining Teacher Supports for Visibility, Believability, and Meaningfulness in Place-Based Citizen Science
     year: '2024'
+  nxcqT2QAAAAJ:zYLM7Y9cAGgC:
+    citations: 0
+    title: 'Designing in Uncertainty: GenAI and Creative Agency in a Graduate Seminar'
+    year: '2026'
