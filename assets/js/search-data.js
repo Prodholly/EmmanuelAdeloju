@@ -209,52 +209,7 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-designing-in-uncertainty-genai-and-creative-agency-in-a-graduate-seminar-has-been-published-in-the-journal-of-instructional-design-and-technology-1-2-1-7-https-doi-org-10-65201-rkhm9093",
           title: 'Our paper Designing in Uncertainty: GenAI and Creative Agency in a Graduate Seminar...',
           description: "",
-          section: "News",},{id: "projects-project-1",
-          title: 'project 1',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/1_project/";
-            },},{id: "projects-project-2",
-          title: 'project 2',
-          description: "a project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/2_project/";
-            },},{id: "projects-project-3-with-very-long-name",
-          title: 'project 3 with very long name',
-          description: "a project that redirects to another website",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/3_project/";
-            },},{id: "projects-project-4",
-          title: 'project 4',
-          description: "another without an image",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/4_project/";
-            },},{id: "projects-project-5",
-          title: 'project 5',
-          description: "a project with a background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/5_project/";
-            },},{id: "projects-project-6",
-          title: 'project 6',
-          description: "a project with no image",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/6_project/";
-            },},{id: "projects-project-7",
-          title: 'project 7',
-          description: "with background image",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/7_project/";
-            },},{id: "projects-project-8",
-          title: 'project 8',
-          description: "an other project with a background image and giscus comments",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/8_project/";
-            },},{id: "projects-project-9",
-          title: 'project 9',
-          description: "another project with an image 🎉",
-          section: "Projects",handler: () => {
-              window.location.href = "/EmmanuelAdeloju/projects/9_project/";
-            },},{id: "projects-teaching-statistics-to-people-who-were-scared-of-it",
+          section: "News",},{id: "projects-teaching-statistics-to-people-who-were-scared-of-it",
           title: 'Teaching Statistics to People Who Were Scared of It',
           description: "Graduate Teaching Assistant for COE 502 Introduction to Data Analysis, Spring 2025. I led weekly SPSS labs, taught full sessions, and graded assignments for a cohort of graduate students across 19 modules of applied quantitative methods.",
           section: "Projects",handler: () => {
