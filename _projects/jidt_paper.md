@@ -468,7 +468,7 @@ body { overflow-x: hidden; }
       <span>Practitioner Inquiry</span>
       <span>Design-Based Pedagogy</span>
     </div>
-    <a class="jd-doi-btn" href="https://doi.org/10.65201/RKHM9093" target="_blank">
+    <a class="jd-doi-btn" href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C3&q=Designing+in+Uncertainty%3A+GenAI+and+Creative+Agency+in+a+Graduate+Seminar&btnG=" target="_blank">
       Read Full Paper ↗
     </a>
   </div>
@@ -691,7 +691,7 @@ body { overflow-x: hidden; }
   <div class="jd-cta">
     <h3>Read the Full Paper</h3>
     <p>Published open access in the <em>Journal of Instructional Design and Technology</em>, Vol. 1, Issue 2, 2026 · DOI: 10.65201/RKHM9093</p>
-    <a href="https://doi.org/10.65201/RKHM9093" target="_blank">Access Paper ↗</a>
+    <a href="https://scholar.google.com/scholar?hl=en&as_sdt=0%2C3&q=Designing+in+Uncertainty%3A+GenAI+and+Creative+Agency+in+a+Graduate+Seminar&btnG=" target="_blank">Access Paper ↗</a>
   </div>
 </div>
 
