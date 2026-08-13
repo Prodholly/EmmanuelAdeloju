@@ -206,7 +206,7 @@ ninja.data = [{
           section: "News",},{id: "news-our-paper-from-policy-to-design-uncovering-socioemotional-risks-in-generative-ai-systems-for-education-was-accepted-at-the-humans-of-generative-ai-workshop-cvpr-2026-denver-colorado",
           title: 'Our paper From Policy to Design: Uncovering Socioemotional Risks in Generative AI Systems...',
           description: "",
-          section: "News",},{id: "news-our-paper-designing-in-uncertainty-genai-and-creative-agency-in-a-graduate-seminar-has-been-published-in-the-journal-of-instructional-design-and-technology-1-2-1-7-https-doi-org-10-65201-rkhm9093",
+          section: "News",},{id: "news-our-paper-designing-in-uncertainty-genai-and-creative-agency-in-a-graduate-seminar-has-been-published-in-the-journal-of-instructional-design-and-technology-1-2-1-7-view-on-google-scholar",
           title: 'Our paper Designing in Uncertainty: GenAI and Creative Agency in a Graduate Seminar...',
           description: "",
           section: "News",},{id: "projects-teaching-statistics-to-people-who-were-scared-of-it",
