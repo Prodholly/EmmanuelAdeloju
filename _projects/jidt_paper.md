@@ -4,7 +4,7 @@ title: "Designing in Uncertainty"
 description: "A practitioner inquiry into how GenAI can serve as a creative partner — not a shortcut — in a graduate seminar grounded in the Five Spaces of Design in Education. Published in the Journal of Instructional Design and Technology, 2026."
 img: assets/img/llmprediction.jpg
 importance: 1
-category: research
+category: work
 ---
 
 <style>
