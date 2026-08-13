@@ -214,6 +214,11 @@ ninja.data = [{
           description: "Graduate Teaching Assistant for COE 502 Introduction to Data Analysis, Spring 2025. I led weekly SPSS labs, taught full sessions, and graded assignments for a cohort of graduate students across 19 modules of applied quantitative methods.",
           section: "Projects",handler: () => {
               window.location.href = "/EmmanuelAdeloju/projects/coe502_teaching/";
+            },},{id: "projects-designing-in-uncertainty",
+          title: 'Designing in Uncertainty',
+          description: "A practitioner inquiry into how GenAI can serve as a creative partner — not a shortcut — in a graduate seminar grounded in the Five Spaces of Design in Education. Published in the Journal of Instructional Design and Technology, 2026.",
+          section: "Projects",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/projects/jidt_paper/";
             },},{id: "projects-program-evaluation",
           title: 'Program Evaluation',
           description: "This is a mixed-methods program evaluation where I co-developed survey instrument with the team, ran full statistical analysis in R, conducted focus group research, and instructional artifact review across a full academic year with a national cohort of educators.",
