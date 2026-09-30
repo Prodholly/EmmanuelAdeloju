@@ -23,6 +23,13 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/publications/";
           },
+        },{id: "nav-research",
+          title: "research",
+          description: "Human-AI interaction, data science education, and the risks of generative AI for young people.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/EmmanuelAdeloju/research/";
+          },
         },{id: "nav-projects",
           title: "Projects",
           description: "A selection of research, evaluation, and applied work.",
@@ -224,6 +231,16 @@ ninja.data = [{
           description: "This is a mixed-methods program evaluation where I co-developed survey instrument with the team, ran full statistical analysis in R, conducted focus group research, and instructional artifact review across a full academic year with a national cohort of educators.",
           section: "Projects",handler: () => {
               window.location.href = "/EmmanuelAdeloju/projects/xplorlabs_evaluation/";
+            },},{id: "research-teacher-llm-collaboration-in-sensemaking",
+          title: 'Teacher-LLM Collaboration in Sensemaking',
+          description: "When science teachers analyze data with AI chatbots, who does the sensemaking? Mostly the teachers judged, and the tools fetched.",
+          section: "Research",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/research/teacher-llm-collaboration/";
+            },},{id: "research-a-theoretical-model-for-teacher-knowledge-development-in-ai-supported-data-science-instruction",
+          title: 'A Theoretical Model for Teacher Knowledge Development in AI-Supported Data Science Instruction',
+          description: "A model for tracing how science teachers&#39; knowledge grows as they learn to analyze data with AI, design lessons that use it, and teach those lessons.",
+          section: "Research",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/research/teacher-knowledge-model/";
             },},{id: "teachings-introduction-to-data-analysis",
           title: 'Introduction to Data Analysis',
           description: "Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.",
