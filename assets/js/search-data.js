@@ -241,6 +241,11 @@ ninja.data = [{
           description: "A model for tracing how science teachers&#39; knowledge grows as they learn to analyze data with AI, design lessons that use it, and teach those lessons.",
           section: "Research",handler: () => {
               window.location.href = "/EmmanuelAdeloju/research/teacher-knowledge-model/";
+            },},{id: "research-explaining-with-data-a-framework-for-data-sensemaking",
+          title: 'Explaining with Data: A Framework for Data Sensemaking',
+          description: "What does it take to build a scientific explanation from data you didn&#39;t collect? A framework for how learners question data and reason from it.",
+          section: "Research",handler: () => {
+              window.location.href = "/EmmanuelAdeloju/research/data-sensemaking-framework/";
             },},{id: "teachings-introduction-to-data-analysis",
           title: 'Introduction to Data Analysis',
           description: "Descriptive statistics, visual approaches, estimation, and inferential methods for univariate and bivariate educational research problems. Experience using statistical software, including Microsoft Excel.",
