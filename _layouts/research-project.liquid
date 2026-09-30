@@ -1,0 +1,158 @@
+---
+layout: default
+---
+{% comment %}
+  Research project page. Section order is fixed here so every project page matches:
+  header -> teaser figure -> abstract -> overview -> page body (method / study design)
+  -> findings -> citation.
+  Asset paths in front matter (teaser.src, links.pdf) may be bare filenames that live
+  next to the page in _research/<slug>/; full URLs are passed through unchanged.
+{% endcomment %}
+{% include research/styles.liquid %}
+
+<div class="post rp-page">
+  <header class="rp-header">
+    <h1>{{ page.title }}</h1>
+
+    <p class="rp-authors">
+      {% for author in page.authors %}
+        {%- if author.url -%}
+          <a href="{{ author.url }}" target="_blank" rel="noopener" {% if author.me %}class="rp-me"{% endif %}>{{ author.name }}</a>
+        {%- else -%}
+          <span {% if author.me %}class="rp-me"{% endif %}>{{ author.name }}</span>
+        {%- endif -%}
+        {%- if page.affiliations.size > 1 and author.affiliation -%}<sup>{{ author.affiliation }}</sup>{%- endif -%}
+        {%- unless forloop.last %}, {% endunless -%}
+      {% endfor %}
+    </p>
+
+    {% if page.affiliations %}
+      <p class="rp-affiliations">
+        {% for aff in page.affiliations %}
+          {%- if page.affiliations.size > 1 -%}<sup>{{ forloop.index }}</sup>{%- endif -%}
+          {{ aff }}{% unless forloop.last %}&nbsp;&nbsp;·&nbsp;&nbsp;{% endunless %}
+        {% endfor %}
+      </p>
+    {% endif %}
+
+    <div class="rp-status">
+      <span class="rp-badge rp-badge--{{ page.status | slugify }}">{{ page.status }}</span>
+      {% if page.venue %}<span class="rp-venue">{{ page.venue }}</span>{% endif %}
+    </div>
+
+    {% assign links = page.links %}
+    {% if links.pdf or links.code or links.data or links.doi %}
+      <div class="rp-buttons">
+        {% if links.pdf == 'pending' %}
+          <span class="rp-btn rp-btn--disabled" aria-disabled="true" title="Not yet available"><i class="fa-solid fa-file-pdf"></i> Paper</span>
+        {% elsif links.pdf %}
+          {% if links.pdf contains '://' %}{% assign pdf_href = links.pdf %}{% else %}{% assign pdf_href = page.url | append: links.pdf | relative_url %}{% endif %}
+          <a class="rp-btn" href="{{ pdf_href }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> Paper</a>
+        {% endif %}
+        {% if links.doi %}
+          <a class="rp-btn" href="{{ links.doi }}" target="_blank" rel="noopener"><i class="fa-solid fa-link"></i> DOI</a>
+        {% endif %}
+        {% if links.code %}
+          <a class="rp-btn" href="{{ links.code }}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+        {% endif %}
+        {% if links.data %}
+          <a class="rp-btn" href="{{ links.data }}" target="_blank" rel="noopener"><i class="fa-solid fa-database"></i> Data</a>
+        {% endif %}
+      </div>
+    {% endif %}
+    {% if page.links_note %}<p class="rp-links-note"><em>{{ page.links_note }}</em></p>{% endif %}
+  </header>
+
+  {% if page.teaser %}
+    {% if page.teaser.src contains '://' %}{% assign teaser_src = page.teaser.src %}{% else %}{% assign teaser_src = page.url | append: page.teaser.src | relative_url %}{% endif %}
+    <figure class="rp-teaser">
+      <div class="rp-figure-frame">
+        <img src="{{ teaser_src }}" alt="{{ page.teaser.alt | escape }}">
+      </div>
+      {% if page.teaser.caption %}<figcaption>{{ page.teaser.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+    </figure>
+  {% endif %}
+
+  {% if page.abstract %}
+    <section class="rp-section rp-abstract">
+      <h2>Abstract</h2>
+      {{ page.abstract | markdownify }}
+    </section>
+  {% endif %}
+
+  {% if page.overview %}
+    <section class="rp-section">
+      <h2>Overview</h2>
+      {{ page.overview | markdownify }}
+    </section>
+  {% endif %}
+
+  {{ content }}
+
+  {% if page.findings or page.finding_sections %}
+    <section class="rp-section rp-findings">
+      <h2>{{ page.findings_heading | default: 'Key findings' }}</h2>
+      {% if page.findings_intro %}{{ page.findings_intro | markdownify }}{% endif %}
+      {% comment %} `finding_sections`: list of {title, text, figure} rendered as short sub-sections with one figure each.
+                    `findings`: list of strings rendered as bullets. {% endcomment %}
+      {% if page.finding_sections %}
+        {% for item in page.finding_sections %}
+          <div class="rp-finding">
+            <h3>{{ item.title }}</h3>
+            {{ item.text | markdownify }}
+            {% if item.figure %}
+              {% if item.figure.src contains '://' %}{% assign fig_src = item.figure.src %}{% else %}{% assign fig_src = page.url | append: item.figure.src | relative_url %}{% endif %}
+              <figure class="rp-figure">
+                <div class="rp-figure-frame"><img src="{{ fig_src }}" alt="{{ item.figure.alt | escape }}" loading="lazy"></div>
+                {% if item.figure.caption %}<figcaption>{{ item.figure.caption | markdownify | remove: '<p>' | remove: '</p>' | strip }}</figcaption>{% endif %}
+              </figure>
+            {% endif %}
+          </div>
+        {% endfor %}
+      {% endif %}
+      {% if page.findings %}
+        <ul>
+          {% for item in page.findings %}
+            <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+          {% endfor %}
+        </ul>
+      {% endif %}
+    </section>
+  {% endif %}
+
+  {% if page.implications %}
+    <section class="rp-section rp-findings">
+      <h2>{{ page.implications_heading | default: 'Design implications' }}</h2>
+      <ul>
+        {% for item in page.implications %}
+          <li>{{ item | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {% endfor %}
+      </ul>
+    </section>
+  {% endif %}
+
+  {% if page.apa or page.bibtex %}
+    <section class="rp-section">
+      <h2>Citation</h2>
+      {% if page.apa %}<p class="rp-apa">{{ page.apa | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+      {% if page.bibtex %}
+        <div class="rp-bibtex-wrap">
+          <button type="button" class="rp-copy" data-copy-target="rp-bibtex">Copy</button>
+          <pre class="rp-bibtex" id="rp-bibtex">{{ page.bibtex | strip | escape }}</pre>
+        </div>
+      {% endif %}
+    </section>
+  {% endif %}
+</div>
+
+<script>
+  document.querySelectorAll(".rp-copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var text = document.getElementById(btn.dataset.copyTarget).innerText;
+      navigator.clipboard.writeText(text).then(function () {
+        btn.textContent = "Copied";
+        setTimeout(function () { btn.textContent = "Copy"; }, 2000);
+      });
+    });
+  });
+</script>

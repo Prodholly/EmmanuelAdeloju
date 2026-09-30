@@ -1,0 +1,202 @@
+<style>
+  /* Shared styles for the /research/ hub and research project pages.
+     Uses the theme's CSS variables so light/dark mode follow the site toggle. */
+
+  /* ---- status badges ---- */
+  .rp-badge {
+    display: inline-block;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid currentColor;
+    line-height: 1.4;
+    vertical-align: middle;
+  }
+  .rp-badge--published { color: #1e7e34; background: rgba(40, 167, 69, 0.1); }
+  .rp-badge--under-review { color: #b8860b; background: rgba(218, 165, 32, 0.12); }
+  .rp-badge--preprint { color: #1f6fb2; background: rgba(31, 111, 178, 0.1); }
+  .rp-badge--in-preparation { color: var(--global-text-color-light); background: transparent; }
+  html[data-theme="dark"] .rp-badge--published { color: #6fd98a; }
+  html[data-theme="dark"] .rp-badge--under-review { color: #f0c65a; }
+  html[data-theme="dark"] .rp-badge--preprint { color: #7ab8f5; }
+
+  .rp-venue {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    vertical-align: middle;
+    margin-left: 0.4rem;
+  }
+
+  /* ---- figure frame (figures are drawn on light backgrounds) ---- */
+  .rp-figure-frame {
+    background: #ffffff;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 8px;
+    padding: 0.75rem;
+  }
+  .rp-figure-frame img {
+    display: block;
+    width: 100%;
+    height: auto;
+  }
+
+  /* ---- project page ---- */
+  .rp-page { max-width: 860px; margin: 0 auto; }
+  .rp-header { text-align: center; margin: 1rem 0 2rem; }
+  .rp-header h1 {
+    font-size: clamp(1.6rem, 3.2vw, 2.2rem);
+    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 0.9rem;
+  }
+  .rp-authors { font-size: 1.05rem; margin-bottom: 0.2rem; }
+  .rp-authors .rp-me { font-weight: 600; }
+  .rp-authors sup, .rp-affiliations sup { font-size: 0.7em; margin-left: 0.1em; }
+  .rp-affiliations {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin-bottom: 0.9rem;
+  }
+  .rp-status { margin-bottom: 1.2rem; }
+  .rp-buttons { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.6rem; }
+  .rp-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 1.1rem;
+    border-radius: 999px;
+    background: var(--global-text-color);
+    color: var(--global-bg-color) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none !important;
+    transition: opacity 0.15s;
+  }
+  .rp-btn:hover { opacity: 0.8; }
+  .rp-btn--disabled, .rp-btn--disabled:hover { opacity: 0.35; cursor: not-allowed; }
+  .rp-links-note {
+    font-size: 0.88rem;
+    color: var(--global-text-color-light);
+    margin: 0.7rem 0 0;
+  }
+
+  .rp-finding { margin-bottom: 1.8rem; }
+  .rp-finding h3 { font-size: 1.05rem; font-weight: 600; margin-bottom: 0.4rem; }
+  .rp-finding .rp-figure { margin: 0.8rem 0 0; }
+
+  .rp-teaser { margin: 0 0 2.5rem; }
+  .rp-teaser figcaption, .rp-figure figcaption {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.6rem;
+    line-height: 1.55;
+  }
+
+  .rp-section { margin-bottom: 2.5rem; }
+  .rp-section > h2 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    padding-bottom: 0.4rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .rp-section p, .rp-section li { line-height: 1.7; }
+  .rp-abstract p { text-align: justify; }
+  .rp-findings li { margin-bottom: 0.5rem; }
+
+  .rp-table-wrap { overflow-x: auto; margin: 1rem 0; }
+  .rp-table-wrap table { width: 100%; font-size: 0.9rem; border-collapse: collapse; }
+  .rp-table-wrap th, .rp-table-wrap td {
+    border: 1px solid var(--global-divider-color);
+    padding: 0.5rem 0.65rem;
+    vertical-align: top;
+    text-align: left;
+  }
+  .rp-table-wrap thead th { background: var(--global-code-bg-color); }
+  .rp-table-wrap .rp-table-caption {
+    font-size: 0.85rem;
+    color: var(--global-text-color-light);
+    margin-top: 0.4rem;
+  }
+
+  .rp-apa { line-height: 1.7; padding-left: 2em; text-indent: -2em; }
+  .rp-bibtex-wrap { position: relative; }
+  .rp-bibtex {
+    background: var(--global-code-bg-color);
+    color: var(--global-text-color);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    font-size: 0.82rem;
+    white-space: pre;
+    overflow-x: auto;
+    margin: 0;
+  }
+  .rp-copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    font-size: 0.78rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 4px;
+    border: 1px solid var(--global-divider-color);
+    background: var(--global-bg-color);
+    color: var(--global-text-color);
+    cursor: pointer;
+  }
+  .rp-copy:hover { border-color: var(--global-theme-color); color: var(--global-theme-color); }
+
+  /* ---- hub page ---- */
+  .rp-intro { font-size: 1.02rem; line-height: 1.75; margin-bottom: 2rem; }
+  .rp-group-heading {
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 2rem 0 1rem;
+    padding-bottom: 0.35rem;
+    border-bottom: 1px solid var(--global-divider-color);
+  }
+  .rp-card {
+    position: relative;
+    display: flex;
+    gap: 1.25rem;
+    align-items: flex-start;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 10px;
+    background: var(--global-card-bg-color);
+    transition: border-color 0.15s, box-shadow 0.15s;
+  }
+  .rp-card:hover {
+    border-color: var(--global-theme-color);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+  .rp-card-thumb {
+    flex: 0 0 240px;
+    background: #ffffff;
+    border: 1px solid var(--global-divider-color);
+    border-radius: 6px;
+    padding: 0.4rem;
+    align-self: center;
+  }
+  .rp-card-thumb img { display: block; width: 100%; height: auto; }
+  .rp-card-body { flex: 1; min-width: 0; }
+  .rp-card-title { font-size: 1.08rem; font-weight: 600; line-height: 1.35; margin: 0.45rem 0 0.4rem; }
+  .rp-card-title a { color: var(--global-text-color); text-decoration: none; }
+  .rp-card:hover .rp-card-title a { color: var(--global-theme-color); }
+  /* whole card is clickable: the title link stretches over the card */
+  .rp-card-title a::after { content: ""; position: absolute; inset: 0; z-index: 1; }
+  .rp-card-desc { font-size: 0.93rem; line-height: 1.6; margin-bottom: 0.5rem; }
+  .rp-card-meta { font-size: 0.85rem; color: var(--global-text-color-light); }
+  .rp-card-links { display: flex; gap: 1rem; font-size: 0.88rem; }
+  /* quick links sit above the stretched link so they stay independently clickable */
+  .rp-card-links a { position: relative; z-index: 2; }
+
+  @media (max-width: 640px) {
+    .rp-card { flex-direction: column; }
+    .rp-card-thumb { flex-basis: auto; width: 100%; }
+    .rp-abstract p { text-align: left; }
+  }
+</style>

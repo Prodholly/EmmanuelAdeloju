@@ -1,0 +1,58 @@
+---
+layout: page
+title: research
+permalink: /research/
+description: Human-AI interaction, data science education, and the risks of generative AI for young people.
+nav: true
+nav_order: 2.5
+# Theme groups, in display order. Each project in _research/ sets `research_theme` to one of these.
+# A group heading is only shown when that group has more than one project.
+research_groups:
+  - Human-AI Data Sensemaking
+  - AI Policy & Socio-emotional Risk
+  - Tools & Artifacts
+---
+
+{% include research/styles.liquid %}
+
+<p class="rp-intro">
+  My research focuses on Human-AI Interaction and Data Science Education, specifically how we can use Large
+  Language Models to support data sensemaking in science education. My dissertation explores how educators make
+  sense of scientific data using LLMs, including their interaction moves, reasoning, negotiations, and process of
+  knowledge development through reflective practice. I also study the socioemotional risks of generative AI
+  systems on young people from the perspectives of policies and AI evaluations.
+</p>
+
+{% for group in page.research_groups %}
+  {% assign projects = site.research | where: "research_theme", group | sort: "date" | reverse %}
+  {% if projects.size > 0 %}
+    {% if projects.size > 1 %}<h2 class="rp-group-heading">{{ group }}</h2>{% endif %}
+    {% for p in projects %}
+      <article class="rp-card">
+        {% if p.teaser %}
+          {% if p.teaser.src contains '://' %}{% assign thumb = p.teaser.src %}{% else %}{% assign thumb = p.url | append: p.teaser.src | relative_url %}{% endif %}
+          <div class="rp-card-thumb"><img src="{{ thumb }}" alt="" loading="lazy"></div>
+        {% endif %}
+        <div class="rp-card-body">
+          <span class="rp-badge rp-badge--{{ p.status | slugify }}">{{ p.status }}</span>
+          <span class="rp-card-meta">&nbsp;{{ p.date | date: "%Y" }}</span>
+          <h3 class="rp-card-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
+          <p class="rp-card-desc">{{ p.description }}</p>
+          {% assign has_pdf = false %}
+          {% if p.links.pdf and p.links.pdf != 'pending' %}{% assign has_pdf = true %}{% endif %}
+          {% if has_pdf or p.links.code %}
+            <div class="rp-card-links">
+              {% if has_pdf %}
+                {% if p.links.pdf contains '://' %}{% assign pdf_href = p.links.pdf %}{% else %}{% assign pdf_href = p.url | append: p.links.pdf | relative_url %}{% endif %}
+                <a href="{{ pdf_href }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>
+              {% endif %}
+              {% if p.links.code %}
+                <a href="{{ p.links.code }}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
+              {% endif %}
+            </div>
+          {% endif %}
+        </div>
+      </article>
+    {% endfor %}
+  {% endif %}
+{% endfor %}

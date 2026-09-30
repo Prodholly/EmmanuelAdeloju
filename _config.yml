@@ -156,6 +156,8 @@ collections:
     output: true
   projects:
     output: true
+  research:
+    output: true
   teachings:
     output: true
 
@@ -199,6 +201,7 @@ exclude:
   - purgecss.config.js
   - README.md
   - readme_preview/
+  - researchpages/
   - vendor
 keep_files:
   - CNAME
