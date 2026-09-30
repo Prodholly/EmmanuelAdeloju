@@ -16,11 +16,8 @@ research_groups:
 {% include research/styles.liquid %}
 
 <p class="rp-intro">
-  My research focuses on Human-AI Interaction and Data Science Education, specifically how we can use Large
-  Language Models to support data sensemaking in science education. My dissertation explores how educators make
-  sense of scientific data using LLMs, including their interaction moves, reasoning, negotiations, and process of
-  knowledge development through reflective practice. I also study the socioemotional risks of generative AI
-  systems on young people from the perspectives of policies and AI evaluations.
+  A question that guides the direction of my research: <strong>How does human-AI interaction/collaboration during
+  data sensemaking shape how learners develop scientific knowledge?</strong>
 </p>
 
 {% for group in page.research_groups %}
@@ -38,17 +35,10 @@ research_groups:
           <span class="rp-card-meta">&nbsp;{{ p.date | date: "%Y" }}</span>
           <h3 class="rp-card-title"><a href="{{ p.url | relative_url }}">{{ p.title }}</a></h3>
           <p class="rp-card-desc">{{ p.description }}</p>
-          {% assign has_pdf = false %}
-          {% if p.links.pdf and p.links.pdf != 'pending' %}{% assign has_pdf = true %}{% endif %}
-          {% if has_pdf or p.links.code %}
+          {% comment %} No PDF link on cards: visitors should land on the project page, which carries the Paper button. {% endcomment %}
+          {% if p.links.code %}
             <div class="rp-card-links">
-              {% if has_pdf %}
-                {% if p.links.pdf contains '://' %}{% assign pdf_href = p.links.pdf %}{% else %}{% assign pdf_href = p.url | append: p.links.pdf | relative_url %}{% endif %}
-                <a href="{{ pdf_href }}" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> PDF</a>
-              {% endif %}
-              {% if p.links.code %}
-                <a href="{{ p.links.code }}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
-              {% endif %}
+              <a href="{{ p.links.code }}" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i> Code</a>
             </div>
           {% endif %}
         </div>
