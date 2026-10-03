@@ -54,7 +54,7 @@ Specifically, my dissertation follows in-service science teachers as they learn 
 
 Another arm of my research involves responsible AI, specifically focused on the socioemotional implications of generative AI for K–12 and higher-education students. This work, being part of the many other exciting ones in my lab, got the CVPR Scholarship and featured on the Teachers' College Media News [essay on designing AI responsibly for youth](https://education.asu.edu/about/news/essay-designing-ai-responsibly-youth-starts-systems-design){:target="_blank" rel="noopener"}.
 
-A third strand of my work is focused on learner agency and capacity to act in the real world, specifically in the sustainability and safety science education domains. Most of my work involve collaboration with UL Research Institutes and engaging with teachers and students to do real work with real consequences in their communities.
+A third strand of my work is focused on learner agency and capacity to act in the real world, specifically in the sustainability and safety science education domains. Most of my work involve collaboration with [Xplorlabs (UL Research Institute)](https://xplorlabs.org/){:target="_blank" rel="noopener"} and engaging with teachers and students to do real work with real consequences in their communities.
 
 Methodologically, I combine learning sciences approaches, including comparative case studies, qualitative and quantitative approaches with computational methods. My work has been presented at NARST, AERA, ICLS, SITE, LERN, and the Humans of Generative AI workshop at CVPR 2026 to mention a few.
 
@@ -68,6 +68,7 @@ The guiding question for my work is:
 
 - **Oct 2026:** I am on the academic job market. Please find my research statement here and reach out.
 - **Oct 2026:** I am also equally open to research roles beyond academic environments. So please reach out too.
+- **Jun 2026:** ASU published my [essay on designing AI responsibly for youth](https://education.asu.edu/about/news/essay-designing-ai-responsibly-youth-starts-systems-design){:target="_blank" rel="noopener"}.
 
 **Want to know?**
 
