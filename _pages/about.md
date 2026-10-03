@@ -28,6 +28,12 @@ latest_posts:
 
 <style>
   .profile img { border: 3px solid #000; }
+  .hp-snapshot {
+    font-size: 1.3rem;
+    font-weight: 600;
+    line-height: 1.5;
+    margin-bottom: 1.2rem;
+  }
   .hp-question {
     margin: 1.2rem 0 1.4rem;
     padding: 1rem 1.4rem;
@@ -40,13 +46,23 @@ latest_posts:
   }
 </style>
 
-I am a fourth-year PhD candidate (All But Dissertation) in Learning Literacies and Technology at Arizona State University, co-advised by [Michelle Jordan](https://search.asu.edu/profile/1623910){:target="_blank" rel="noopener"} and [Punya Mishra](https://punyamishra.com/){:target="_blank" rel="noopener"}. My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how people (learners) make sense of scientific data in collaboration with AI systems, and how these interactions shape the development of scientific knowledge.
+<p class="hp-snapshot">I study people + AI + data, during sensemaking.</p>
+
+I am a fourth-year PhD candidate (All But Dissertation) in Learning Literacies and Technology at Arizona State University, co-advised by [Michelle Jordan](https://search.asu.edu/profile/1623910){:target="_blank" rel="noopener"} and [Punya Mishra](https://punyamishra.com/){:target="_blank" rel="noopener"}. My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how people (learners and teachers) make sense of scientific data in collaboration with AI systems, and how these interactions shape how they develop scientific knowledge.
+
+Specifically, my dissertation follows in-service science teachers as they learn to make sense of data with large language models, design lessons around it, and teach those lessons, and tracing how their technological, pedagogical, and disciplinary knowledge develops along the way. This work has expanded to include developing a cognitive framework of data sensemaking, where I show how explanations and new knowledge are constructed from scientific data.
+
+Another arm of my research involves responsible AI, specifically focused on the socioemotional implications of generative AI for K–12 and higher-education students. This work, being part of the many other exciting ones in my lab, got the CVPR Scholarship and featured on the Teachers' College Media News [essay on designing AI responsibly for youth](https://education.asu.edu/about/news/essay-designing-ai-responsibly-youth-starts-systems-design){:target="_blank" rel="noopener"}.
+
+A third strand of my work is focused on learner agency and capacity to act in the real world, specifically in the sustainability and safety science education domains. Most of my work involve collaboration with UL Research Institutes and engaging with teachers and students to do real work with real consequences in their communities.
+
+Methodologically, I combine learning sciences approaches, including comparative case studies, qualitative and quantitative approaches with computational methods. My work has been presented at NARST, AERA, ICLS, SITE, LERN, and the Humans of Generative AI workshop at CVPR 2026 to mention a few.
+
+I recommend you visit my [research page]({{ '/research/' | relative_url }}) to get a coffee chat experience with the centerpieces of my work. I am populating this page gradually as time permits, so more to be added.
 
 The guiding question for my work is:
 
 <div class="hp-question">How does human–AI interaction (collaboration) during data sensemaking shape how learners develop scientific knowledge?</div>
-
-I recommend you visit my [research page]({{ '/research/' | relative_url }}) to get a coffee chat experience with the centerpieces of my work (start here).
 
 **A few announcements:**
 
@@ -56,7 +72,7 @@ I recommend you visit my [research page]({{ '/research/' | relative_url }}) to g
 **Want to know?**
 
 - Outside of work, I am a soccer midfielder with magical dribbling skills like Jay Jay Okocha.
-- I watched a 12-minute YouTube video to learn how to drive my first car, then, with virtually no experience, immediately drove about 20 kilometers on a highway (I even had a passenger who had no idea I had just learned to drive).
+- I watched a 12-minute YouTube video to learn how to drive my first car, then, with virtually no experience, immediately drove about 20 kilometers on a highway (I even had a passenger who had no idea I had just learned to drive); we got home safe.
 
 **Research areas:** Human–AI Interaction · Data Sensemaking · Science Education · Data Science Education · Learning Sciences · Responsible AI · AI Evaluation
 
