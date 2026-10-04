@@ -10,7 +10,7 @@ profile:
   more_info: >
     <p>eadeloju[at]asu[dot]edu</p>
     <p><a href="https://scholar.google.com/citations?user=nxcqT2QAAAAJ&hl=en" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i> Google Scholar</a></p>
-    <p><a href="/EmmanuelAdeloju/assets/pdf/Emmanuel_Adeloju_Resume_Industry_Main.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> CV</a></p>
+    <p><a href="/EmmanuelAdeloju/assets/pdf/Emmanuel_Adeloju_Academic_CV.pdf" target="_blank" rel="noopener"><i class="fa-solid fa-file-pdf"></i> CV</a></p>
 
 selected_papers: true # includes a list of papers marked as "selected={true}"
 social: true # includes social icons at the bottom of the page
@@ -48,17 +48,17 @@ latest_posts:
 
 <p class="hp-snapshot">I study people + AI + data, during sensemaking.</p>
 
-I am a fourth-year PhD candidate (All But Dissertation) in Learning Literacies and Technology at Arizona State University, co-advised by [Michelle Jordan](https://search.asu.edu/profile/1623910){:target="_blank" rel="noopener"} and [Punya Mishra](https://punyamishra.com/){:target="_blank" rel="noopener"}. My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how people (learners and teachers) make sense of scientific data in collaboration with AI systems, and how these interactions shape how they develop scientific knowledge.
+I am a fourth-year PhD candidate (All But Dissertation) in Learning, Literacies, and Technologies at Arizona State University, co-advised by [Michelle Jordan](https://search.asu.edu/profile/1623910){:target="_blank" rel="noopener"} and [Punya Mishra](https://punyamishra.com/){:target="_blank" rel="noopener"}.
 
-Specifically, my dissertation follows in-service science teachers as they learn to make sense of data with large language models, design lessons around it, and teach those lessons, and tracing how their technological, pedagogical, and disciplinary knowledge develops along the way. This work has expanded to include developing a cognitive framework of data sensemaking, where I show how explanations and new knowledge are constructed from scientific data.
+My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how students and teachers make sense of scientific data in collaboration with AI systems, and how these interactions shape the development of scientific knowledge.
 
-Another arm of my research involves responsible AI, specifically focused on the socioemotional implications of generative AI for K–12 and higher-education students. This work, being part of the many other exciting ones in my lab, got the CVPR Scholarship and featured on the Teachers' College Media News [essay on designing AI responsibly for youth](https://education.asu.edu/about/news/essay-designing-ai-responsibly-youth-starts-systems-design){:target="_blank" rel="noopener"}.
+My dissertation examines how in-service science teachers develop the knowledge to use large language models for data sensemaking, design AI-integrated lessons, and support students as they engage with data. Alongside this work, I am developing a cognitive framework of data sensemaking that shows how people construct explanations and new knowledge from scientific data.
 
-A third strand of my work is focused on learner agency and capacity to act in the real world, specifically in the sustainability and safety science education domains. Most of my work involve collaboration with [Xplorlabs (UL Research Institutes)](https://xplorlabs.org/){:target="_blank" rel="noopener"} and engaging with teachers and students to do real work with real consequences in their communities.
+My broader research program extends these questions into responsible AI and student agency. I study the socioemotional implications of generative AI for learners and how they can supported and positioned to act on consequential problems in their communities.
 
-Methodologically, I combine learning sciences approaches, including comparative case studies, qualitative and quantitative approaches with computational methods. My work has been presented at NARST, AERA, ICLS, SITE, LERN, and the Humans of Generative AI workshop at CVPR 2026 to mention a few.
+Across these projects, I use learning sciences and computational approaches to investigate how people, AI systems, and data interact in educational settings.
 
-I recommend you visit my [research page]({{ '/research/' | relative_url }}) to get a coffee chat experience with the centerpieces of my work. I am populating this page gradually as time permits, so more to be added.
+I invite you to explore my [research page]({{ '/research/' | relative_url }}) for selected projects and publications.
 
 The guiding question for my work is:
 
