@@ -52,7 +52,7 @@ I am a fourth-year PhD candidate (All But Dissertation) in Learning, Literacies,
 
 My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how students and teachers make sense of scientific data in collaboration with AI systems, and how these interactions shape the development of scientific knowledge.
 
-My dissertation examines how in-service science teachers develop the knowledge to use large language models for data sensemaking, design AI-integrated lessons, and support students as they engage with data. Alongside this work, I am developing a cognitive framework of data sensemaking that shows how people construct explanations and new knowledge from scientific data.
+My dissertation examines how in-service science teachers develop knowledge as they collaborate with large language models while learning to make sense with data, design lessons, and support students to engage with data. Alongside this work, I am developing a cognitive framework of data sensemaking that shows how people construct explanations and new knowledge from scientific data.
 
 My broader research program extends these questions into responsible AI and student agency. I study the socioemotional implications of generative AI for learners and how they can supported and positioned to act on consequential problems in their communities.
 
