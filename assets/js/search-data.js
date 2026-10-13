@@ -9,12 +9,12 @@ ninja.data = [{
     handler: () => {
       window.location.href = "/EmmanuelAdeloju/";
     },
-  },{id: "nav-blog",
-          title: "blog",
-          description: "",
+  },{id: "nav-research",
+          title: "research",
+          description: "Human-AI interaction, data science education, and the risks of generative AI for young people.",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/EmmanuelAdeloju/blog/";
+            window.location.href = "/EmmanuelAdeloju/research/";
           },
         },{id: "nav-publications",
           title: "publications",
@@ -23,13 +23,6 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/publications/";
           },
-        },{id: "nav-research",
-          title: "research",
-          description: "Human-AI interaction, data science education, and the risks of generative AI for young people.",
-          section: "Navigation",
-          handler: () => {
-            window.location.href = "/EmmanuelAdeloju/research/";
-          },
         },{id: "nav-projects",
           title: "Projects",
           description: "A selection of research, evaluation, and applied work.",
@@ -37,12 +30,12 @@ ninja.data = [{
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/projects/";
           },
-        },{id: "nav-repositories",
-          title: "repositories",
-          description: "My GitHub profile and repositories.",
+        },{id: "nav-blog",
+          title: "blog",
+          description: "",
           section: "Navigation",
           handler: () => {
-            window.location.href = "/EmmanuelAdeloju/repositories/";
+            window.location.href = "/EmmanuelAdeloju/blog/";
           },
         },{id: "nav-teaching",
           title: "teaching",
@@ -50,6 +43,13 @@ ninja.data = [{
           section: "Navigation",
           handler: () => {
             window.location.href = "/EmmanuelAdeloju/teaching/";
+          },
+        },{id: "nav-repositories",
+          title: "repositories",
+          description: "My GitHub profile and repositories.",
+          section: "Navigation",
+          handler: () => {
+            window.location.href = "/EmmanuelAdeloju/repositories/";
           },
         },{id: "post-on-conducting-interviews-a-guide-for-ux-and-hai-researchers",
         
