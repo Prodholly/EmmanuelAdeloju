@@ -66,7 +66,7 @@ The guiding question for my work is:
 
 **A few announcements:**
 
-- **Oct 2026:** I am on the academic job market. Please find my research statement here and reach out.
+- **Oct 2026:** I am on the academic job market. Please, reach out if I fit what you are looking for or want to chat.
 - **Oct 2026:** I am also equally open to research roles beyond academic environments. So please reach out too.
 - **Jun 2026:** ASU published my [essay on designing AI responsibly for youth](https://education.asu.edu/about/news/essay-designing-ai-responsibly-youth-starts-systems-design){:target="_blank" rel="noopener"}.
 

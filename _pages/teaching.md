@@ -4,7 +4,7 @@ permalink: /teaching/
 title: teaching
 description: Course materials, schedules, and resources for classes I taught.
 nav: true
-nav_order: 6
+nav_order: 5
 calendar: true
 ---
 
