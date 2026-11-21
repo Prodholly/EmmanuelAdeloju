@@ -202,6 +202,7 @@ exclude:
   - README.md
   - readme_preview/
   - researchpages/
+  - swayed/
   - vendor
 keep_files:
   - CNAME

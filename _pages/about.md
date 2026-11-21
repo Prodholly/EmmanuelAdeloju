@@ -6,7 +6,7 @@ permalink: /
 profile:
   align: right
   image: pic.jpg
-  image_circular: false # crops the image to make it circular
+  image_circular: true # crops the image to make it circular
   more_info: >
     <p>eadeloju[at]asu[dot]edu</p>
     <p><a href="https://scholar.google.com/citations?user=nxcqT2QAAAAJ&hl=en" target="_blank" rel="noopener"><i class="ai ai-google-scholar"></i> Google Scholar</a></p>
@@ -27,22 +27,23 @@ latest_posts:
 ---
 
 <style>
-  .profile img { border: 3px solid #000; }
+  /* small circular photo, top right (Loom-style bubble) */
+  .profile { width: 160px !important; text-align: center; }
+  .profile img {
+    width: 112px; height: 112px; object-fit: cover; margin: 0 auto;
+    border: 3px solid var(--global-card-bg-color);
+    box-shadow: 0 0 0 2px var(--global-theme-color), 0 6px 18px rgba(0, 0, 0, 0.18);
+  }
+  .profile .more-info { font-size: 0.8rem; }
+  .profile .more-info p { display: block; }
+  @media (max-width: 575px) {
+    .profile { width: 100% !important; float: none !important; margin: 0 0 1rem !important; }
+  }
   .hp-snapshot {
     font-size: 1.3rem;
     font-weight: 600;
     line-height: 1.5;
     margin-bottom: 1.2rem;
-  }
-  .hp-question {
-    margin: 1.2rem 0 1.4rem;
-    padding: 1rem 1.4rem;
-    border-left: 4px solid var(--global-theme-color);
-    background: var(--global-code-bg-color);
-    border-radius: 0 6px 6px 0;
-    font-size: 1.1rem;
-    font-weight: 600;
-    line-height: 1.6;
   }
 </style>
 
@@ -50,19 +51,11 @@ latest_posts:
 
 I am a fourth-year PhD candidate (All But Dissertation) in Learning, Literacies, and Technologies at Arizona State University, co-advised by [Michelle Jordan](https://search.asu.edu/profile/1623910){:target="_blank" rel="noopener"} and [Punya Mishra](https://punyamishra.com/){:target="_blank" rel="noopener"}.
 
-My research sits at the intersection of human–AI interaction, data sensemaking, and science education. I study how students and teachers make sense of scientific data in collaboration with AI systems, and how these interactions shape the development of scientific knowledge.
+I study the cognitive and behavioral processes involved in how humans and AI generate scientific knowledge (data sensemaking) from multimodal data. Please, explore further how I study these below:
 
-My dissertation examines how in-service science teachers develop knowledge as they collaborate with large language models while learning to make sense with data, design lessons, and support students to engage with data. Alongside this work, I am developing a cognitive framework of data sensemaking that shows how people construct explanations and new knowledge from scientific data.
+{% include guiding_questions.liquid %}
 
-My broader research program extends these questions into responsible AI and student agency. I study the socioemotional implications of generative AI for learners and how they can supported and positioned to act on consequential problems in their communities.
-
-Across these projects, I use learning sciences and computational approaches to investigate how people, AI systems, and data interact in educational settings.
-
-I invite you to explore my [research page]({{ '/research/' | relative_url }}) for selected projects and publications.
-
-The guiding question for my work is:
-
-<div class="hp-question">How does human–AI interaction (collaboration) during data sensemaking shape how learners develop scientific knowledge?</div>
+{% include sensemaking_tools.liquid %}
 
 **A few announcements:**
 

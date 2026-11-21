@@ -1,0 +1,54 @@
+/* Research-question pages (/questions/cognition/, /questions/behavior/). Uses al-folio's theme variables. */
+/* the animation band breaks out of the theme's fixed-width container to span the window */
+html:has(.rq-band) { overflow-x: clip; }
+.rq-band { width: 100vw; margin-left: calc(50% - 50vw); margin-top: -3rem; background: var(--hb-stage); border-bottom: 1px solid var(--global-divider-color); }
+.rq-band canvas { display: block; width: 100%; height: 330px; }
+@media (max-width: 767px) { .rq-band canvas { height: 240px; } }
+
+.rq { max-width: 760px; margin: 0 auto; padding: 0 0 3rem; }
+.rq-crumbs { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap;
+  font-size: 0.86rem; margin: 1.6rem 0 2rem; color: var(--global-text-color-light); }
+.rq-crumbs a { color: var(--global-text-color-light); text-decoration: none; }
+.rq-crumbs a:hover { color: var(--global-theme-color); }
+.rq-switch { display: inline-flex; border: 1px solid var(--global-divider-color); border-radius: 999px; padding: 3px; }
+.rq-switch a { padding: 3px 12px; border-radius: 999px; font-weight: 500; }
+.rq-switch a[aria-current="page"] { background: var(--global-text-color); color: var(--global-bg-color); }
+
+.rq-kicker { font-size: 0.74rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--global-theme-color); margin: 0 0 0.6rem; }
+.rq h1 { font-size: 2rem; font-weight: 500; line-height: 1.25; margin: 0 0 1.1rem; letter-spacing: -0.01em; }
+.rq-lede { font-size: 1.06rem; line-height: 1.7; margin: 0 0 0.8rem; }
+.rq-fields { font-size: 0.9rem; color: var(--global-text-color-light); margin: 0; }
+
+.rq h2 { font-size: 1.15rem; font-weight: 600; margin: 2.6rem 0 1rem; padding-top: 1.4rem; border-top: 1px solid var(--global-divider-color); }
+.rq-list { list-style: none; padding: 0; margin: 0; counter-reset: rq; }
+.rq-list li { display: grid; grid-template-columns: 2.6rem 1fr; gap: 0.2rem 0.6rem; padding: 0.95rem 0; border-bottom: 1px solid var(--global-divider-color); }
+.rq-list li:last-child { border-bottom: 0; }
+.rq-list li::before { counter-increment: rq; content: attr(data-n); grid-row: span 2; font-size: 0.82rem; font-weight: 700;
+  color: var(--global-theme-color); padding-top: 0.15rem; font-variant-numeric: tabular-nums; }
+.rq-label { font-size: 0.78rem; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--global-text-color-light); }
+.rq-q { font-size: 1.02rem; line-height: 1.55; }
+
+.rq-paper { border: 1px solid var(--global-divider-color); border-radius: 14px; padding: 1.2rem 1.3rem; background: var(--global-card-bg-color); }
+.rq-paper + .rq-paper { margin-top: 0.8rem; }
+.rq-paper-tag { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--global-text-color-light); margin: 0 0 0.35rem; }
+.rq-paper h3 { font-size: 1.08rem; font-weight: 600; line-height: 1.4; margin: 0 0 0.3rem; }
+.rq-paper .rq-meta { font-size: 0.9rem; color: var(--global-text-color-light); margin: 0 0 0.6rem; }
+.rq-paper p { line-height: 1.6; margin: 0 0 0.9rem; }
+
+/* Paper buttons in the style of academic project pages: dark rounded pills with an icon */
+.rq-links { display: flex; flex-wrap: wrap; gap: 8px; }
+.paper-btn {
+  display: inline-flex; align-items: center; gap: 7px; padding: 0.42rem 1rem; border-radius: 999px;
+  background: #363636; color: #fff !important; font-size: 0.9rem; font-weight: 500; text-decoration: none !important;
+  border: 1px solid #363636; transition: background 0.15s ease, transform 0.15s ease;
+}
+.paper-btn:hover { background: #111; transform: translateY(-1px); }
+.paper-btn svg { width: 15px; height: 15px; flex: none; }
+.paper-btn--ghost { background: transparent; color: var(--global-text-color) !important; border-color: var(--global-divider-color); }
+.paper-btn--ghost:hover { background: var(--global-code-bg-color); }
+html[data-theme="dark"] .paper-btn:not(.paper-btn--ghost) { background: #e8e8e8; color: #111 !important; border-color: #e8e8e8; }
+html[data-theme="dark"] .paper-btn:not(.paper-btn--ghost):hover { background: #fff; }
+
+.rq-next { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 1.4rem;
+  border-top: 1px solid var(--global-divider-color); font-size: 0.92rem; }
+.rq-next a { text-decoration: none; font-weight: 500; }

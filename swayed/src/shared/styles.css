@@ -1,0 +1,63 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/source-serif-4";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Source Serif 4 Variable", ui-serif, Georgia, serif;
+
+  --color-paper: #f7f5f0;
+  --color-card: #ffffff;
+  --color-ink: #16181d;
+  --color-muted: #5b5e66;
+  --color-faint: #8a8d94;
+  --color-line: #e4e1da;
+  --color-wash: #efece5;
+
+  /* roles: learner / AI / ground truth */
+  --color-learner: #eb6834;
+  --color-learner-wash: #fdeee6;
+  --color-ai: #6250d6;
+  --color-ai-wash: #efecfb;
+  --color-truth: #0f7a3d;
+  --color-truth-wash: #e4f3e9;
+  --color-bad: #c03a39;
+  --color-bad-wash: #fbe9e8;
+}
+
+:root { color-scheme: light; }
+
+body {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "cv11", "ss01";
+}
+
+/* range inputs styled consistently */
+input[type="range"] {
+  appearance: none;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--color-wash);
+  outline-offset: 4px;
+}
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 20px; height: 20px; border-radius: 999px;
+  background: var(--color-ink);
+  border: 3px solid white;
+  box-shadow: 0 1px 4px rgb(0 0 0 / 0.25);
+  cursor: grab;
+}
+input[type="range"]::-moz-range-thumb {
+  width: 16px; height: 16px; border-radius: 999px;
+  background: var(--color-ink); border: 3px solid white;
+}
+
+/* Observable Plot tweaks */
+figure, svg[class^="plot"] { font-family: var(--font-sans); }
+[aria-label="tip"] { font-size: 12px; }
+
+.card { background: var(--color-card); border: 1px solid var(--color-line); border-radius: 16px; }

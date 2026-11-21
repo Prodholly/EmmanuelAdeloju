@@ -1,0 +1,148 @@
+/* Homepage blocks: animated guiding questions + "Data Sensemaking Tools I Built".
+   Uses al-folio's theme variables, so light and dark mode follow the site toggle. */
+:root {
+  --hb-learner: #eb6834;
+  --hb-ai: #6250d6;
+  --hb-ai-wash: rgba(98, 80, 214, 0.08);
+  --hb-truth: #0f7a3d;
+  --hb-truth-wash: rgba(15, 122, 61, 0.1);
+  --hb-hurt: #c03a39;
+  --hb-hurt-wash: rgba(192, 58, 57, 0.08);
+  --hb-stage: rgba(181, 9, 172, 0.035);
+}
+html[data-theme="dark"] {
+  --hb-learner: #f08a5d;
+  --hb-ai: #9085e9;
+  --hb-ai-wash: rgba(144, 133, 233, 0.12);
+  --hb-truth: #3fb27f;
+  --hb-truth-wash: rgba(63, 178, 127, 0.12);
+  --hb-hurt: #e66767;
+  --hb-hurt-wash: rgba(230, 103, 103, 0.12);
+  --hb-stage: rgba(38, 152, 186, 0.06);
+}
+
+/* ---------- guiding questions ---------- */
+.gq-grid { clear: both; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 1.1rem 0 1.9rem; }
+.gq-card {
+  display: flex; flex-direction: column; overflow: hidden; text-decoration: none !important; color: inherit !important;
+  background: var(--global-card-bg-color); border: 1px solid var(--global-divider-color); border-radius: 14px;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.gq-card:hover, .gq-card:focus-visible { transform: translateY(-3px); box-shadow: 0 12px 30px rgba(0, 0, 0, 0.09); border-color: var(--global-theme-color); outline: none; }
+.gq-canvas { display: block; width: 100%; height: 250px; background: var(--hb-stage); border-bottom: 1px solid var(--global-divider-color); }
+.gq-body { padding: 0.95rem 1.15rem 1.1rem; display: flex; flex-direction: column; gap: 0.4rem; flex: 1; }
+.gq-num { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; color: var(--global-theme-color); }
+.gq-question { font-size: 1.14rem; font-weight: 600; line-height: 1.38; color: var(--global-text-color); }
+.gq-caption { font-size: 0.86rem; line-height: 1.5; color: var(--global-text-color-light); }
+.gq-more { margin-top: auto; padding-top: 0.35rem; font-size: 0.86rem; font-weight: 600; color: var(--global-theme-color); }
+.gq-more span { display: inline-block; transition: transform 0.2s ease; }
+.gq-card:hover .gq-more span { transform: translateX(4px); }
+@media (max-width: 767px) {
+  .gq-grid { grid-template-columns: 1fr; }
+  .gq-canvas { height: 220px; }
+}
+
+/* ---------- tools ---------- */
+.dst { margin: 2.2rem 0 1.6rem; }
+.dst-title { font-size: 1.45rem; font-weight: 600; margin: 0 0 0.3rem; }
+.dst-lead { color: var(--global-text-color-light); margin: 0 0 1rem; }
+.dst-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 10px; }
+.dst-tile {
+  display: flex; align-items: center; gap: 12px; width: 100%; text-align: left; cursor: pointer;
+  padding: 10px 12px; border-radius: 12px; border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color); color: var(--global-text-color); font: inherit;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.dst-tile:hover { border-color: var(--global-text-color-light); }
+.dst-tile.is-active { border-color: var(--global-theme-color); box-shadow: inset 0 0 0 1px var(--global-theme-color); }
+.dst-tile:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: 2px; }
+.dst-icon { flex: none; width: 52px; height: 52px; border-radius: 12px; background: var(--hb-ai-wash); display: grid; place-items: center; }
+.dst-icon svg { width: 36px; height: 36px; }
+.dst-text { display: flex; flex-direction: column; min-width: 0; }
+.dst-name { font-weight: 600; display: flex; align-items: center; gap: 8px; }
+.dst-badge { font-size: 0.66rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 7px; border-radius: 999px; color: var(--hb-truth); background: var(--hb-truth-wash); }
+.dst-short { font-size: 0.86rem; color: var(--global-text-color-light); line-height: 1.35; }
+.dst-chev { margin-left: auto; color: var(--global-text-color-light); transition: transform 0.2s ease; }
+.dst-tile.is-active .dst-chev { transform: rotate(90deg); }
+
+.dst-panel {
+  margin-top: 10px; padding: 1.1rem; border-radius: 14px; border: 1px solid var(--global-divider-color);
+  background: var(--global-card-bg-color); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr); gap: 1.4rem;
+  animation: dst-open 0.3s ease;
+}
+.dst-panel[hidden] { display: none; }
+@keyframes dst-open { from { opacity: 0; transform: translateY(-6px); } to { opacity: 1; transform: none; } }
+@media (max-width: 767px) { .dst-panel { grid-template-columns: 1fr; } }
+.dst-panel h4 { font-size: 1.05rem; font-weight: 600; margin: 0 0 0.2rem; }
+.dst-kicker { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--global-text-color-light); margin: 0 0 0.4rem; }
+.dst-about { font-size: 0.9rem; color: var(--global-text-color-light); line-height: 1.5; margin: 0.4rem 0 0; }
+.dst-chart { width: 100%; height: auto; margin-top: 0.6rem; }
+.dst-chart .c-line { fill: none; stroke: var(--global-text-color); stroke-width: 2; opacity: 0.85; }
+.dst-chart .c-pt { fill: var(--global-card-bg-color); stroke: var(--global-text-color); stroke-width: 1.6; }
+.dst-chart .c-grid { stroke: var(--global-divider-color); }
+.dst-chart text { font-size: 10px; fill: var(--global-text-color-light); }
+.dst-q { font-weight: 600; margin: 0.6rem 0 0; line-height: 1.4; }
+
+/* teaser steps */
+.st-label { display: block; font-size: 0.9rem; font-weight: 600; margin-bottom: 0.4rem; }
+.st-inputrow { display: flex; gap: 8px; align-items: stretch; }
+.st-inputrow input {
+  flex: 1; min-width: 0; font: inherit; font-size: 1.15rem; font-weight: 600; padding: 0.45rem 0.7rem; border-radius: 10px;
+  border: 1px solid var(--global-divider-color); background: var(--global-bg-color); color: var(--global-text-color);
+}
+.st-inputrow input:focus { outline: none; border-color: var(--global-theme-color); }
+.st-unit { align-self: center; font-size: 0.85rem; color: var(--global-text-color-light); }
+.st-btn {
+  display: inline-flex; align-items: center; justify-content: center; font: inherit; font-size: 0.9rem; font-weight: 600;
+  padding: 0.5rem 0.95rem; border-radius: 999px; border: 1px solid var(--global-text-color); background: transparent;
+  color: var(--global-text-color) !important; cursor: pointer; text-decoration: none !important; transition: opacity 0.2s ease;
+}
+.st-btn:hover { opacity: 0.85; }
+.st-primary { background: var(--global-text-color); color: var(--global-bg-color) !important; }
+.st-btn:disabled { opacity: 0.35; cursor: not-allowed; }
+.st-link { font: inherit; font-size: 0.88rem; background: none; border: 0; color: var(--global-text-color-light); text-decoration: underline; cursor: pointer; }
+.st-you { margin: 0 0 0.6rem; font-size: 0.92rem; display: flex; align-items: center; gap: 8px; }
+.st-bubble { border-radius: 12px; padding: 0.75rem 0.9rem; background: var(--hb-ai-wash); border: 1px solid color-mix(in srgb, var(--hb-ai) 30%, transparent); }
+.st-bubble-head { margin: 0 0 0.35rem; font-size: 0.82rem; font-weight: 600; display: flex; align-items: center; gap: 6px; }
+.st-ai-badge { font-size: 0.66rem; font-weight: 700; color: #fff; background: var(--hb-ai); border-radius: 5px; padding: 1px 5px; }
+.st-conf { margin-left: auto; font-weight: 500; color: var(--hb-ai); }
+.st-bubble-text { margin: 0; font-size: 0.92rem; line-height: 1.5; min-height: 1.5em; }
+.st-ai-answer { display: inline-flex; align-items: center; gap: 7px; margin-top: 0.45rem; }
+.st-typing { display: inline-flex; gap: 4px; }
+.st-typing i { width: 6px; height: 6px; border-radius: 50%; background: var(--hb-ai); opacity: 0.4; animation: st-blink 0.9s infinite; }
+.st-typing i:nth-child(2) { animation-delay: 0.15s; } .st-typing i:nth-child(3) { animation-delay: 0.3s; }
+@keyframes st-blink { 50% { opacity: 1; } }
+.st-choice { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 0.75rem; }
+.st-choice[hidden] { display: none; }
+.st-verdict { border-radius: 12px; padding: 0.65rem 0.9rem; font-size: 0.92rem; line-height: 1.5; }
+.st-verdict p { margin: 0; }
+.st-verdict-head { font-weight: 700; }
+.st-good { background: var(--hb-truth-wash); } .st-good .st-verdict-head { color: var(--hb-truth); }
+.st-bad { background: var(--hb-hurt-wash); } .st-bad .st-verdict-head { color: var(--hb-hurt); }
+.st-line { width: 100%; height: auto; margin-top: 0.6rem; overflow: visible; }
+.st-axis { stroke: var(--global-text-color-light); stroke-width: 1.3; opacity: 0.6; }
+.st-tick { font-size: 10px; fill: var(--global-text-color-light); text-anchor: middle; }
+.st-band { fill: var(--hb-truth-wash); }
+.st-truth { stroke: var(--hb-truth); stroke-width: 2.5; }
+.st-aistem { stroke: var(--hb-ai); stroke-width: 1.4; stroke-dasharray: 2 2; }
+.st-ai { fill: var(--hb-ai); stroke: var(--global-card-bg-color); stroke-width: 2; }
+.st-first { fill: var(--global-card-bg-color); stroke: var(--hb-learner); stroke-width: 2.5; }
+.st-final { fill: var(--hb-learner); stroke: var(--global-card-bg-color); stroke-width: 2; }
+.st-move { fill: none; stroke: var(--hb-learner); stroke-width: 1.5; stroke-dasharray: 3 3; }
+.st-arrhead { fill: var(--hb-learner); }
+.st-legend { list-style: none; padding: 0; margin: 0.3rem 0 0; display: flex; flex-wrap: wrap; gap: 4px 16px; font-size: 0.84rem; color: var(--global-text-color-light); }
+.st-legend li { display: flex; align-items: center; gap: 6px; white-space: nowrap; }
+.st-legend b { color: var(--global-text-color); }
+.st-key { display: inline-block; flex: none; }
+.st-key-first { width: 11px; height: 11px; border-radius: 50%; border: 2.5px solid var(--hb-learner); }
+.st-key-final { width: 11px; height: 11px; border-radius: 50%; background: var(--hb-learner); }
+.st-key-ai { width: 9px; height: 9px; background: var(--hb-ai); transform: rotate(45deg); }
+.st-key-truth { width: 4px; height: 13px; border-radius: 2px; background: var(--hb-truth); }
+.st-flaw { font-size: 0.88rem; margin: 0.7rem 0 0; line-height: 1.45; }
+.st-flaw .st-key { margin: 0 8px 1px 1px; vertical-align: middle; }
+.st-cta { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin-top: 0.9rem; }
+.dst-note { font-size: 0.78rem; color: var(--global-text-color-light); margin: 0.8rem 0 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .gq-card, .dst-panel, .st-typing i { transition: none; animation: none; }
+}

@@ -1,0 +1,50 @@
+<!-- "Data Sensemaking Tools I Built" (homepage). Teaser logic: assets/js/swayed-teaser.js · Styles: assets/css/home-blocks.css -->
+<section class="dst" aria-labelledby="dst-title">
+  <h2 class="dst-title" id="dst-title">Data Sensemaking Tools I Built</h2>
+  <p class="dst-lead">Interactive tools for studying how people reason with data and AI. Select one to see how it works.</p>
+  <div class="dst-grid">
+    <button type="button" class="dst-tile is-active" aria-expanded="true" aria-controls="dst-panel-swayed">
+      <span class="dst-icon" aria-hidden="true">
+        <svg viewBox="0 0 36 36">
+          <rect x="7" y="16" width="10" height="16" rx="2" fill="var(--hb-truth-wash)"/>
+          <line x1="3" y1="24" x2="33" y2="24" stroke="currentColor" stroke-opacity=".45" stroke-width="1.5"/>
+          <line x1="12" y1="15" x2="12" y2="31" stroke="var(--hb-truth)" stroke-width="2.2"/>
+          <path d="M12 27 Q19 33 26 27" fill="none" stroke="var(--hb-learner)" stroke-width="1.4" stroke-dasharray="2 2"/>
+          <line x1="27" y1="10" x2="27" y2="24" stroke="var(--hb-ai)" stroke-width="1.2" stroke-dasharray="1.5 1.5"/>
+          <rect x="23.5" y="6.5" width="7" height="7" transform="rotate(45 27 10)" fill="var(--hb-ai)"/>
+          <circle cx="12" cy="24" r="3.6" fill="var(--global-card-bg-color)" stroke="var(--hb-learner)" stroke-width="2"/>
+          <circle cx="27" cy="24" r="3" fill="var(--hb-learner)"/>
+        </svg>
+      </span>
+      <span class="dst-text">
+        <span class="dst-name">Swayed <span class="dst-badge">Live</span></span>
+        <span class="dst-short">When AI answers pull data reasoning off course</span>
+      </span>
+      <span class="dst-chev" aria-hidden="true">›</span>
+    </button>
+  </div>
+  <div class="dst-panel" id="dst-panel-swayed" data-teaser
+       data-play-url="{{ '/tools/swayed/play/' | relative_url }}"
+       data-study-url="{{ '/tools/swayed/' | relative_url }}">
+    <div>
+      <p class="dst-kicker">Try one task · 20 seconds</p>
+      <h4>How fast is CO₂ rising?</h4>
+      <svg class="dst-chart" viewBox="0 0 320 136" role="img" aria-label="Line chart of atmospheric CO2 at Mauna Loa: 369.7 ppm in 2000, 380.0 in 2005, 389.9 in 2010, 401.0 in 2015, 414.2 in 2020">
+        <line class="c-grid" x1="30" x2="306" y1="109.6" y2="109.6"/><text x="24" y="113" text-anchor="end">370</text>
+        <line class="c-grid" x1="30" x2="306" y1="68.1" y2="68.1"/><text x="24" y="72" text-anchor="end">390</text>
+        <line class="c-grid" x1="30" x2="306" y1="26.6" y2="26.6"/><text x="24" y="30" text-anchor="end">410</text>
+        <polyline class="c-line" points="30,110.2 97.5,88.9 165,68.3 232.5,45.3 300,17.9"/>
+        <circle class="c-pt" cx="30" cy="110.2" r="3.5"/><circle class="c-pt" cx="97.5" cy="88.9" r="3.5"/><circle class="c-pt" cx="165" cy="68.3" r="3.5"/><circle class="c-pt" cx="232.5" cy="45.3" r="3.5"/><circle class="c-pt" cx="300" cy="17.9" r="3.5"/>
+        <text x="30" y="132" text-anchor="middle">2000</text><text x="165" y="132" text-anchor="middle">2010</text><text x="300" y="132" text-anchor="middle">2020</text>
+      </svg>
+      <p class="dst-q">On average, by how many ppm per year did CO₂ rise between 2000 and 2020?</p>
+      <p class="dst-about">CO₂ at Mauna Loa (ppm). In the full tool, learners answer 8 tasks like this. An AI weighs in on each one, and it is deliberately wrong on 5.</p>
+    </div>
+    <div>
+      <p class="dst-kicker">Your turn</p>
+      <div data-teaser-stage></div>
+      <p class="dst-note">The AI is simulated and its answer is written in advance. Nothing you type leaves your browser.</p>
+    </div>
+  </div>
+</section>
+<script src="{{ '/assets/js/swayed-teaser.js' | relative_url }}"></script>

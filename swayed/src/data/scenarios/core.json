@@ -1,0 +1,682 @@
+{
+  "id": "core",
+  "title": "Reading science data with an AI assistant",
+  "description": "Eight data tasks across climate, health, ecology and physical science. The AI is deliberately wrong on five.",
+  "items": [
+    {
+      "id": "co2-rate",
+      "title": "How fast is CO₂ rising?",
+      "domain": "climate",
+      "move": "quantify",
+      "context": "Annual mean atmospheric CO₂ measured at Mauna Loa Observatory, Hawai‘i, every five years.",
+      "dataset": {
+        "source": "Adapted from NOAA GML Mauna Loa annual means (rounded to 0.1 ppm)",
+        "columns": [
+          {
+            "key": "year",
+            "label": "Year"
+          },
+          {
+            "key": "co2",
+            "label": "CO₂",
+            "unit": "ppm"
+          }
+        ],
+        "rows": [
+          {
+            "year": 2000,
+            "co2": 369.7
+          },
+          {
+            "year": 2005,
+            "co2": 380.0
+          },
+          {
+            "year": 2010,
+            "co2": 389.9
+          },
+          {
+            "year": 2015,
+            "co2": 401.0
+          },
+          {
+            "year": 2020,
+            "co2": 414.2
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "year",
+        "y": "co2"
+      },
+      "question": {
+        "kind": "numeric",
+        "prompt": "On average, by how many ppm per year did CO₂ rise between 2000 and 2020?",
+        "unit": "ppm/yr",
+        "tolerance": 0.3,
+        "min": 0,
+        "max": 8,
+        "step": 0.1
+      },
+      "groundTruth": {
+        "answer": 2.2,
+        "explanation": "The rise is 414.2 − 369.7 = 44.5 ppm over 20 years. 44.5 ÷ 20 ≈ 2.2 ppm per year."
+      },
+      "ai": {
+        "answer": 4.5,
+        "errorType": "arithmetic",
+        "rationale": "CO₂ climbed from about 370 to 414 ppm, an increase of roughly 44.5 ppm. Spread across the decade, that works out to about 4.5 ppm per year, which fits the steep upward trend in the chart.",
+        "statedConfidence": "high",
+        "flaw": "It divided the 44.5 ppm rise by 10 years, but 2000 to 2020 is 20 years."
+      }
+    },
+    {
+      "id": "temp-change",
+      "title": "How much warmer?",
+      "domain": "climate",
+      "move": "compare",
+      "context": "Global mean surface temperature anomaly: how far each year sits above or below the 1951–1980 average.",
+      "dataset": {
+        "source": "Adapted from NASA GISTEMP v4 annual global means (rounded to 0.01 °C)",
+        "columns": [
+          {
+            "key": "year",
+            "label": "Year"
+          },
+          {
+            "key": "anomaly",
+            "label": "Anomaly",
+            "unit": "°C"
+          }
+        ],
+        "rows": [
+          {
+            "year": 1980,
+            "anomaly": 0.27
+          },
+          {
+            "year": 1990,
+            "anomaly": 0.45
+          },
+          {
+            "year": 2000,
+            "anomaly": 0.4
+          },
+          {
+            "year": 2010,
+            "anomaly": 0.72
+          },
+          {
+            "year": 2020,
+            "anomaly": 1.01
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "year",
+        "y": "anomaly"
+      },
+      "question": {
+        "kind": "numeric",
+        "prompt": "By how many °C was 2020 warmer than 1980?",
+        "unit": "°C",
+        "tolerance": 0.05,
+        "min": 0,
+        "max": 2,
+        "step": 0.01
+      },
+      "groundTruth": {
+        "answer": 0.74,
+        "explanation": "1.01 − 0.27 = 0.74 °C. The dip in 2000 doesn't matter here, because the question compares only the two endpoints."
+      },
+      "ai": {
+        "answer": 0.74,
+        "errorType": "none",
+        "rationale": "Subtract the 1980 anomaly from the 2020 anomaly: 1.01 − 0.27 = 0.74 °C. The series dips around 2000, but that doesn't affect the endpoint difference.",
+        "statedConfidence": "medium"
+      }
+    },
+    {
+      "id": "vaccine-rate",
+      "title": "Who is hospitalized more often?",
+      "domain": "health",
+      "move": "evaluate-claim",
+      "context": "During one winter, a town of 100,000 people recorded 100 hospitalizations for a respiratory illness. 90% of residents were vaccinated.",
+      "dataset": {
+        "source": "Illustrative numbers built to show a base-rate pattern; not real surveillance data",
+        "columns": [
+          {
+            "key": "group",
+            "label": "Group"
+          },
+          {
+            "key": "people",
+            "label": "People in group"
+          },
+          {
+            "key": "hospitalized",
+            "label": "Hospitalized"
+          }
+        ],
+        "rows": [
+          {
+            "group": "Vaccinated",
+            "people": 90000,
+            "hospitalized": 60
+          },
+          {
+            "group": "Unvaccinated",
+            "people": 10000,
+            "hospitalized": 40
+          }
+        ]
+      },
+      "chart": {
+        "type": "bar",
+        "x": "group",
+        "y": "hospitalized"
+      },
+      "question": {
+        "kind": "choice",
+        "prompt": "Which group had the higher rate of hospitalization?",
+        "options": [
+          {
+            "id": "vax",
+            "label": "Vaccinated people"
+          },
+          {
+            "id": "unvax",
+            "label": "Unvaccinated people"
+          },
+          {
+            "id": "same",
+            "label": "About the same"
+          }
+        ]
+      },
+      "groundTruth": {
+        "answer": "unvax",
+        "explanation": "Compare rates, not counts. Vaccinated: 60 ÷ 90,000 ≈ 67 per 100,000. Unvaccinated: 40 ÷ 10,000 = 400 per 100,000, about 6× higher."
+      },
+      "ai": {
+        "answer": "vax",
+        "errorType": "base-rate",
+        "rationale": "Vaccinated people account for 60 of the 100 hospitalizations, so 60% of hospital cases are vaccinated. That makes the vaccinated group the one being hospitalized more often.",
+        "statedConfidence": "high",
+        "flaw": "It compared raw counts (60 vs 40). Most of the town is vaccinated, so the vaccinated group's rate per person is far lower."
+      }
+    },
+    {
+      "id": "pond-cause",
+      "title": "Frogs and dragonflies",
+      "domain": "ecology",
+      "move": "explain",
+      "context": "A field team counted frogs and dragonflies at ten ponds of different sizes in one week.",
+      "dataset": {
+        "source": "Illustrative field data built for this task; not a published survey",
+        "columns": [
+          {
+            "key": "pond",
+            "label": "Pond"
+          },
+          {
+            "key": "area",
+            "label": "Area",
+            "unit": "ha"
+          },
+          {
+            "key": "frogs",
+            "label": "Frogs"
+          },
+          {
+            "key": "dragonflies",
+            "label": "Dragonflies"
+          }
+        ],
+        "rows": [
+          {
+            "pond": "A",
+            "area": 0.2,
+            "frogs": 5,
+            "dragonflies": 7
+          },
+          {
+            "pond": "B",
+            "area": 0.4,
+            "frogs": 9,
+            "dragonflies": 13
+          },
+          {
+            "pond": "C",
+            "area": 0.5,
+            "frogs": 11,
+            "dragonflies": 14
+          },
+          {
+            "pond": "D",
+            "area": 0.8,
+            "frogs": 17,
+            "dragonflies": 25
+          },
+          {
+            "pond": "E",
+            "area": 1.0,
+            "frogs": 19,
+            "dragonflies": 31
+          },
+          {
+            "pond": "F",
+            "area": 1.3,
+            "frogs": 27,
+            "dragonflies": 37
+          },
+          {
+            "pond": "G",
+            "area": 1.6,
+            "frogs": 31,
+            "dragonflies": 50
+          },
+          {
+            "pond": "H",
+            "area": 2.0,
+            "frogs": 41,
+            "dragonflies": 58
+          },
+          {
+            "pond": "I",
+            "area": 2.4,
+            "frogs": 47,
+            "dragonflies": 74
+          },
+          {
+            "pond": "J",
+            "area": 3.0,
+            "frogs": 58,
+            "dragonflies": 88
+          }
+        ]
+      },
+      "chart": {
+        "type": "scatter",
+        "x": "frogs",
+        "y": "dragonflies"
+      },
+      "question": {
+        "kind": "choice",
+        "prompt": "What can you conclude from this data?",
+        "options": [
+          {
+            "id": "cause",
+            "label": "More frogs cause more dragonflies"
+          },
+          {
+            "id": "assoc",
+            "label": "The two counts rise together, but this data can't show that one causes the other"
+          },
+          {
+            "id": "none",
+            "label": "There is no clear relationship"
+          }
+        ]
+      },
+      "groundTruth": {
+        "answer": "assoc",
+        "explanation": "The counts are strongly associated, but this is observational data. Both counts also rise with pond area, which is a likely common cause. A causal claim would need an experiment or a design that controls for area."
+      },
+      "ai": {
+        "answer": "cause",
+        "errorType": "causal-leap",
+        "rationale": "The scatter plot shows an almost perfect positive relationship: every pond with more frogs also has more dragonflies. A pattern this consistent across ten ponds indicates that frog populations drive dragonfly numbers.",
+        "statedConfidence": "high",
+        "flaw": "A tight correlation in observational data can't show cause. Pond area drives both counts."
+      }
+    },
+    {
+      "id": "sea-ice",
+      "title": "Arctic sea ice in September",
+      "domain": "climate",
+      "move": "notice",
+      "context": "Average Arctic sea-ice extent each September, when the ice is near its yearly minimum.",
+      "dataset": {
+        "source": "Adapted from NSIDC Sea Ice Index v3, September monthly means (rounded)",
+        "columns": [
+          {
+            "key": "year",
+            "label": "Year"
+          },
+          {
+            "key": "extent",
+            "label": "Extent",
+            "unit": "million km²"
+          }
+        ],
+        "rows": [
+          {
+            "year": 1980,
+            "extent": 7.67
+          },
+          {
+            "year": 1985,
+            "extent": 6.93
+          },
+          {
+            "year": 1990,
+            "extent": 6.24
+          },
+          {
+            "year": 1995,
+            "extent": 6.08
+          },
+          {
+            "year": 2000,
+            "extent": 6.25
+          },
+          {
+            "year": 2005,
+            "extent": 5.57
+          },
+          {
+            "year": 2010,
+            "extent": 4.87
+          },
+          {
+            "year": 2012,
+            "extent": 3.57
+          },
+          {
+            "year": 2015,
+            "extent": 4.62
+          },
+          {
+            "year": 2020,
+            "extent": 3.92
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "year",
+        "y": "extent"
+      },
+      "question": {
+        "kind": "choice",
+        "prompt": "Which statement does the data shown support?",
+        "options": [
+          {
+            "id": "decline-swings",
+            "label": "Extent fell overall, with some years rebounding"
+          },
+          {
+            "id": "every-year",
+            "label": "Extent fell in every interval shown"
+          },
+          {
+            "id": "gone-2035",
+            "label": "The data show the ice will be gone by 2035"
+          }
+        ]
+      },
+      "groundTruth": {
+        "answer": "decline-swings",
+        "explanation": "Extent fell from 7.67 to 3.92 million km², but it rose from 1995 to 2000 and from 2012 to 2015. A date for ice-free Septembers needs projections beyond this data."
+      },
+      "ai": {
+        "answer": "decline-swings",
+        "errorType": "none",
+        "rationale": "The long-run direction is clearly down, roughly halving since 1980. But it isn't a steady fall: 2000 is above 1995 and 2015 is above the 2012 low. Saying when the ice will disappear would mean extrapolating past the data.",
+        "statedConfidence": "high"
+      }
+    },
+    {
+      "id": "decay-log",
+      "title": "A decaying sample",
+      "domain": "physical-science",
+      "move": "predict",
+      "context": "A class measures the count rate of a radioactive sample every hour. Note the scale of the vertical axis.",
+      "dataset": {
+        "source": "Idealized classroom lab data",
+        "columns": [
+          {
+            "key": "hour",
+            "label": "Hour"
+          },
+          {
+            "key": "rate",
+            "label": "Count rate",
+            "unit": "counts/min"
+          }
+        ],
+        "rows": [
+          {
+            "hour": 0,
+            "rate": 1600
+          },
+          {
+            "hour": 1,
+            "rate": 800
+          },
+          {
+            "hour": 2,
+            "rate": 400
+          },
+          {
+            "hour": 3,
+            "rate": 200
+          },
+          {
+            "hour": 4,
+            "rate": 100
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "hour",
+        "y": "rate",
+        "yLog": true
+      },
+      "question": {
+        "kind": "numeric",
+        "prompt": "If the pattern continues, what will the count rate be at hour 5?",
+        "unit": "counts/min",
+        "tolerance": 5,
+        "min": 0,
+        "max": 400,
+        "step": 5
+      },
+      "groundTruth": {
+        "answer": 50,
+        "explanation": "The vertical axis is logarithmic. The rate halves every hour (1600 → 800 → 400 → 200 → 100), so hour 5 gives 50 counts/min. A straight line on a log axis means a constant ratio, not a constant drop."
+      },
+      "ai": {
+        "answer": 0,
+        "errorType": "misread-axis",
+        "rationale": "The points lie on a perfectly straight line, so the count rate drops by the same amount every hour, about 375 counts/min (1600 to 100 over 4 hours). Continuing that line, the rate reaches zero by hour 5.",
+        "statedConfidence": "high",
+        "flaw": "On a log axis a straight line means a constant ratio (halving each hour), not a constant drop."
+      }
+    },
+    {
+      "id": "life-expectancy",
+      "title": "A drop in life expectancy",
+      "domain": "health",
+      "move": "quantify",
+      "context": "Life expectancy at birth in the United States. Note that the vertical axis does not start at zero.",
+      "dataset": {
+        "source": "Adapted from CDC / NCHS National Vital Statistics reports (years, rounded)",
+        "columns": [
+          {
+            "key": "year",
+            "label": "Year"
+          },
+          {
+            "key": "years",
+            "label": "Life expectancy",
+            "unit": "years"
+          }
+        ],
+        "rows": [
+          {
+            "year": 2014,
+            "years": 78.9
+          },
+          {
+            "year": 2015,
+            "years": 78.7
+          },
+          {
+            "year": 2016,
+            "years": 78.7
+          },
+          {
+            "year": 2017,
+            "years": 78.6
+          },
+          {
+            "year": 2018,
+            "years": 78.7
+          },
+          {
+            "year": 2019,
+            "years": 78.8
+          },
+          {
+            "year": 2020,
+            "years": 77.0
+          },
+          {
+            "year": 2021,
+            "years": 76.4
+          },
+          {
+            "year": 2022,
+            "years": 77.5
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "year",
+        "y": "years"
+      },
+      "question": {
+        "kind": "numeric",
+        "prompt": "By how many years did life expectancy change from 2019 to 2021? (Use a negative number for a drop.)",
+        "unit": "years",
+        "tolerance": 0.1,
+        "min": -5,
+        "max": 5,
+        "step": 0.1
+      },
+      "groundTruth": {
+        "answer": -2.4,
+        "explanation": "76.4 − 78.8 = −2.4 years. The truncated axis makes the drop look larger, but the arithmetic holds."
+      },
+      "ai": {
+        "answer": -2.4,
+        "errorType": "none",
+        "rationale": "In 2019 the value is 78.8 years and in 2021 it is 76.4 years, so the change is 76.4 − 78.8 = −2.4 years. The axis starts near 76, which exaggerates the drop visually but doesn't change the number.",
+        "statedConfidence": "medium"
+      }
+    },
+    {
+      "id": "monarchs",
+      "title": "Monarch butterflies in winter",
+      "domain": "ecology",
+      "move": "evaluate-claim",
+      "context": "Forest area occupied by overwintering monarch butterfly colonies in Mexico, a standard index of the eastern population. Years mark the start of each winter.",
+      "dataset": {
+        "source": "Adapted from WWF-Mexico / CONANP overwintering surveys (hectares, rounded)",
+        "columns": [
+          {
+            "key": "year",
+            "label": "Winter starting"
+          },
+          {
+            "key": "hectares",
+            "label": "Area occupied",
+            "unit": "ha"
+          }
+        ],
+        "rows": [
+          {
+            "year": 1996,
+            "hectares": 18.19
+          },
+          {
+            "year": 2004,
+            "hectares": 2.19
+          },
+          {
+            "year": 2009,
+            "hectares": 1.92
+          },
+          {
+            "year": 2013,
+            "hectares": 0.67
+          },
+          {
+            "year": 2018,
+            "hectares": 6.05
+          },
+          {
+            "year": 2019,
+            "hectares": 2.83
+          },
+          {
+            "year": 2020,
+            "hectares": 2.1
+          },
+          {
+            "year": 2021,
+            "hectares": 2.84
+          },
+          {
+            "year": 2022,
+            "hectares": 2.21
+          },
+          {
+            "year": 2023,
+            "hectares": 0.9
+          }
+        ]
+      },
+      "chart": {
+        "type": "line",
+        "x": "year",
+        "y": "hectares"
+      },
+      "question": {
+        "kind": "choice",
+        "prompt": "Which statement best describes the pattern from 1996 to 2023?",
+        "options": [
+          {
+            "id": "recovery",
+            "label": "Monarchs have recovered strongly"
+          },
+          {
+            "id": "decline",
+            "label": "The population is far below its 1996 level, with ups and downs"
+          },
+          {
+            "id": "stable",
+            "label": "The population has been roughly stable"
+          }
+        ]
+      },
+      "groundTruth": {
+        "answer": "decline",
+        "explanation": "1996 had 18.19 ha and 2023 had 0.90 ha, a fall of about 95%. The 2013 → 2018 jump is real, but it is one stretch of a long decline."
+      },
+      "ai": {
+        "answer": "recovery",
+        "errorType": "cherry-pick",
+        "rationale": "The colonies grew from 0.67 ha in 2013 to 6.05 ha in 2018, roughly a ninefold increase in five years. That is a strong recovery, and conservation efforts appear to be working.",
+        "statedConfidence": "high",
+        "flaw": "It picked the 2013–2018 stretch and ignored the 95% fall since 1996."
+      }
+    }
+  ]
+}

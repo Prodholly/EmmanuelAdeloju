@@ -1,0 +1,23 @@
+<!-- Animated guiding-question cards (homepage). Styles: assets/css/home-blocks.css · Animation: assets/js/guiding-stages.js -->
+<link rel="stylesheet" href="{{ '/assets/css/home-blocks.css' | relative_url }}">
+<div class="gq-grid">
+  <a class="gq-card" data-scene="brain" href="{{ '/questions/cognition/' | relative_url }}">
+    <canvas class="gq-canvas" aria-hidden="true"></canvas>
+    <span class="gq-body">
+      <span class="gq-num">01 · COGNITION</span>
+      <span class="gq-question">How do humans and AI construct knowledge from scientific multimodal data?</span>
+      <span class="gq-caption">A brain and an AI network take in the same charts, tables, text and images. Do they build knowledge, and schemas, the same way?</span>
+      <span class="gq-more">Explore the research questions <span aria-hidden="true">→</span></span>
+    </span>
+  </a>
+  <a class="gq-card" data-scene="build" href="{{ '/questions/behavior/' | relative_url }}">
+    <canvas class="gq-canvas" aria-hidden="true"></canvas>
+    <span class="gq-body">
+      <span class="gq-num">02 · BEHAVIOR</span>
+      <span class="gq-question">How does collaborating with AI shape the knowledge people build from data?</span>
+      <span class="gq-caption">A human and an AI question, explain, challenge and revise until a shared network of knowledge takes shape.</span>
+      <span class="gq-more">Explore the research questions <span aria-hidden="true">→</span></span>
+    </span>
+  </a>
+</div>
+<script src="{{ '/assets/js/guiding-stages.js' | relative_url }}"></script>
