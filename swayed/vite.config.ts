@@ -16,6 +16,11 @@ export default defineConfig({
         study: resolve(__dirname, "index.html"), // project / results page
         play: resolve(__dirname, "play/index.html"), // the interactive tool
       },
+      // ".min.js" names make the site's jekyll-terser step skip these already-minified files
+      output: {
+        entryFileNames: "assets/[name]-[hash].min.js",
+        chunkFileNames: "assets/[name]-[hash].min.js",
+      },
     },
   },
   test: { environment: "node" },
