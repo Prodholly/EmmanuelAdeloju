@@ -1,0 +1,62 @@
+# Technical projects shown on /technical/.
+# Add a project by adding an entry under its group's `projects` list.
+# Fields: label (small kicker, optional), name, description (one sentence), tags, url (repo or README folder).
+
+- id: refresher
+  title: Refresher
+  description: My own directed refresh of core AI and ML algorithms, rebuilt from scratch to see what frameworks do under the hood.
+  source:
+    name: ml-foundations
+    url: https://github.com/Prodholly/ml-foundations
+    note: "a 115-day curriculum. Each build has its own code, tests, runnable example, README and research log."
+  projects:
+    - label: Day 1
+      name: DataLoader
+      description: A minimal, typed DataLoader built from scratch, with batching, seeded shuffling, drop-last and a pluggable collate function.
+      tags: [Python, generators]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/1_dataloader
+    - label: Day 2
+      name: Linear algebra for ML
+      description: Matrix multiply, softmax and cross-entropy written as plain loops, rebuilt with einsum, then benchmarked against NumPy.
+      tags: [NumPy, einsum]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/2_linalg
+    - label: Day 3
+      name: Scientific data explorer
+      description: A command-line tool that profiles any CSV or TSV file, reporting each column's type, missing values, distinct values and summary statistics.
+      tags: [Python, CLI]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/3_scidata
+    - label: Day 4
+      name: Data structures and complexity
+      description: Typed utility functions for everyday ML jobs, each with an explicit contract, edge-case handling, complexity analysis and tests.
+      tags: [Python, pytest]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/4_utils
+    - label: Day 5
+      name: NumPy shapes and broadcasting
+      description: Shape inspection, reshaping, axis reductions and broadcasting, with a loop-versus-NumPy benchmark and animated figures.
+      tags: [NumPy]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/5_shape_inspect
+    - label: Day 6
+      name: Gradient checking
+      description: A finite-difference gradient checker that verifies the softmax and cross-entropy gradient to 1e-8, plus vectorization speed curves.
+      tags: [NumPy, calculus]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/6_grad_check
+    - label: Day 7
+      name: Probability, statistics and regularized models
+      description: MLE, MAP, Bayes and information theory from scratch, used to build linear and logistic regression and to run three pre-registered experiments.
+      tags: [statistics, NumPy]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/7_prob_stats
+    - label: Day 8
+      name: One neural network, built three ways
+      description: The same network in pure NumPy, raw PyTorch and nn.Module (97.9% on MNIST), then a CIFAR-10 CNN that reaches 90.5%.
+      tags: [PyTorch, NumPy]
+      url: https://github.com/Prodholly/ml-foundations/tree/main/8_pytorch
+
+- id: papers
+  title: Paper implementations
+  description: Research papers I reimplement from scratch, to understand them in depth and check whether their results hold.
+  projects: []
+
+- id: experiments
+  title: Experiments
+  description: Experiments I design and run on how AI models learn, represent and reason.
+  projects: []

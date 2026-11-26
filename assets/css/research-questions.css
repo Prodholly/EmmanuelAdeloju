@@ -52,3 +52,30 @@ html[data-theme="dark"] .paper-btn:not(.paper-btn--ghost):hover { background: #f
 .rq-next { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-top: 3rem; padding-top: 1.4rem;
   border-top: 1px solid var(--global-divider-color); font-size: 0.92rem; }
 .rq-next a { text-decoration: none; font-weight: 500; }
+
+/* ---------- technical projects page (/technical/) ---------- */
+.tp-group { border: 1px solid var(--global-divider-color); border-radius: 14px; background: var(--global-card-bg-color); margin-bottom: 0.8rem; overflow: hidden; }
+.tp-group > summary { list-style: none; cursor: pointer; display: grid; grid-template-columns: 1fr auto; gap: 0.15rem 1rem; padding: 1rem 1.2rem; align-items: center; }
+.tp-group > summary::-webkit-details-marker { display: none; }
+.tp-group > summary:hover { background: var(--global-code-bg-color); }
+.tp-group > summary:focus-visible { outline: 2px solid var(--global-theme-color); outline-offset: -2px; }
+.tp-gtitle { font-size: 1.12rem; font-weight: 600; color: var(--global-text-color); }
+.tp-count { grid-row: span 2; align-self: center; display: flex; align-items: center; gap: 10px; font-size: 0.82rem; font-weight: 600; color: var(--global-text-color-light); white-space: nowrap; }
+.tp-count::after { content: "›"; font-size: 1.3rem; line-height: 1; transition: transform 0.2s ease; }
+.tp-group[open] .tp-count::after { transform: rotate(90deg); }
+.tp-gdesc { font-size: 0.92rem; color: var(--global-text-color-light); line-height: 1.5; }
+.tp-body { border-top: 1px solid var(--global-divider-color); padding: 0.2rem 1.2rem 1rem; }
+.tp-repo { font-size: 0.9rem; color: var(--global-text-color-light); margin: 0.8rem 0 0.2rem; line-height: 1.55; }
+.tp-list { list-style: none; padding: 0; margin: 0; }
+.tp-item { display: grid; grid-template-columns: 1fr auto; gap: 0.3rem 1rem; align-items: center; padding: 0.95rem 0; border-bottom: 1px solid var(--global-divider-color); }
+.tp-item:last-child { border-bottom: 0; }
+.tp-day { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--global-theme-color); }
+.tp-item h3 { font-size: 1rem; font-weight: 600; margin: 0.1rem 0 0.25rem; }
+.tp-item p { font-size: 0.93rem; line-height: 1.55; margin: 0 0 0.45rem; }
+.tp-tags { display: flex; flex-wrap: wrap; gap: 5px; }
+.tp-tags span { font-size: 0.74rem; padding: 1px 8px; border-radius: 999px; background: var(--global-code-bg-color); color: var(--global-text-color-light); }
+.tp-empty { font-size: 0.93rem; color: var(--global-text-color-light); margin: 0.9rem 0 0.2rem; }
+@media (max-width: 575px) {
+  .tp-item { grid-template-columns: 1fr; }
+  .tp-item .paper-btn { justify-self: start; }
+}

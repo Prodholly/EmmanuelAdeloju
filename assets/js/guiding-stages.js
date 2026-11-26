@@ -335,9 +335,61 @@
     }
   }
 
+  /* =====================================================================
+     Scene 3 (Technical work): a small network trains while its loss curve falls
+     ===================================================================== */
+  const TRAIN_LAYERS = [3, 4, 4, 2];
+  const TRAIN_W = (() => { const r = seeded(5), w = []; for (let l = 0; l < TRAIN_LAYERS.length - 1; l++) for (let i = 0; i < TRAIN_LAYERS[l]; i++) for (let j = 0; j < TRAIN_LAYERS[l + 1]; j++) w.push({ l, i, j, mag: 0.25 + r() * 0.75 }); return w; })();
+  const TRAIN_CYCLE = 9.5, TRAIN_RUN = 7.5;
+
+  function train(ctx, w, h, t) {
+    const T = t % TRAIN_CYCLE, p = clamp(T / TRAIN_RUN), done = T > TRAIN_RUN;
+    const fade = T > TRAIN_CYCLE - 0.5 ? (TRAIN_CYCLE - T) / 0.5 : 1;
+    const wide = w > h * 2.6, narrow = w < 380;
+    // layout: network on the left, loss chart on the right
+    const netL = wide ? w * 0.5 - h * 1.45 : w * 0.09, netR = wide ? w * 0.5 - h * 0.15 : w * (narrow ? 0.5 : 0.52);
+    const chL = wide ? w * 0.5 + h * 0.2 : w * (narrow ? 0.6 : 0.62), chR = wide ? w * 0.5 + h * 1.35 : w - 18;
+    const top = h * 0.16, bot = h * 0.78;
+    const node = (l, i) => ({ x: lerp(netL, netR, l / (TRAIN_LAYERS.length - 1)), y: lerp(top, bot, (i + 0.5) / TRAIN_LAYERS[l]) });
+
+    // edges strengthen as training proceeds
+    for (const e of TRAIN_W) {
+      const a = node(e.l, e.i), b = node(e.l + 1, e.j);
+      line(ctx, a.x, a.y, b.x, b.y, P.ai, (0.1 + p * 0.55 * e.mag) * fade, 0.8 + p * 1.6 * e.mag);
+    }
+    // forward pass (ink) then backward pass (orange gradients), repeating each "step"
+    const STEP = 1.25, sp = (T % STEP) / STEP;
+    if (!done) {
+      const forward = sp < 0.5, q = forward ? sp / 0.5 : (sp - 0.5) / 0.5;
+      const span = TRAIN_LAYERS.length - 1, pos = forward ? q * span : (1 - q) * span;
+      const l = Math.min(span - 1, Math.floor(pos)), f = pos - l;
+      for (const e of TRAIN_W) {
+        if (e.l !== l || e.mag < 0.55) continue;
+        const a = node(e.l, e.i), b = node(e.l + 1, e.j);
+        dot(ctx, lerp(a.x, b.x, f), lerp(a.y, b.y, f), 2.1, forward ? P.ink : "#f0802e", 0.75 * fade);
+      }
+      label(ctx, forward ? "forward" : "backprop", (netL + netR) / 2, h - 12, "center", forward ? P.muted : "#f0802e", 0.95, 600);
+    }
+    TRAIN_LAYERS.forEach((n, l) => { for (let i = 0; i < n; i++) { const c = node(l, i); dot(ctx, c.x, c.y, 5.2, P.ai, fade); } });
+
+    // loss chart
+    const loss = (x) => 0.12 + 0.82 * Math.exp(-4.2 * x) + 0.035 * Math.sin(x * 37) * (1 - x);
+    const X = (x) => lerp(chL, chR, x), Y = (v) => lerp(bot, top, v); // high loss sits high
+    line(ctx, chL, top - 4, chL, bot, P.muted, 0.55, 1);
+    line(ctx, chL, bot, chR, bot, P.muted, 0.55, 1);
+    label(ctx, "epochs →", chR, bot + 11, "right", P.muted, 0.9);
+    ctx.globalAlpha = fade; ctx.strokeStyle = P.ink; ctx.lineWidth = 2; ctx.beginPath();
+    for (let k = 0; k <= 80; k++) { const x = (k / 80) * p; k ? ctx.lineTo(X(x), Y(loss(x))) : ctx.moveTo(X(x), Y(loss(x))); }
+    ctx.stroke(); ctx.globalAlpha = 1;
+    dot(ctx, X(p), Y(loss(p)), 3.4, done ? P.truth : "#f0802e", fade);
+    const epoch = Math.round(p * 20);
+    label(ctx, done ? "trained ✓" : `loss ${loss(p).toFixed(2)} · epoch ${epoch}`, chR, top - 8, "right", done ? P.truth : P.ink, fade, 600);
+  }
+
   const SCENES = {
     brain: { draw: brain, still: 1.6 },
     build: { draw: build, still: BUILD + 1.2 },
+    train: { draw: train, still: 6.2 },
   };
 
   /* ---------- stage runner ---------- */
