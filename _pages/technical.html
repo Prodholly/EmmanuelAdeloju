@@ -26,7 +26,7 @@ nav: false
   </p>
   {% for group in site.data.technical_projects %}
   {% assign n = group.projects | size %}
-  <details class="tp-group" id="{{ group.id }}"{% if forloop.first %} open{% endif %}>
+  <details class="tp-group" id="{{ group.id }}">
     <summary>
       <span class="tp-gtitle">{{ group.title }}</span>
       <span class="tp-count">{% if n > 0 %}{{ n }} project{% if n != 1 %}s{% endif %}{% else %}In progress{% endif %}</span>

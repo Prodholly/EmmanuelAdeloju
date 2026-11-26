@@ -336,41 +336,55 @@
   }
 
   /* =====================================================================
-     Scene 3 (Technical work): a small network trains while its loss curve falls
+     Scene 3 (Technical work): a 3D network trains while its loss curve falls
      ===================================================================== */
-  const TRAIN_LAYERS = [3, 4, 4, 2];
-  const TRAIN_W = (() => { const r = seeded(5), w = []; for (let l = 0; l < TRAIN_LAYERS.length - 1; l++) for (let i = 0; i < TRAIN_LAYERS[l]; i++) for (let j = 0; j < TRAIN_LAYERS[l + 1]; j++) w.push({ l, i, j, mag: 0.25 + r() * 0.75 }); return w; })();
+  // layers sit side by side along x; each layer's neurons ring the x-axis in 3D
+  const NET3 = (() => {
+    const sizes = [4, 6, 6, 3], nodes = [], edges = [], r = seeded(5);
+    sizes.forEach((n, l) => {
+      for (let i = 0; i < n; i++) {
+        const a = (i / n) * Math.PI * 2 + l * 0.4, rad = n === 3 ? 0.3 : 0.44;
+        nodes.push({ l, x: (l - (sizes.length - 1) / 2) * 0.95, y: Math.cos(a) * rad, z: Math.sin(a) * rad });
+      }
+    });
+    nodes.forEach((A, i) => nodes.forEach((B, j) => { if (B.l === A.l + 1) edges.push({ i, j, mag: 0.25 + r() * 0.75 }); }));
+    return { nodes, edges, layers: sizes.length };
+  })();
   const TRAIN_CYCLE = 9.5, TRAIN_RUN = 7.5;
 
   function train(ctx, w, h, t) {
     const T = t % TRAIN_CYCLE, p = clamp(T / TRAIN_RUN), done = T > TRAIN_RUN;
     const fade = T > TRAIN_CYCLE - 0.5 ? (TRAIN_CYCLE - T) / 0.5 : 1;
-    const wide = w > h * 2.6, narrow = w < 380;
-    // layout: network on the left, loss chart on the right
-    const netL = wide ? w * 0.5 - h * 1.45 : w * 0.09, netR = wide ? w * 0.5 - h * 0.15 : w * (narrow ? 0.5 : 0.52);
-    const chL = wide ? w * 0.5 + h * 0.2 : w * (narrow ? 0.6 : 0.62), chR = wide ? w * 0.5 + h * 1.35 : w - 18;
+    const wide = w > h * 2.6;
+    const ncx = wide ? w * 0.5 - h * 0.85 : w * 0.31, ncy = h * 0.46, ns = wide ? h * 0.46 : Math.min(w * 0.19, h * 0.36);
+    const chL = wide ? w * 0.5 + h * 0.25 : w * 0.64, chR = wide ? w * 0.5 + h * 1.4 : w - 16;
     const top = h * 0.16, bot = h * 0.78;
-    const node = (l, i) => ({ x: lerp(netL, netR, l / (TRAIN_LAYERS.length - 1)), y: lerp(top, bot, (i + 0.5) / TRAIN_LAYERS[l]) });
+    const rotY = Math.sin(t * 0.3) * 0.38 + 0.18, rotX = 0.32;   // stays side-on enough to read the layers
 
-    // edges strengthen as training proceeds
-    for (const e of TRAIN_W) {
-      const a = node(e.l, e.i), b = node(e.l + 1, e.j);
-      line(ctx, a.x, a.y, b.x, b.y, P.ai, (0.1 + p * 0.55 * e.mag) * fade, 0.8 + p * 1.6 * e.mag);
+    const P3 = NET3.nodes.map((n) => project(n.x, n.y, n.z, rotY, rotX, ncx, ncy, ns));
+    const depthA = (z) => clamp(0.35 + (1 - (z + 0.8) / 1.6) * 0.65);
+    // edges: fade with depth, strengthen with training
+    for (const e of NET3.edges) {
+      const a = P3[e.i], b = P3[e.j];
+      line(ctx, a.x, a.y, b.x, b.y, P.ai, (0.06 + p * 0.4 * e.mag) * depthA((a.z + b.z) / 2) * fade, 0.6 + p * 1.3 * e.mag);
     }
-    // forward pass (ink) then backward pass (orange gradients), repeating each "step"
+    // pulses: forward pass (ink), then gradients flowing back (orange)
     const STEP = 1.25, sp = (T % STEP) / STEP;
     if (!done) {
       const forward = sp < 0.5, q = forward ? sp / 0.5 : (sp - 0.5) / 0.5;
-      const span = TRAIN_LAYERS.length - 1, pos = forward ? q * span : (1 - q) * span;
+      const span = NET3.layers - 1, pos = forward ? q * span : (1 - q) * span;
       const l = Math.min(span - 1, Math.floor(pos)), f = pos - l;
-      for (const e of TRAIN_W) {
-        if (e.l !== l || e.mag < 0.55) continue;
-        const a = node(e.l, e.i), b = node(e.l + 1, e.j);
-        dot(ctx, lerp(a.x, b.x, f), lerp(a.y, b.y, f), 2.1, forward ? P.ink : "#f0802e", 0.75 * fade);
+      for (const e of NET3.edges) {
+        if (NET3.nodes[e.i].l !== l || e.mag < 0.6) continue;
+        const a = P3[e.i], b = P3[e.j];
+        dot(ctx, lerp(a.x, b.x, f), lerp(a.y, b.y, f), 2, forward ? P.ink : "#f0802e", 0.8 * depthA(lerp(a.z, b.z, f)) * fade);
       }
-      label(ctx, forward ? "forward" : "backprop", (netL + netR) / 2, h - 12, "center", forward ? P.muted : "#f0802e", 0.95, 600);
+      label(ctx, forward ? "forward pass" : "backprop", ncx, h - 12, "center", forward ? P.muted : "#f0802e", 0.95, 600);
     }
-    TRAIN_LAYERS.forEach((n, l) => { for (let i = 0; i < n; i++) { const c = node(l, i); dot(ctx, c.x, c.y, 5.2, P.ai, fade); } });
+    // neurons, back to front
+    P3.map((q, i) => ({ q, i })).sort((A, B) => B.q.z - A.q.z).forEach(({ q }) => {
+      dot(ctx, q.x, q.y, 3.6 + q.f * 2.2, P.ai, depthA(q.z) * fade);
+    });
 
     // loss chart
     const loss = (x) => 0.12 + 0.82 * Math.exp(-4.2 * x) + 0.035 * Math.sin(x * 37) * (1 - x);
@@ -382,8 +396,7 @@
     for (let k = 0; k <= 80; k++) { const x = (k / 80) * p; k ? ctx.lineTo(X(x), Y(loss(x))) : ctx.moveTo(X(x), Y(loss(x))); }
     ctx.stroke(); ctx.globalAlpha = 1;
     dot(ctx, X(p), Y(loss(p)), 3.4, done ? P.truth : "#f0802e", fade);
-    const epoch = Math.round(p * 20);
-    label(ctx, done ? "trained ✓" : `loss ${loss(p).toFixed(2)} · epoch ${epoch}`, chR, top - 8, "right", done ? P.truth : P.ink, fade, 600);
+    label(ctx, done ? "trained ✓" : `loss ${loss(p).toFixed(2)} · epoch ${Math.round(p * 20)}`, chR, top - 8, "right", done ? P.truth : P.ink, fade, 600);
   }
 
   const SCENES = {
